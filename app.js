@@ -4,6 +4,8 @@ const control = document.getElementById('control');
 const targetInput = document.getElementById('target');
 const startBtn = document.getElementById('startBtn');
 const yamlFile = document.getElementById('yamlFile');
+const payloadsFile = document.getElementById('payloadsFile');
+const modeSel = document.getElementById('modeSel');
 const pauseBtn = document.getElementById('pauseBtn');
 const skipBtn = document.getElementById('skipBtn');
 const stopBtn = document.getElementById('stopBtn');
@@ -18,9 +20,9 @@ const log = document.getElementById('log');
 const findings = document.getElementById('findings');
 const status = document.getElementById('status');
 
-const MODS = ["headers","archivos","rutas","sqli","idor","xss","tech","nuclei"];
-const MOD_ICONS = { headers:'🛡', archivos:'📁', rutas:'🗺', sqli:'💉', idor:'🔓', xss:'🔥', tech:'🔎', nuclei:'🧬' };
-const MOD_LABEL = { headers:'HEADERS', archivos:'ARCHIVOS', rutas:'RUTAS', sqli:'SQLi', idor:'IDOR', xss:'XSS', tech:'TECH', nuclei:'NUCLEI' };
+const MODS = ["headers","archivos","rutas","sqli","idor","xss","lfi","traversal","rfi","rce","xxe","tech","nuclei"];
+const MOD_ICONS = { headers:'🛡', archivos:'📁', rutas:'🗺', sqli:'💉', idor:'🔓', xss:'🔥', lfi:'📂', traversal:'📂', rfi:'🌐', rce:'💀', xxe:'📜', tech:'🔎', nuclei:'🧬' };
+const MOD_LABEL = { headers:'HEADERS', archivos:'ARCHIVOS', rutas:'RUTAS', sqli:'SQLi', idor:'IDOR', xss:'XSS', lfi:'LFI', traversal:'TRAVERSAL', rfi:'RFI', rce:'RCE', xxe:'XXE', tech:'TECH', nuclei:'NUCLEI' };
 
 let CURRENT_SCAN = null;
 let currentModule = null;
@@ -55,12 +57,14 @@ function setCtrlBtns(enabled) {
 }
 
 function buildNodes() {
+  const passive = modeSel.value === 'passive';
   nodes.innerHTML = '';
   MODS.forEach(m => {
     const d = document.createElement('div');
     d.className = 'node'; d.dataset.m = m;
     d.innerHTML = `<span class="nicon">${MOD_ICONS[m]}</span>${MOD_LABEL[m]}`;
-    d.style.display = (m === 'nuclei' && !yamlFile.files.length) ? 'none' : 'flex';
+    if (m === 'nuclei' && !yamlFile.files.length) d.style.display = 'none';
+    if (passive && ['sqli','idor','xss'].includes(m)) d.style.display = 'none';
     nodes.appendChild(d);
   });
 }
@@ -80,8 +84,9 @@ function buildGraph() {
   svg.appendChild(ct);
 
   const active = MODS.filter(m => !(m === 'nuclei' && !yamlFile.files.length));
-  const n = active.length;
-  active.forEach((m, i) => {
+  const visible = active.filter(m => !(modeSel.value === 'passive' && ['sqli','idor','xss'].includes(m)));
+  const n = visible.length;
+  visible.forEach((m, i) => {
     const ang = (Math.PI*2*i/n) - Math.PI/2;
     const x = cx + R*Math.cos(ang);
     const y = cy + R*Math.sin(ang) * 0.62;
@@ -152,22 +157,37 @@ startBtn.addEventListener('click', () => {
   typeHeader('escaneando...');
   addLog('Iniciando recon de ' + target, 'hi');
 
-  // Enviar YAML por POST si hay archivo
-  const runScan = (templatesParam) => {
-    const url = '/api/scan?target=' + encodeURIComponent(target) + (templatesParam ? '&templates=' + encodeURIComponent(templatesParam) : '');
+  // Enviar YAML (plantilla + payloads) y modo por GET
+  const runScan = (templatesParam, payloadsParam) => {
+    let url = '/api/scan?target=' + encodeURIComponent(target) +
+              '&mode=' + encodeURIComponent(modeSel.value);
+    if (templatesParam) url += '&templates=' + encodeURIComponent(templatesParam);
+    if (payloadsParam) url += '&payloads=' + encodeURIComponent(payloadsParam);
     const es = new EventSource(url);
     es.onmessage = (e) => { let ev; try { ev = JSON.parse(e.data); } catch { return; } handleEvent(ev); };
     es.addEventListener('end', () => { es.close(); typeHeader('completado ✓'); addLog('=== ESCANEO FINALIZADO ===', 'hi'); setCtrlBtns(false); });
     es.onerror = () => { if (status.textContent.indexOf('completado') === -1) addLog('Conexion cerrada', 'warn'); };
   };
 
-  if (yamlFile.files.length) {
-    const reader = new FileReader();
-    reader.onload = () => { runScan(reader.result); };
-    reader.readAsText(yamlFile.files[0]);
-  } else {
-    runScan(null);
-  }
+  const readFiles = (cb) => {
+    let tpl = null, pay = null, pending = 0;
+    const done = () => { if (pending === 0) cb(tpl, pay); };
+    if (yamlFile.files.length) {
+      pending++;
+      const r = new FileReader();
+      r.onload = () => { tpl = r.result; pending--; done(); };
+      r.readAsText(yamlFile.files[0]);
+    }
+    if (payloadsFile.files.length) {
+      pending++;
+      const r = new FileReader();
+      r.onload = () => { pay = r.result; pending--; done(); };
+      r.readAsText(payloadsFile.files[0]);
+    }
+    if (pending === 0) done();
+  };
+
+  readFiles((tpl, pay) => runScan(tpl, pay));
 });
 
 function handleEvent(ev) {
@@ -178,6 +198,9 @@ function handleEvent(ev) {
       break;
     case 'start':
       addLog(`Target: ${ev.target} | modulos: ${ev.total}`, 'hi');
+      break;
+    case 'mode':
+      addLog(`Modo: ${ev.mode === 'passive' ? '👁 PASIVO (solo recon)' : '⚡ ACTIVO (con payloads)'}`, 'warn');
       break;
     case 'module':
       currentModule = ev.name;
