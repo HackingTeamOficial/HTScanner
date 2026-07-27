@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HT Scanner — hacking team</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="scanlines"></div>
+
+<header>
+  <div class="logo">⚡ HT<span>SCANNER</span></div>
+  <div class="tag">hacking team · recon & vuln scanner</div>
+</header>
+
+<main>
+  <!-- PANEL DE AUTORIZACION -->
+  <section id="auth" class="panel auth">
+    <h2>⚠️ AVISO DE AUTORIZACIÓN</h2>
+    <p>Esta herramienta realiza pruebas de seguridad <b>reales</b>. Úsala
+    <b>SOLO</b> contra sistemas propios o con autorización explícita por escrito.
+    El uso no autorizado es ilegal.</p>
+    <label class="check">
+      <input type="checkbox" id="authCheck">
+      <span>Confirmo que tengo autorización para escanear el objetivo.</span>
+    </label>
+  </section>
+
+  <!-- PANEL DE CONTROL -->
+  <section class="panel control" id="control" style="opacity:.4;pointer-events:none">
+    <div class="inputrow">
+      <input id="target" type="text" placeholder="https://objetivo.com  (o http://127.0.0.1:8080)" autocomplete="off">
+      <button id="startBtn">▶ INICIAR SCAN</button>
+    </div>
+    <div class="mods">
+      <span class="chip" data-m="headers">HEADERS</span>
+      <span class="chip" data-m="archivos">ARCHIVOS</span>
+      <span class="chip" data-m="rutas">RUTAS</span>
+      <span class="chip" data-m="sqli">SQLi</span>
+      <span class="chip" data-m="idor">IDOR</span>
+      <span class="chip" data-m="xss">XSS</span>
+      <span class="chip" data-m="tech">TECH</span>
+    </div>
+    <div class="mods">
+      <label class="upload">
+        📄 Plantilla YAML (Nuclei): <input type="file" id="yamlFile" accept=".yaml,.yml">
+      </label>
+    </div>
+    <div class="controls">
+      <button id="pauseBtn" class="ctrl">⏸ PAUSAR</button>
+      <button id="skipBtn" class="ctrl">⏭ SALTAR</button>
+      <button id="stopBtn" class="ctrl danger">⏹ DETENER</button>
+    </div>
+  </section>
+
+  <!-- MAPA DE NODOS (grafo) -->
+  <section class="panel graphpanel" id="graphPanel" style="display:none">
+    <div class="loghead">🔗 MAPA DE RECON</div>
+    <svg id="graph" viewBox="0 0 900 160" preserveAspectRatio="xMidYMid meet">
+      <!-- lineas y nodos se dibujan por JS -->
+    </svg>
+  </section>
+
+  <!-- PROGRESO -->
+  <section class="panel progress" id="progressPanel" style="display:none">
+    <div class="barwrap">
+      <div class="bar" id="bar"></div>
+      <div class="barpct" id="barpct">0%</div>
+    </div>
+    <div class="nodes" id="nodes"></div>
+  </section>
+
+  <!-- LOG EN VIVO -->
+  <section class="panel logpanel" id="logPanel" style="display:none">
+    <div class="loghead">▌ ACTIVIDAD EN TIEMPO REAL</div>
+    <div id="log" class="log"></div>
+  </section>
+
+  <!-- HALLAZGOS -->
+  <section class="panel findpanel" id="findPanel" style="display:none">
+    <div class="loghead">🔍 HALLAZGOS</div>
+    <div id="findings" class="findings"></div>
+  </section>
+</main>
+
+<footer>
+  <span id="status">listo</span> · Solo fines educativos / CTF local
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
