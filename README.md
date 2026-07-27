@@ -1,4 +1,8 @@
 ⚡ HT Scanner — Hacking Team
+<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_42_10" src="https://github.com/user-attachments/assets/5154f192-ec7b-498f-a85f-7db3639e3b3a" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_43_02" src="https://github.com/user-attachments/assets/eca077c2-6bfc-4599-aacc-317536846404" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_43_10" src="https://github.com/user-attachments/assets/530547b5-a63b-42c5-92a3-1676f6007592" />
+
 
 Scanner de recon y vulnerabilidades con **interfaz gráfica web** estilo neón.
 Busca de forma REAL (no fake): cabeceras, archivos sensibles, rutas, **SQLi**,
@@ -114,10 +118,6 @@ El escaneo de prueba detectó de verdad:
 - Tecnología: Apache + Next.js
 - Plantilla YAML Nuclei detectó `.git/config` expuesto
 
-
-<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_43_10" src="https://github.com/user-attachments/assets/530547b5-a63b-42c5-92a3-1676f6007592" />
-<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_43_02" src="https://github.com/user-attachments/assets/eca077c2-6bfc-4599-aacc-317536846404" />
-<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_42_10" src="https://github.com/user-attachments/assets/5154f192-ec7b-498f-a85f-7db3639e3b3a" />
 🔧 Ampliable
 Cada módulo es una función en `server.py` (`scan_target`). Para añadir uno nuevo
 basta con agregarlo a la lista `mods` y emitir eventos con `emit({"type": "finding", ...})`.
