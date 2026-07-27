@@ -1,4 +1,4 @@
-# ⚡ HT Scanner — hacking team
+⚡ HT Scanner — Hacking Team
 
 Scanner de recon y vulnerabilidades con **interfaz gráfica web** estilo neón.
 Busca de forma REAL (no fake): cabeceras, archivos sensibles, rutas, **SQLi**,
@@ -8,9 +8,8 @@ Busca de forma REAL (no fake): cabeceras, archivos sensibles, rutas, **SQLi**,
 > propios o con **autorización explícita por escrito**. El uso no autorizado es ilegal.
 > La propia GUI exige marcar el checkbox de autorización antes de escanear.
 
----
 
-## 🚀 Puesta en marcha (local)
+🚀 Puesta en marcha (local)
 
 ```bash
 pip install pyyaml        # solo si quieres el modulo Nuclei/YAML
@@ -24,9 +23,8 @@ Abre en el navegador: **http://127.0.0.1:8777/index.html**
 Escribe el objetivo (ej. `http://127.0.0.1:9090` o tu dominio autorizado),
 marca la autorización y pulsa **▶ INICIAR SCAN**.
 
----
 
-## 🧩 Módulos
+🧩 Módulos
 
 | Módulo | Qué busca |
 |---|---|
@@ -39,9 +37,8 @@ marca la autorización y pulsa **▶ INICIAR SCAN**.
 | TECH | Detección de server, CMS y frameworks (WordPress, Next.js, Laravel...) |
 | NUCLEI | Ejecuta tus **plantillas YAML** (formato compatible con Nuclei) |
 
----
 
-## 🎮 Controles en vivo
+🎮 Controles en vivo
 
 Debajo del objetivo hay 3 botones mientras escanea:
 
@@ -49,9 +46,8 @@ Debajo del objetivo hay 3 botones mientras escanea:
 - **⏭ SALTAR** — salta el módulo que se está ejecutando ahora.
 - **⏹ DETENER** — aborta el escaneo completo.
 
----
 
-## 📄 Plantillas YAML (estilo Nuclei)
+📄 Plantillas YAML (estilo Nuclei)
 
 Sube un `.yaml` con el botón "Plantilla YAML (Nuclei)" antes de escanear.
 Formato simplificado compatible:
@@ -73,9 +69,8 @@ requests:
 El módulo NUCLEI ejecuta cada plantilla contra el objetivo y reporta
 coincidencias como hallazgos.
 
----
 
-## 🖥️ Interfaz
+🖥️ Interfaz
 
 - **Mapa de recon**: grafo SVG con nodo central **HACKING TEAM** y los módulos alrededor.
 - **Barra de progreso** en tiempo real + nodos que se iluminan al escanear.
@@ -83,9 +78,8 @@ coincidencias como hallazgos.
 - **Panel de hallazgos** por severidad (HIGH / MEDIUM / LOW).
 - **Controles** de pausa / salto / detención en vivo.
 
----
 
-## 📦 Para tu web (sección Herramientas de hacking team)
+📦 Para tu web (sección Herramientas de hacking team)
 
 Esta carpeta es autocontenida (Python stdlib + `pyyaml` opcional). Para publicarla:
 
@@ -109,9 +103,7 @@ ht_scanner/
 └── README.md
 ```
 
----
-
-## ✅ Probado contra el demo
+✅ Probado contra el demo
 El escaneo de prueba detectó de verdad:
 - SQLi HIGH en `/notes?id=`
 - XSS HIGH en `/search?q=`
@@ -122,9 +114,11 @@ El escaneo de prueba detectó de verdad:
 - Tecnología: Apache + Next.js
 - Plantilla YAML Nuclei detectó `.git/config` expuesto
 
----
 
-## 🔧 Ampliable
+<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_43_10" src="https://github.com/user-attachments/assets/530547b5-a63b-42c5-92a3-1676f6007592" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_43_02" src="https://github.com/user-attachments/assets/eca077c2-6bfc-4599-aacc-317536846404" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-27_21_42_10" src="https://github.com/user-attachments/assets/5154f192-ec7b-498f-a85f-7db3639e3b3a" />
+🔧 Ampliable
 Cada módulo es una función en `server.py` (`scan_target`). Para añadir uno nuevo
 basta con agregarlo a la lista `mods` y emitir eventos con `emit({"type": "finding", ...})`.
 El control de pausa/salto/stop usa un diccionario `SCANS` por `scan_id`.
