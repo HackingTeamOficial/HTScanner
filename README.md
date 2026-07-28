@@ -1,4 +1,14 @@
 # ⚡ HT Scanner — hacking team
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_51_40" src="https://github.com/user-attachments/assets/077b2c6a-9cc3-4ecf-b676-6ccd8f06c70e" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_03" src="https://github.com/user-attachments/assets/fb16cad5-3be4-4904-8569-9a7579ba1fc3" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_27" src="https://github.com/user-attachments/assets/234d7f57-474b-4c4b-97b9-c4f34a8715a3" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_44" src="https://github.com/user-attachments/assets/867a0cc8-9084-4231-b43f-c925976a7e13" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_06" src="https://github.com/user-attachments/assets/2a88f5ae-0af1-4d1b-ae25-c88c4759f12f" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_17" src="https://github.com/user-attachments/assets/8d0319aa-85da-4087-8455-011d00fd7097" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_26" src="https://github.com/user-attachments/assets/eb8ad780-4522-41ee-b086-3e42f1708de9" />
+
+
+
 
 Scanner de recon y vulnerabilidades con **interfaz gráfica web** estilo neón,
 hecho por y para la comunidad **hacking team**.
