@@ -169,39 +169,6 @@ ht_scanner/
 └── PRESENTACION_HTSCANNER.md  # presentación para la comunidad
 ```
 
----
-
-## 🌐 Publicarlo en tu web (sección Herramientas de hacking team)
-
-Esta carpeta es autocontenida (Python stdlib + `pyyaml` opcional). Para publicarla:
-
-1. **Opción A — Alojarla en tu propio VPS:**
-   - Sube la carpeta `ht_scanner/` a tu VPS.
-   - Ejecuta `python3 server.py` (usa `nohup` o `screen` para dejarlo fijo).
-   - Apunta un subdominio (ej. `tools.hackingteamoficcial.uk`) al puerto 8777.
-   - ⚠️ Nunca expongas el scanner a Internet sin autenticación.
-
-2. **Opción B — Descargable:** pon `ht_scanner.zip` en tu sección "Herramientas".
-
----
-
-## 🐙 Subir a GitHub
-
-```bash
-cd ht_scanner
-git init
-git add .
-git commit -m "HT Scanner: scanner web con 13 modulos (SQLi, XSS, IDOR, LFI, TRAVERSAL, RFI, RCE, XXE, Nuclei)"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/ht_scanner.git
-git push -u origin main
-```
-
-> 💡 Recomendado: añade un `.gitignore` con `__pycache__/` y no subas nada que
-> no sea tu código (sin datos ni objetivos reales).
-
----
-
 ## ✅ Probado contra el demo (lab autorizado)
 
 El escaneo de prueba detectó de verdad:
