@@ -1,3 +1,11 @@
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_51_40" src="https://github.com/user-attachments/assets/a275a840-7b6e-40cf-bdf5-e25e1497f5ad" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_03" src="https://github.com/user-attachments/assets/12fcbeba-2cf8-4fa4-86d6-6ab29c8704fb" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_27" src="https://github.com/user-attachments/assets/0b88f2ca-d4b2-4620-a327-220fe676886d" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_44" src="https://github.com/user-attachments/assets/e4220f68-31bc-461b-939e-76c2017c9476" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_06" src="https://github.com/user-attachments/assets/7a46c516-c500-4ee0-9d8b-46f9c66e9530" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_17" src="https://github.com/user-attachments/assets/28a128b0-3ab5-4182-994c-36cdb80a0855" />
+<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_26" src="https://github.com/user-attachments/assets/c9ae6511-c413-4367-95eb-77cc17c3484d" />
+
 
 # ⚡ HT Scanner — hacking team
 
@@ -15,7 +23,7 @@ detección de tecnología y **plantillas YAML tipo Nuclei**.
 
 ---
 
-## 🚀 Puesta en marcha (local)
+🚀 Puesta en marcha (local)
 
 ```bash
 pip install pyyaml          # solo si quieres el módulo Nuclei/YAML
@@ -31,9 +39,8 @@ marca la autorización y pulsa **▶ INICIAR SCAN**.
 
 > 💡 Atajo: `bash launch.sh` arranca el servidor de la herramienta en un comando.
 
----
 
-## 🧩 Módulos (13)
+🧩 Módulos (13)
 
 | Módulo | Severidad | Qué busca |
 |---|---|---|
@@ -51,16 +58,14 @@ marca la autorización y pulsa **▶ INICIAR SCAN**.
 | 🔎 TECH | — | Detección de server, CMS y frameworks (WordPress, Next.js, Laravel...) |
 | 🧬 NUCLEI | varía | Ejecuta tus **plantillas YAML** (formato compatible con Nuclei) |
 
-### Sobre RFI y XXE (detección OOB)
+Sobre RFI y XXE (detección OOB)
 RFI y XXE se confirman con un **servidor de callback local** que el scanner
 levanta durante el escaneo. Si el objetivo intenta cargar el recurso externo
 (`http://127.0.0.1:<puerto>/<token>`), el scanner lo confirma como hallazgo
 real. Esto evita falsos positivos: solo reporta si el servidor *de verdad*
 intentó la conexión. Estos dos módulos añaden ~2.5 s por endpoint probado.
 
----
-
-## 🎯 Lista de payloads (`.txt`)
+🎯 Lista de payloads (`.txt`)
 
 Sube un archivo `.txt` con tus payloads personalizadas. Una por línea, con
 secciones opcionales para separar por tipo:
@@ -77,14 +82,7 @@ secciones opcionales para separar por tipo:
 999
 ```
 
-Si no pones secciones, cada línea se aplica a los tres tipos (SQLi/XSS/IDOR).
-
-> 💡 El YAML queda reservado solo para las **plantillas Nuclei** (botón aparte).
-> Las payloads de ataque van en `.txt`, como pediste.
-
----
-
-## 🔘 Modo activo / pasivo
+🔘 Modo activo / pasivo
 
 - ⚡ **ACTIVO** (por defecto): ejecuta todos los módulos, incluyendo el envío de
   payloads de ataque (SQLi / XSS / IDOR / LFI / TRAVERSAL / RFI / RCE / XXE).
@@ -92,9 +90,7 @@ Si no pones secciones, cada línea se aplica a los tres tipos (SQLi/XSS/IDOR).
   tecnología) **sin enviar payloads**. Ideal para una primera pasada sigilosa
   o contra objetivos sensibles.
 
----
-
-## 🎮 Controles en vivo
+🎮 Controles en vivo
 
 Debajo del objetivo hay 3 botones mientras escanea:
 
@@ -102,9 +98,7 @@ Debajo del objetivo hay 3 botones mientras escanea:
 - **⏭ SALTAR** — salta el módulo que se está ejecutando ahora.
 - **⏹ DETENER** — aborta el escaneo completo.
 
----
-
-## 📄 Plantillas YAML (estilo Nuclei)
+📄 Plantillas YAML (estilo Nuclei)
 
 Sube un `.yaml` con el botón "Plantilla YAML (Nuclei)" antes de escanear.
 Formato simplificado compatible:
@@ -126,9 +120,7 @@ requests:
 El módulo NUCLEI ejecuta cada plantilla contra el objetivo y reporta
 coincidencias como hallazgos.
 
----
-
-## 🖥️ Interfaz
+🖥️ Interfaz
 
 - **Mapa de recon**: grafo SVG con nodo central **HACKING TEAM** y los módulos alrededor.
 - **Barra de progreso** en tiempo real + nodos que se iluminan al escanear.
@@ -136,9 +128,7 @@ coincidencias como hallazgos.
 - **Panel de hallazgos** por severidad (HIGH / MEDIUM / LOW / CRITICAL).
 - **Controles** de pausa / salto / detención en vivo.
 
----
-
-## 📦 Estructura del proyecto
+📦 Estructura del proyecto
 
 ```
 ht_scanner/
@@ -151,42 +141,9 @@ ht_scanner/
 ├── launch.sh             # arranque en un comando
 ├── README.md
 └── PRESENTACION_HTSCANNER.md  # presentación para la comunidad
-```
+````
 
----
-
-## 🌐 Publicarlo en tu web (sección Herramientas de hacking team)
-
-Esta carpeta es autocontenida (Python stdlib + `pyyaml` opcional). Para publicarla:
-
-1. **Opción A — Alojarla en tu propio VPS:**
-   - Sube la carpeta `ht_scanner/` a tu VPS.
-   - Ejecuta `python3 server.py` (usa `nohup` o `screen` para dejarlo fijo).
-   - Apunta un subdominio (ej. `tools.hackingteamoficcial.uk`) al puerto 8777.
-   - ⚠️ Nunca expongas el scanner a Internet sin autenticación.
-
-2. **Opción B — Descargable:** pon `ht_scanner.zip` en tu sección "Herramientas".
-
----
-
-## 🐙 Subir a GitHub
-
-```bash
-cd ht_scanner
-git init
-git add .
-git commit -m "HT Scanner: scanner web con 13 modulos (SQLi, XSS, IDOR, LFI, TRAVERSAL, RFI, RCE, XXE, Nuclei)"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/ht_scanner.git
-git push -u origin main
-```
-
-> 💡 Recomendado: añade un `.gitignore` con `__pycache__/` y no subas nada que
-> no sea tu código (sin datos ni objetivos reales).
-
----
-
-## ✅ Probado contra el demo (lab autorizado)
+✅ Probado contra el demo (lab autorizado)
 
 El escaneo de prueba detectó de verdad:
 
@@ -206,7 +163,7 @@ El escaneo de prueba detectó de verdad:
 
 ---
 
-## 🔧 Ampliable
+🔧 Ampliable
 
 Cada módulo es una función dentro de `scan_target()` en `server.py`. Para añadir
 uno nuevo: agrégalo a la lista `mods` y emite eventos con
@@ -214,9 +171,7 @@ uno nuevo: agrégalo a la lista `mods` y emite eventos con
 diccionario `SCANS` por `scan_id`. RFI/XXE usan `start_oob()` / `wait_oob()`
 para el callback local.
 
----
-
-## 📜 Licencia y responsabilidad
+📜 Licencia y responsabilidad
 
 Proyecto educativo de la comunidad **hacking team**. Al usarlo, aceptas hacerlo
 única y exclusivamente con autorización. Los autores no se hacen responsables
