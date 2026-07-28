@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="Screenshot_2026-07-27_23_26_06" src="https://github.com/user-attachments/assets/7311feba-5e93-46be-81d5-241e1a0e0f72" />
 # ⚡ HT Scanner — hacking team
 
 Scanner de recon y vulnerabilidades con **interfaz gráfica web** estilo neón,
