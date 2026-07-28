@@ -1,4 +1,4 @@
-# ⚡ HT Scanner — hacking team
+# ⚡ HT Scanner — hacking team ESTEN Pendientes A Actualizaciones 
 <img width="1920" height="1080" alt="Screenshot_2026-07-28_03_51_40" src="https://github.com/user-attachments/assets/077b2c6a-9cc3-4ecf-b676-6ccd8f06c70e" />
 <img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_03" src="https://github.com/user-attachments/assets/fb16cad5-3be4-4904-8569-9a7579ba1fc3" />
 <img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_27" src="https://github.com/user-attachments/assets/234d7f57-474b-4c4b-97b9-c4f34a8715a3" />
