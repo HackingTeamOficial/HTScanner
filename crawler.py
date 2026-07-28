@@ -1,0 +1,199 @@
+#!/usr/bin/env python3
+"""crawler.py - Crawler de reconocimiento para HTScanner (stdlib puro).
+
+Descubre:
+  * Enlaces (<a href>), formularios (action+inputs) y parametros GET/POST.
+  * Redirecciones 3xx (sique Location para ampliar superficie).
+  * Endpoints embebidos en archivos JavaScript (incluidos bundles de SPA
+    React/Vue/Angular): extrae rutas tipo /api/..., /user/..., rutas de
+    router (<Route path>, vue-router path:, react-router path=) y cadenas
+    entre comillas que parezcan paths. Tambien sique imports de .js.
+  * APIs REST/GraphQL/swagger/openapi/redoc.
+  * Parametros en formularios POST (method=post) y en la query.
+No ejecuta JS (headless requeriria Chromium); en su lugar analiza
+estaticamente los bundles .js para recuperar las rutas que la SPA llamaria.
+
+El crawler devuelve un dict:
+  {
+    "urls": set,          # URLs absolutas descubiertas
+    "forms": [...],       # {action, method, params:[...]}
+    "params": set,        # nombres de parametros unicos vistos
+    "js_endpoints": set,  # endpoints extraidos de .js
+    "spa_routes": set,   # rutas de router SPA (React/Vue)
+    "apis": set,          # /api, /graphql, /swagger, etc.
+    "redirects": set,     # URLs de redireccion 3xx
+    "visited": set,
+  }
+"""
+import re
+import urllib.parse
+
+LINK_RE = re.compile(r"""href\s*=\s*["']([^"']+)["']""", re.IGNORECASE)
+SRC_RE = re.compile(r"""src\s*=\s*["']([^"']+)["']""", re.IGNORECASE)
+ACTION_RE = re.compile(r"""<form[^>]*action\s*=\s*["']?([^"'\s>]*)""", re.IGNORECASE)
+METHOD_RE = re.compile(r"""<form[^>]*method\s*=\s*["']?(post|get)""", re.IGNORECASE)
+INPUT_RE = re.compile(r"""<input[^>]*name\s*=\s*["']([^"']+)["']""", re.IGNORECASE)
+# rutas tipo /api/foo, /user/123, /v1/x en texto JS
+JS_ROUTE_RE = re.compile(r"""["'`]((?:/[a-zA-Z0-9_\-.]+){1,4}(?:/[A-Za-z0-9_\-.]+)?)["'`]""")
+# router SPA: <Route path="...">, vue-router path: '...', react-router path=
+SPA_ROUTE_RE = re.compile(r"""(?:path|to)\s*[:=]\s*["'`]([^"'`]+)["'`]""", re.IGNORECASE)
+# llamadas a fetch/axios/router con ruta: fetch('/x'), axios.get('/y')
+JS_CALL_RE = re.compile(r"""(?:fetch|axios|http|request|router\.\w+|\$\.get|\$\.post)\s*\(?\s*["'`]([^"'`]+)["'`]""", re.IGNORECASE)
+# imports de JS: import X from '/y.js'  ||  from '/z.js'
+JS_IMPORT_RE = re.compile(r"""from\s+["']([^"']+\.js)["']""", re.IGNORECASE)
+# strings que parezcan endpoint (empiezan por / y tienen palabras clave)
+API_HINTS = ["api", "graphql", "rest", "v1", "v2", "admin", "user", "login",
+             "auth", "token", "oauth", "swagger", "openapi", "proxy", "dashboard"]
+
+
+def _abs(base, link):
+    if link.startswith("//"):
+        return urllib.parse.urlparse(base).scheme + ":" + link
+    if link.startswith("/"):
+        p = urllib.parse.urlparse(base)
+        return f"{p.scheme}://{p.netloc}{link}"
+    if link.startswith("http"):
+        return link
+    if link.startswith("#") or link.startswith("javascript:") or link.startswith("mailto:"):
+        return ""
+    return urllib.parse.urljoin(base, link)
+
+
+def _is_same_host(base, url):
+    try:
+        return urllib.parse.urlparse(url).netloc == urllib.parse.urlparse(base).netloc
+    except Exception:
+        return False
+
+
+def crawl(ctx, max_pages=60, max_js=25):
+    """Recolecta superficie del objetivo. Respeta control de escaneo."""
+    base = ctx.target
+    visited = set()
+    to_visit = [base]
+    urls = set()
+    forms = []
+    params = set()
+    js_files = set()
+    js_endpoints = set()
+    spa_routes = set()
+    apis = set()
+    redirects = set()
+
+    def _analyze_js(js_url, depth=0, seen=None):
+        nonlocal js_endpoints, apis, spa_routes
+        if seen is None:
+            seen = set()
+        if js_url in seen or depth > 3:
+            return
+        seen.add(js_url)
+        try:
+            rr = ctx.req("GET", js_url, timeout=8)
+            txt = rr.get("body", "") or ""
+            # rutas genericas
+            for m in JS_ROUTE_RE.findall(txt):
+                path = m.strip()
+                if len(path) > 1 and not path.startswith("//"):
+                    low = path.lower()
+                    if any(h in low for h in API_HINTS) or low.startswith("/api"):
+                        js_endpoints.add(path)
+                        apis.add(path)
+            # router SPA
+            for m in SPA_ROUTE_RE.findall(txt):
+                if m.startswith("/"):
+                    spa_routes.add(m)
+                    if any(h in m.lower() for h in API_HINTS):
+                        apis.add(m)
+            # llamadas fetch/axios/router
+            for m in JS_CALL_RE.findall(txt):
+                if m.startswith("/") and len(m) > 1:
+                    js_endpoints.add(m)
+                    if any(h in m.lower() for h in API_HINTS):
+                        apis.add(m)
+            # seguir imports de .js para ampliar la superficie
+            for imp in JS_IMPORT_RE.findall(txt):
+                absi = _abs(js_url, imp)
+                if absi and absi.endswith(".js") and absi not in seen:
+                    js_files.add(absi)
+                    if depth < 2:
+                        _analyze_js(absi, depth + 1, seen)
+        except Exception:
+            pass
+
+    while to_visit and len(visited) < max_pages:
+        url = to_visit.pop(0)
+        if url in visited:
+            continue
+        visited.add(url)
+        if ctx.ctrl("crawler") in ("stop", "skip"):
+            break
+        try:
+            rr = ctx.req("GET", url, timeout=10, follow_redirects=False)
+        except Exception:
+            continue
+        # redirecciones 3xx
+        code = rr.get("code")
+        hdrs = {k.lower(): v for k, v in (rr.get("headers", {}) or {}).items()}
+        if code and 300 <= int(code) < 400:
+            loc = hdrs.get("location")
+            if loc:
+                absr = _abs(url, loc.split("?")[0])
+                if absr:
+                    redirects.add(absr)
+                    if _is_same_host(base, absr) and absr not in visited and len(to_visit) < max_pages:
+                        to_visit.append(absr)
+        body = rr.get("body", "") or ""
+        # enlaces
+        for ln in LINK_RE.findall(body) + SRC_RE.findall(body):
+            clean = ln.split("#")[0]
+            absu = _abs(url, clean)
+            if not absu:
+                continue
+            if absu.startswith(base.rstrip("/")):
+                urls.add(absu)
+                if absu.endswith(".js") or "/static/" in absu or "/assets/" in absu:
+                    js_files.add(absu)
+                elif absu not in visited and len(to_visit) < max_pages:
+                    to_visit.append(absu)
+        # formularios (GET/POST)
+        for fm in re.findall(r"<form.*?</form>", body, re.IGNORECASE | re.DOTALL):
+            action = ACTION_RE.search(fm)
+            act = action.group(1) if action else ""
+            method_m = METHOD_RE.search(fm)
+            method = (method_m.group(1).upper() if method_m else "GET")
+            ps = INPUT_RE.findall(fm)
+            for p in ps:
+                params.add(p)
+            forms.append({"action": _abs(url, act) if act else url,
+                          "method": method, "params": ps})
+        # parametros en la propia query
+        q = urllib.parse.urlparse(url).query
+        for k, _ in urllib.parse.parse_qsl(q):
+            params.add(k)
+        # APIs comunes
+        for api in ["/api", "/graphql", "/swagger", "/swagger.json", "/openapi.json",
+                    "/redoc", "/api/v1", "/api/v2"]:
+            if api in (body.lower() + url.lower()):
+                apis.add(api)
+
+    # analizar JS estaticamente (sustituye al headless para SPA)
+    n = 0
+    for jf in list(js_files):
+        if n >= max_js:
+            break
+        if ctx.ctrl("crawler") in ("stop", "skip"):
+            break
+        _analyze_js(jf)
+        n += 1
+
+    return {
+        "urls": urls,
+        "forms": forms,
+        "params": params,
+        "js_endpoints": js_endpoints,
+        "spa_routes": spa_routes,
+        "apis": apis,
+        "js_files": js_files,
+        "redirects": redirects,
+        "visited": visited,
+    }

@@ -1,21 +1,17 @@
-# ⚡ HT Scanner — hacking team ESTEN Pendientes A Actualizaciones 
-<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_51_40" src="https://github.com/user-attachments/assets/077b2c6a-9cc3-4ecf-b676-6ccd8f06c70e" />
-<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_03" src="https://github.com/user-attachments/assets/fb16cad5-3be4-4904-8569-9a7579ba1fc3" />
-<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_27" src="https://github.com/user-attachments/assets/234d7f57-474b-4c4b-97b9-c4f34a8715a3" />
-<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_52_44" src="https://github.com/user-attachments/assets/867a0cc8-9084-4231-b43f-c925976a7e13" />
-<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_06" src="https://github.com/user-attachments/assets/2a88f5ae-0af1-4d1b-ae25-c88c4759f12f" />
-<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_17" src="https://github.com/user-attachments/assets/8d0319aa-85da-4087-8455-011d00fd7097" />
-<img width="1920" height="1080" alt="Screenshot_2026-07-28_03_53_26" src="https://github.com/user-attachments/assets/eb8ad780-4522-41ee-b086-3e42f1708de9" />
+# ⚡ HT Scanner — hacking team
 
+Plataforma de **reconocimiento y evaluación de seguridad web** con interfaz
+gráfica web estilo neón, hecha por y para la comunidad **hacking team**.
 
+Busca de forma **REAL** (no simulada) y reúne toda la información en un único
+informe, en la línea de herramientas modernas como **Katana + Httpx + Nuclei**
+o **Web-Check**: cabeceras, fingerprinting, crawler, descubrimiento de archivos,
+extracción de secretos, y detección de vulnerabilidades
+(**SQLi**, **IDOR**, **XSS**, **LFI**, **Path Traversal**, **RFI**, **RCE**, **XXE**,
+**CORS**, **JWT**, **GraphQL**, **CSRF**).
 
-
-Scanner de recon y vulnerabilidades con **interfaz gráfica web** estilo neón,
-hecho por y para la comunidad **hacking team**.
-
-Busca de forma **REAL** (no simulada): cabeceras, archivos sensibles, rutas,
-**SQLi**, **IDOR**, **XSS**, **LFI**, **Path Traversal**, **RFI**, **RCE**, **XXE**,
-detección de tecnología y **plantillas YAML tipo Nuclei**.
+Todo hallazgo lleva **`confidence: confirmed | sospechoso`** para separar lo
+que se verificó de verdad (petición real) de lo que es solo heurística.
 
 > ⚠️ **SOLO para fines educativos / CTF / laboratorios locales.**
 > Úsalo únicamente contra sistemas propios o con **autorización explícita por
@@ -38,70 +34,110 @@ Abre en el navegador: **http://127.0.0.1:8777/index.html**
 Escribe el objetivo (ej. `http://127.0.0.1:9090` o tu dominio autorizado),
 marca la autorización y pulsa **▶ INICIAR SCAN**.
 
-> 💡 Atajo: `bash launch.sh` arranca el servidor de la herramienta en un comando.
-
 ---
 
-## 🧩 Módulos (13)
+## 🧩 Capacidades (roadmap completo)
 
-| Módulo | Severidad | Qué busca |
-|---|---|---|
-| 🛡️ HEADERS | — | HSTS, CSP, X-Frame-Options faltantes |
-| 📁 ARCHIVOS | — | `.git/config`, `robots.txt`, `wp-config.php`, etc. expuestos |
-| 🗺️ RUTAS | — | Enumeración de endpoints comunes (`/admin`, `/login`, `/api`...) |
-| 💉 SQLi | HIGH | Inyección SQL en parámetros GET (error-based + diferencial) |
-| 🔓 IDOR | MEDIUM | Objetos accesibles por `id` sin control de acceso |
-| 🔥 XSS | HIGH | XSS reflejado en parámetros GET |
-| 📂 LFI | HIGH | Inclusión de archivos locales (`/etc/passwd`, `php://filter`) |
-| 📂 TRAVERSAL | HIGH | Path Traversal (`../../etc/passwd` y variantes codificadas) |
-| 🌐 RFI | HIGH | Inclusión remota vía **callback OOB local** |
-| 💀 RCE | CRITICAL | Inyección de comandos (`;id`, `$(id)`, `\| whoami`) |
-| 📜 XXE | HIGH | XML External Entity vía **callback OOB local** |
-| 🔎 TECH | — | Detección de server, CMS y frameworks (WordPress, Next.js, Laravel...) |
-| 🧬 NUCLEI | varía | Ejecuta tus **plantillas YAML** (formato compatible con Nuclei) |
+### 🔌 Sistema de Plugins
+Cualquier archivo `.py` en `plugins/` con `PLUGIN_NAME` y `run(ctx)` se carga
+**automáticamente** al arrancar. Incluidos: `sqli`, `idor`, `xss`, `lfi`,
+`rce`, `cors`, `jwt`, `graphql`, `csrf`. Añade el tuyo sin tocar el core.
 
+### 🕷️ Crawler profundo
+Descubre enlaces, formularios **GET/POST**, parámetros y **endpoints embebidos
+en archivos JS** (incluidos bundles de SPAs React/Vue/Angular, analizados de
+forma estática). Sigue **redirecciones 3xx**, extrae **rutas de router SPA**
+(React Router/Vue `<Route path>`), **imports de otros bundles .js** y llamadas
+`fetch`/`axios`/`$.post`. Detecta APIs REST/GraphQL/swagger. Toda la superficie
+descubierta alimenta automáticamente a los plugins de ataque.
 
-## 🎯 Lista de payloads (`.txt`)
+### 🔎 Fingerprinting avanzado (estilo WhatWeb/Wappalyzer)
+Detecta servidor, versiones (**Apache, Nginx, PHP, Laravel, jQuery, WordPress,
+React, Next.js, Vercel, Netlify…**), **WAF/CDN** (Cloudflare, Akamai,
+Imperva…), CMS, frameworks y **librerías JS vulnerables** (moment <2.29.2,
+lodash <4.17.21, handlebars, marked, dompurify…). Además: **TLS/certificados,
+DNS, HTTP/2, HTTP/3** y cabeceras de seguridad (HSTS, CSP, X-Frame, cookies).
+Las reglas viven en `signatures/tech.json` (tech/cloud/admin_panels/js_libs).
 
-Sube un archivo `.txt` con tus payloads personalizadas. Una por línea, con
-secciones opcionales para separar por tipo:
+### 📂 Descubrimiento de archivos
+Wordlist ampliada: `.env`, `.git`, `composer.lock`, `package.json`, backups
+(`.zip`, `.sql`), `robots.txt`, `security.txt`, `wp-config.php`, paneles, etc.
 
-```
-# Comentarios con #
-[SQLi]
-'
-' OR '1'='1
-[XSS]
-<script>alert(1)</script>
-[IDOR]
-1
-999
-```
+### 🔑 Analizador de JavaScript
+Extrae **secretos** de los `.js`: AWS keys, Google Maps, Firebase, Stripe,
+Twilio, JWT, private keys y tokens genéricos.
 
-## 🔘 Modo activo / pasivo
+### 🛡️ Detección de APIs
+Encuentra `/api`, `/graphql` (con prueba de **introspection**), `/swagger`,
+`/openapi.json`, `/redoc`.
 
-- ⚡ **ACTIVO** (por defecto): ejecuta todos los módulos, incluyendo el envío de
-  payloads de ataque (SQLi / XSS / IDOR / LFI / TRAVERSAL / RFI / RCE / XXE).
-- 👁 **PASIVO**: solo hace recon de superficie (headers, archivos, rutas,
-  tecnología) **sin enviar payloads**. Ideal para una primera pasada sigilosa
-  o contra objetivos sensibles.
+### ⚡ Concurrencia
+Los módulos se ejecutan en **hilos paralelos** (semaforo configurable vía slider
+de concurrencia). Un escaneo completo de 17 módulos tarda **~5-7s** en local.
 
----
+### 🔐 Sesión / Auth
+Soporte opcional de **login** (POST a URL con credenciales) para escanear
+aplicaciones detrás de autenticación; la cookie de sesión se reutiliza.
 
-## 📄 Reporte PDF automático (firmado por hacking team)
+### 🎯 Priorización + Correlación + IA local
+Los hallazgos se **ordenan por riesgo** (CRITICAL→INFO) y se **correlacionan**
+(ej. XSS + cookie sin HttpOnly ⇒ robo de sesión; LFI/XXE + RCE ⇒ compromiso
+total). Un motor de reglas local (sin API externa) **sugiere siguientes pasos**
+según la tecnología y los hallazgos (estilo "IA").
 
-Al **terminar cada escaneo**, HT Scanner genera un **reporte PDF profesional**
-con el logo oficial de hacking team, que incluye:
+### 🤖 Dashboard tipo SOC
+Contadores en tiempo real por severidad con gráfico de barras, mapa de recon
+y panel de sugerencias.
 
-- **Portada** con objetivo, fecha, modo y número de hallazgos.
-- **Resumen del sistema**: host, servidor, tecnología detectada y puertos.
-- **Tabla de vulnerabilidades** por severidad (CRITICAL / HIGH / MEDIUM / LOW) con módulo y detalle.
-- **Módulos ejecutados** con su resultado.
-- **Firma** de hacking team al final.
+### 🎚 Perfiles de escaneo
+Selecciona el conjunto de módulos sin tocar el código:
+`full`, `recon`, `passive`, `bugbounty`, `api`, `cms`, `wordpress`.
+Cada perfil define recon + ataque + modo. El frontend tiene un selector.
 
-El PDF se guarda en `reports/<scan_id>.pdf` y aparece un enlace de descarga
-en la interfaz al concluir el escaneo. El generador es **stdlib puro**
-(`pdfgen.py`) — no requiere `pip install`.
+### 🧾 Sistema de firmas (JSON)
+Las detecciones de tecnología/cloud/paneles/librerías JS viven en
+`signatures/tech.json` (reglas `header`/`body`/`url`/`js`). Añadir una
+detección = editar un JSON, sin tocar Python. `signatures/findings.json`
+tiene reglas de hallazgos (ej. "Laravel Debug", "CORS wildcard").
+
+### 🔗 Grafo de correlación (cadenas de ataque)
+`risk.attack_chains()` cruza módulos en un grafo y levanta cadenas como
+**JWT → API admin → CORS → CSRF = toma de control**, o
+**LFI/XXE → RCE = compromiso total**. Se muestran en el panel de análisis.
+
+### 🎯 Confirmacion real (reducir falsos positivos)
+Cada hallazgo lleva `confidence`:
+- **`confirmed`** — se verificó con una petición real: CORS (envía `Origin`
+  externo y comprueba la respuesta), CSRF (reenvía el POST sin token y mira si
+  el servidor lo acepta), XSS (la carga se refleja sin escapar), JWT
+  (`alg=none` aceptado por el endpoint), Traversal/LFI/RCE (firma de éxito).
+- **`sospechoso`** — solo heurística (paneles expuestos, librerías JS
+  vulnerables, fingerprints por cabecera). Útil para priorizar revisión manual
+  sin disparar falsas alertas críticas.
+
+Los informes (JSON/Markdown/HTML/Nuclei/Burp) muestran la confianza para que
+sepas qué hallazgos son sólidos.
+
+### 📊 Historial y comparación (SQLite)
+Cada escaneo se persiste en `ht_scanner.db` (objetivo, fecha, tecnologías,
+hallazgos, duración). La API `/api/scans` lista el historial y el evento
+`diff` compara con el escaneo previo del **mismo objetivo** (nuevos/resueltos).
+
+### 🎛 Filtros y búsqueda en hallazgos
+En el panel de hallazgos puedes filtrar por **severidad** (critical→info) y
+por **módulo**, y **buscar texto** en cualquier hallazgo (detalle, módulo o
+evidencia). Cada hallazgo muestra su `confidence` (confirmed/sospechoso).
+
+### 🔬 Comparador visual de escaneos
+Botón **COMPARAR** en el panel de hallazgos: elige dos escaneos guardados
+(A/B) y el dashboard resalta los **nuevos** (en rojo) y los **resueltos**
+(en verde), usando `GET /api/compare?a=<id>&b=<id>`. Ideal para ver la
+evolución tras un arreglo.
+
+### 🔌 API REST de lectura
+- `GET /api/scans` — lista de escaneos guardados (`{"scans":[...]}`).
+- `GET /api/scan/<id>` — detalle (hallazgos, techs, duración).
+- `GET /api/compare?a=<id>&b=<id>` — diferencias entre dos escaneos.
 
 ---
 
@@ -109,138 +145,97 @@ en la interfaz al concluir el escaneo. El generador es **stdlib puro**
 
 Debajo del objetivo hay 3 botones mientras escanea:
 
-- **⏸ PAUSAR / ▶ REANUDAR** — congela y retoma el escaneo.
-- **⏭ SALTAR** — salta el módulo que se está ejecutando ahora.
-- **⏹ DETENER** — aborta el escaneo completo.
+- **⏸ PAUSAR / ▶ REANUDAR** — congela y continúa el escaneo.
+- **⏭ SALTAR** — salta el módulo actual (responde al instante).
+- **⏹ DETENER** — aborta el escaneo.
 
 ---
 
-## 📄 Plantillas YAML (estilo Nuclei)
+## 🐙 Subir a GitHub
 
-Sube un `.yaml` con el botón "Plantilla YAML (Nuclei)" antes de escanear.
-Formato simplificado compatible:
-
-```yaml
-id: exposed-git-config
-severity: high
-requests:
-  - method: GET
-    path: /.git/config
-    matchers:
-      - type: word
-        words: ["repositoryformatversion"]
-        part: body
-      - type: status
-        status: [200]
+```bash
+cd ht_scanner
+git init
+git add .
+git commit -m "HT Scanner: plataforma de recon y vulns"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/ht_scanner.git
+git push -u origin main
 ```
 
-El módulo NUCLEI ejecuta cada plantilla contra el objetivo y reporta
-coincidencias como hallazgos.
+---
+
+## 🧱 Arquitectura desacoplada (core/)
+
+HTScanner v2 separa el **núcleo** del **servidor** y del **frontend**. Nada en
+`core/` importa `server.py`; los módulos nunca se llaman entre sí, solo pasan
+por la capa de red común.
+
+```
+core/
+  http.py        -> request(): unica funcion de red (todos usan esta)
+  control.py      -> ControlStore: estado de escaneos (pause/skip/stop)
+  oob.py          -> servidor Out-Of-Band (RFI/XXE) por scan_id
+  eventbus.py     -> EventBus pub/sub (scanner/plugins/GUI/API/logs)
+  plugin.py       -> Plugin + PluginManager (carga dinamica)
+  context.py      -> ScanContext (une http/oob/control/eventbus)
+  db.py           -> persistencia SQLite (comparar escaneos)
+
+server.py  -> solo HTTP server + API + SSE (delega en core/)
+engine.py  -> fachada: re-exporta core.* + confirmadores + run_modules
+plugins/   -> 10 modulos cargados por PluginManager (copiar = anadir)
+```
+
+Flujo: `HTTP server -> API -> EventBus + Context -> PluginManager -> Plugins -> EventBus -> GUI/API/DB/logs`.
+
+La base de datos SQLite guarda objetivo, fecha, tecnologías, hallazgos y riesgo,
+permitiendo **comparar escaneos** (estado, nuevo vs viejo).
 
 ---
 
-## 🖥️ Interfaz
-
-- **Mapa de recon**: grafo SVG con nodo central **HACKING TEAM** y los módulos alrededor.
-- **Barra de progreso** en tiempo real + nodos que se iluminan al escanear.
-- **Log de actividad** estilo terminal (efecto máquina escribiendo en el estado).
-- **Panel de hallazgos** por severidad (HIGH / MEDIUM / LOW / CRITICAL).
-- **Controles** de pausa / salto / detención en vivo.
-
----
-
-## 📦 Estructura del proyecto
+## 📁 Estructura
 
 ```
 ht_scanner/
-├── server.py             # backend (motor de escaneo + SSE + control + YAML + OOB)
-├── index.html            # interfaz web
-├── style.css             # tema neón hacking team
-├── app.js                # lógica frontend (grafo, progreso, log, control, YAML)
-├── demo_target.py        # lab vulnerable para probar (autorizado, puerto 9090)
-├── payloads_example.txt  # ejemplo de lista de payloads (.txt)
-├── launch.sh             # arranque en un comando
-├── README.md
-└── PRESENTACION_HTSCANNER.md  # presentación para la comunidad
+├── server.py        # HTTP server + API SSE (delega en core/)
+├── engine.py        # fachada: re-exporta core.* + confirmadores + run_modules
+├── core/            # nucleo DESACOPLADO (no importa server.py)
+│   ├── http.py      # capa de red unica
+│   ├── control.py   # estado de escaneos (pause/skip/stop)
+│   ├── oob.py       # servidor Out-Of-Band (RFI/XXE)
+│   ├── eventbus.py  # bus de eventos pub/sub
+│   ├── plugin.py    # Plugin + PluginManager (carga dinamica)
+│   ├── context.py   # ScanContext
+│   └── db.py        # persistencia SQLite (comparar escaneos)
+├── crawler.py       # crawler de reconocimiento
+├── fingerprint.py   # fingerprinting + TLS/DNS/headers
+├── discovery.py     # descubrimiento de archivos
+├── jsecret.py       # analizador de secretos en JS
+├── risk.py          # priorización, correlación, sugerencias IA
+├── exporters.py     # PDF/JSON/MD/HTML/Nuclei/Burp
+├── pdfgen.py        # generador de PDF en stdlib puro
+├── plugins/         # 10 módulos cargados por PluginManager
+│   ├── sqli.py  idor.py  xss.py  lfi.py  rce.py  traversal.py
+│   ├── cors.py  jwt.py  graphql.py  csrf.py
+├── demo_target.py   # lab vulnerable autorizado (puerto 9090)
+├── index.html  app.js  style.css
+└── logo.png         # escudo oficial hacking team
 ```
 
-## ✅ Probado contra el demo (lab autorizado)
-
-El escaneo de prueba detectó de verdad:
-
-- 💉 **SQLi HIGH** en `/notes?id=`
-- 🔥 **XSS HIGH** en `/search?q=`
-- 📂 **LFI HIGH** en `/file?file=/etc/passwd`
-- 📂 **TRAVERSAL HIGH** en `/download?file=../../../../../../etc/passwd`
-- 🌐 **RFI HIGH (OOB)** en `/include?url=<callback>`
-- 💀 **RCE CRITICAL** en `/ping?host=;id`
-- 📜 **XXE HIGH (OOB)** vía entidad externa en `/xml`
-- `.git/config`, `robots.txt`, `api/` expuestos
-- `/admin`, `/login`, `/api` accesibles
-- IDOR en `id=1`
-- Cabeceras HSTS/CSP/X-Frame-Options faltantes
-- Tecnología: Apache + Next.js
-- Plantilla YAML Nuclei detectó `.git/config` expuesto
+Todo en **Python stdlib** (salvo `pyyaml` opcional para Nuclei). Sin `pip install`
+obligatorio.
 
 ---
 
-## 🔧 Ampliable
+## ⚖️ Alcance y honestidad
 
-Cada módulo es una función dentro de `scan_target()` en `server.py`. Para añadir
-uno nuevo: agrégalo a la lista `mods` y emite eventos con
-`emit({"type": "finding", ...})`. El control de pausa/salto/stop usa un
-diccionario `SCANS` por `scan_id`. RFI/XXE usan `start_oob()` / `wait_oob()`
-para el callback local.
+HT Scanner es una **plataforma de reconocimiento y detección** de nivel intermedio
+orientada a acelerar el recon inicial y encontrar vulnerabilidades comunes en
+apps pequeñas/medianas, labs y formación. No sustituye el análisis manual ni
+herramientas de referencia (Burp Suite Pro, sqlmap, Amass) en auditorías
+profesionales o bug bounty de gran escala, pero su arquitectura de plugins,
+concurrencia, crawler y reportes lo hacen una base sólida y extensible.
 
----
-
-## 📜 Licencia y responsabilidad
-
-Proyecto educativo de la comunidad **hacking team**. Al usarlo, aceptas hacerlo
-única y exclusivamente con autorización. Los autores no se hacen responsables
-del uso indebido.
-
-💻🔥 Somos una comunidad de hacking y ciberseguridad donde aprender es parte del juego 🔥💻
-
-🧑‍💻 Aquí encontrarás gente que está empezando y otros que ya están en nivel avanzado, todos compartiendo herramientas, trucos, metodologías y experiencias reales.
-
-🛠 Desde pentesting hasta OSINT, explotación o defensa, tocamos todo lo necesario para crecer en este mundo.
-
-🎯 Nos gusta aprender haciendo: laboratorios, retos, pruebas reales y colaboración constante.
-
-🧠 Nuestros logotipos representan quiénes somos: una comunidad unida por la curiosidad, el conocimiento y las ganas de romper (y entender) sistemas.
-
-🚀 Si te mola la ciberseguridad y quieres subir de nivel rodeado de gente que está en lo mismo que tú… este es tu sitio.
-
-🌐 Página Web:
-https://www.hackingteamoficcial.uk/
-
-💻 GitHub:
-https://github.com/HackingTeamOficial
-
-📲 Telegram:
-https://t.me/PlantillasNucleiHackingTeam
-https://t.me/HackingTeamGrupoOfficial
-https://t.me/+0hHSaKO7eI9mNWY8 (Difusión)
-https://t.me/+llcmNGzz6JIyMmI0 (Biblioteca)
-https://t.me/TermuxHackingTeam
-
-🐦 X (Twitter):
-@HackingTeam77
-
-🦋 Bluesky:
-https://bsky.app/profile/hackingteam.bsky.social
-
-💬 Discord:
-https://discord.gg/V4nPFbQX
-
-📘 Facebook:
-https://www.facebook.com/groups/hackingteam2022/?ref=share
-https://www.facebook.com/groups/HackingTeamCyber/?ref=share
-
-🎥 YouTube:
-https://www.youtube.com/@HackingTeamOficial/videos
-
-🎵 TikTok:
-https://www.tiktok.com/@hackingteamprohackers
-https://www.tiktok.com/@hacking.kdea?_t=ZS-8vTtlaQrDTL&_r=1
+La versión headless (ejecutar JS de SPAs en Chromium) y la integración con
+subfinder/Amass/Wayback quedan como **hooks opcionales** (se usan si los binarios
+están instalados; si no, hay fallback en stdlib).
