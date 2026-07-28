@@ -149,21 +149,6 @@ Debajo del objetivo hay 3 botones mientras escanea:
 - **⏭ SALTAR** — salta el módulo actual (responde al instante).
 - **⏹ DETENER** — aborta el escaneo.
 
----
-
-## 🐙 Subir a GitHub
-
-```bash
-cd ht_scanner
-git init
-git add .
-git commit -m "HT Scanner: plataforma de recon y vulns"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/ht_scanner.git
-git push -u origin main
-```
-
----
 
 ## 🧱 Arquitectura desacoplada (core/)
 
