@@ -225,6 +225,15 @@ function handleEvent(ev) {
       addLog(`  ⚠ HALLAZGO (${ev.severity}) ${ev.module}: ${ev.detail}`, 'warn');
       break;
     }
+    case 'report':
+      addLog('📄 ' + ev.msg, 'hi');
+      {
+        const d = document.createElement('div');
+        d.className = 'fitem info';
+        d.innerHTML = `<b>REPORTE PDF</b> — <a href="/api/report?scan_id=${CURRENT_SCAN}" target="_blank" download>⬇ Descargar ${ev.msg.split(': ')[1] || 'reporte'}</a>`;
+        findings.appendChild(d);
+      }
+      break;
     case 'done':
       addLog(ev.summary, 'hi');
       break;

@@ -20,6 +20,7 @@ import time
 import re
 import threading
 import uuid
+import datetime
 from http.server import BaseHTTPRequestHandler, HTTPServer, ThreadingHTTPServer
 from http.server import SimpleHTTPRequestHandler
 
@@ -29,8 +30,12 @@ try:
 except Exception:
     HAS_YAML = False
 
+import pdfgen
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PORT = 8777
+REPORTS_DIR = os.path.join(ROOT, "reports")
+os.makedirs(REPORTS_DIR, exist_ok=True)
 
 SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
@@ -109,6 +114,30 @@ def stop_oob():
 
 def wait_oob(timeout=4):
     return OOB_HIT.wait(timeout)
+
+
+def wait_oob_responsive(scan_id, current_module, timeout=1.2):
+    """Espera el callback OOB pero chequea skip/stop cada 0.1s para respuesta rapida."""
+    end = time.time() + timeout
+    while time.time() < end:
+        if OOB_HIT.is_set():
+            return True
+        ctrl = check_control(scan_id, current_module)
+        if ctrl in ("skip", "stop"):
+            return False
+        time.sleep(0.1)
+    return OOB_HIT.is_set()
+
+
+def sleep_ctrl(scan_id, current_module, seconds):
+    """Duerme pero interrumpe si hay skip/stop (para que el boton SALTAR responda ya)."""
+    end = time.time() + seconds
+    while time.time() < end:
+        ctrl = check_control(scan_id, current_module)
+        if ctrl in ("skip", "stop"):
+            return ctrl
+        time.sleep(0.05)
+    return "run"
 
 
 def req(method, url, data=None, cookie=None, timeout=10, raw=False):
@@ -264,6 +293,25 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
     """
     def emit(ev):
         bus(ev)
+        # Recolectar datos para el reporte PDF
+        if ev.get("type") == "finding":
+            report_data["findings"].append({
+                "severity": ev.get("severity", "low"),
+                "module": ev.get("module", ""),
+                "detail": ev.get("detail", ""),
+            })
+        elif ev.get("type") == "module" and ev.get("status") == "done":
+            report_data["modules_list"].append({
+                "name": ev.get("name", ""),
+                "ok": True,
+                "msg": ev.get("msg", ""),
+            })
+
+    report_data = {
+        "findings": [],
+        "modules_list": [],
+        "system": {"host": "", "server": "", "tech": "", "ports": ""},
+    }
 
     if not target.startswith("http"):
         target = "http://" + target
@@ -302,6 +350,11 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
         issues.append("Falta X-Frame-Options (clickjacking)")
     if h.get("server"):
         issues.append(f"Server expuesto: {h.get('server')}")
+        report_data["system"]["server"] = h.get("server")
+    try:
+        report_data["system"]["host"] = urllib.parse.urlparse(target).netloc
+    except Exception:
+        pass
     emit({"type": "module", "name": "headers", "status": "done",
           "msg": f"HTTP {r['code']} | hallazgos: {', '.join(issues) if issues else 'ninguno'}", "findings": issues})
     done += 1
@@ -494,8 +547,8 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
         emit({"type": "done", "summary": "Escaneo detenido"}); return
     emit({"type": "module", "name": "traversal", "status": "running", "msg": "Probando Path Traversal (../)..."})
     trv_hits = []
-    TRV_ROUTES = ["", "/download", "/file", "/img", "/view", "/read"]
-    TRV_PARAMS = ["file", "path", "dir", "folder", "name", "img", "image", "download", "ufile"]
+    TRV_ROUTES = ["", "/download", "/file"]
+    TRV_PARAMS = ["file", "path", "name", "img"]
     TRV_PAYLOADS = ["../../../../../../etc/passwd", "..%2f..%2f..%2fetc%2fpasswd",
                     "....//....//....//etc/passwd", "..\\..\\..\\windows\\win.ini",
                     "%2e%2e%2f%2e%2e%2fetc%2fpasswd"]
@@ -529,8 +582,8 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
         emit({"type": "done", "summary": "Escaneo detenido"}); return
     emit({"type": "module", "name": "rfi", "status": "running", "msg": "Probando RFI (inclusion remota) via callback OOB..."})
     rfi_hits = []
-    RFI_TARGETS = ["", "/include"]
-    RFI_PARAMS = ["url", "file", "page", "path", "inc", "include", "template", "lang", "view"]
+    RFI_TARGETS = ["/include"]
+    RFI_PARAMS = ["url"]
     # URL del callback local: el server objetivo intentaria cargar este recurso
     cb_url = f"http://{oob_host}:{oob_port}/{oob_token}.txt"
     for rt in RFI_TARGETS:
@@ -542,7 +595,7 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
                 if check_control(scan_id, "rfi") == "skip":
                     break
                 rr = req("GET", base_url, {param: p}, timeout=5)
-                if wait_oob(2.5):
+                if wait_oob_responsive(scan_id, "rfi", 1.2):
                     rfi_hits.append(f"{rt or '/'}{param}={p}")
                     emit({"type": "finding", "severity": "high", "module": "rfi",
                           "detail": f"RFI OOB en '{base_url}' param '{param}': el servidor intento cargar {p}"})
@@ -593,7 +646,7 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
         emit({"type": "done", "summary": "Escaneo detenido"}); return
     emit({"type": "module", "name": "xxe", "status": "running", "msg": "Probando XXE (entidad externa) via callback OOB..."})
     xxe_hits = []
-    XXE_ENDPOINTS = ["", "/api", "/xml", "/upload", "/soap", "/graphql", "/parse"]
+    XXE_ENDPOINTS = ["/", "/xml"]
     payload = (
         f'<?xml version="1.0"?>'
         f'<!DOCTYPE foo [<!ENTITY xxe SYSTEM "http://{oob_host}:{oob_port}/{oob_token}">]>'
@@ -605,7 +658,7 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
         if check_control(scan_id, "xxe") == "skip":
             break
         rr = req("POST", target.rstrip("/") + ep, data=payload, raw=True, timeout=5)
-        if wait_oob(2.5):
+        if wait_oob_responsive(scan_id, "xxe", 1.2):
             xxe_hits.append(ep or "/")
             emit({"type": "finding", "severity": "high", "module": "xxe",
                   "detail": f"XXE OOB en '{ep or '/'}' (el parser solicitó recurso externo)"})
@@ -643,6 +696,7 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
         tech_hits.append("Framework: React")
     if "jquery" in body_l:
         tech_hits.append("Lib: jQuery")
+    report_data["system"]["tech"] = ", ".join(tech_hits) if tech_hits else "no detectada"
     emit({"type": "module", "name": "tech", "status": "done", "msg": f"Tech: {len(tech_hits)} senal(es)", "findings": tech_hits})
     done += 1
     emit({"type": "progress", "done": done, "total": total})
@@ -656,6 +710,19 @@ def scan_target(scan_id, target, bus, templates=None, payloads=None, mode="activ
         done += 1
         emit({"type": "progress", "done": done, "total": total})
 
+    # --- Generar reporte PDF firmado por hacking team ---
+    try:
+        report_data["target"] = target
+        report_data["fecha"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        report_data["mode"] = mode
+        report_data["modulos"] = total
+        pdf_path = os.path.join(REPORTS_DIR, f"{scan_id}.pdf")
+        pdfgen.generate_report(report_data, pdf_path)
+        emit({"type": "report", "path": pdf_path,
+              "msg": f"Reporte PDF generado: {os.path.basename(pdf_path)}"})
+    except Exception as e:
+        emit({"type": "error", "msg": f"No se pudo generar el PDF: {e}"})
+
     emit({"type": "done", "target": target, "summary": f"Escaneo completado. Modulos: {total}. Revisa los hallazgos."})
 
 
@@ -664,6 +731,26 @@ class Handler(SimpleHTTPRequestHandler):
         super().__init__(*a, directory=ROOT, **k)
 
     def do_GET(self):
+        if self.path.startswith("/api/report?"):
+            qs = urllib.parse.urlparse(self.path).query
+            params = urllib.parse.parse_qs(qs)
+            scan_id = params.get("scan_id", [""])[0]
+            path = os.path.join(REPORTS_DIR, f"{scan_id}.pdf")
+            if os.path.exists(path):
+                with open(path, "rb") as f:
+                    data = f.read()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/pdf")
+                self.send_header("Content-Disposition",
+                                 f'attachment; filename="HTScanner_{scan_id}.pdf"')
+                self.send_header("Content-Length", str(len(data)))
+                self.end_headers()
+                self.wfile.write(data)
+            else:
+                self.send_response(404)
+                self.end_headers()
+            return
+
         if self.path.startswith("/api/scan?"):
             qs = urllib.parse.urlparse(self.path).query
             params = urllib.parse.parse_qs(qs)
@@ -697,6 +784,13 @@ class Handler(SimpleHTTPRequestHandler):
                     self.wfile.flush()
                 except Exception:
                     pass
+
+            # Emitir el scan_id para que el frontend pueda enviar controles
+            try:
+                self.wfile.write(f"data: {json.dumps({'type': 'scan_id', 'scan_id': scan_id})}\n\n".encode())
+                self.wfile.flush()
+            except Exception:
+                pass
 
             try:
                 scan_target(scan_id, target, bus, templates, payloads, mode)
