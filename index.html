@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HT Scanner — hacking team</title>
+<link rel="stylesheet" href="style.css?v=2.6">
+</head>
+<body>
+<!-- Pantalla de bloqueo eliminada: el escaneo arranca directo (uso local/CTF) -->
+
+<header>
+  <div class="logo">
+    <img src="assets/logo_dni.png" alt="HTScanner" style="height:56px;width:auto;display:inline-block;margin-right:10px;vertical-align:middle">
+    HT<span>SCANNER</span>
+  </div>
+  <div class="tag">hacking team · plataforma de recon & vulnerabilidades</div>
+</header>
+
+<main>
+  <!-- PANEL DE AUTORIZACION -->
+  <section id="auth" class="panel auth">
+    <h2>⚠️ AVISO DE AUTORIZACIÓN</h2>
+    <p>Esta herramienta realiza pruebas de seguridad <b>reales</b>. Úsala
+    <b>SOLO</b> contra sistemas propios o con autorización explícita por escrito.
+    El uso no autorizado es ilegal.</p>
+    <label class="check">
+      <input type="checkbox" id="authCheck">
+      <span>Confirmo que tengo autorización para escanear el objetivo.</span>
+    </label>
+  </section>
+
+  <!-- PANEL DE CONTROL -->
+  <section class="panel control" id="control" style="opacity:.4;pointer-events:none">
+    <div class="inputrow">
+      <input id="target" type="text" placeholder="https://objetivo.com  (o http://127.0.0.1:9090)" autocomplete="off">
+      <button id="startBtn">▶ INICIAR SCAN</button>
+    </div>
+    <div class="mods">
+      <span class="chip" data-m="headers">HEADERS</span>
+      <span class="chip" data-m="tech">TECH/FP</span>
+      <span class="chip" data-m="crawler">CRAWLER</span>
+      <span class="chip" data-m="archivos">ARCHIVOS</span>
+      <span class="chip" data-m="jsecret">JS-SECRETS</span>
+      <span class="chip" data-m="sqli">SQLi</span>
+      <span class="chip" data-m="idor">IDOR</span>
+      <span class="chip" data-m="xss">XSS</span>
+      <span class="chip" data-m="lfi">LFI</span>
+      <span class="chip" data-m="traversal">TRAVERSAL</span>
+      <span class="chip" data-m="rfi">RFI</span>
+      <span class="chip" data-m="rce">RCE</span>
+      <span class="chip" data-m="xxe">XXE</span>
+      <span class="chip" data-m="cors">CORS</span>
+      <span class="chip" data-m="jwt">JWT</span>
+      <span class="chip" data-m="graphql">GRAPHQL</span>
+      <span class="chip" data-m="csrf">CSRF</span>
+    </div>
+    <div class="mods">
+      <label class="upload">
+        📄 Plantilla YAML (Nuclei): <input type="file" id="yamlFile" accept=".yaml,.yml">
+      </label>
+      <label class="upload">
+        🎯 Lista de payloads (.txt): <input type="file" id="payloadsFile" accept=".txt">
+      </label>
+      <label class="mode">
+        🔘 Modo:
+        <select id="modeSel">
+          <option value="active">⚡ ACTIVO (envía payloads)</option>
+          <option value="passive">👁 PASIVO (solo recon)</option>
+        </select>
+      </label>
+      <label class="mode">
+        🎚 Perfil:
+        <select id="profileSel">
+          <option value="full">Full (todos los módulos)</option>
+          <option value="recon">Recon (solo reconocimiento)</option>
+          <option value="passive">Passive (sin payloads)</option>
+          <option value="bugbounty">Bug Bounty (superficie amplia)</option>
+          <option value="api">API (solo superficie de APIs)</option>
+          <option value="cms">CMS (WordPress/Joomla/Drupal)</option>
+          <option value="wordpress">WordPress</option>
+        </select>
+      </label>
+      <label class="mode">
+        🧵 Concurrencia: <input type="range" id="conc" min="1" max="12" value="6">
+        <span id="concVal">6</span>
+      </label>
+    </div>
+
+    <!-- Auth opcional (login para escanear tras autenticacion) -->
+    <details class="authbox">
+      <summary>🔐 Autenticación (opcional)</summary>
+      <div class="mods">
+        <input id="authUrl" type="text" placeholder="URL de login (POST)">
+        <input id="authUserField" type="text" placeholder="campo usuario (ej. username)" value="username">
+        <input id="authPassField" type="text" placeholder="campo pass (ej. password)" value="password">
+        <input id="authUser" type="text" placeholder="usuario">
+        <input id="authPass" type="password" placeholder="contraseña">
+      </div>
+    </details>
+
+    <div class="controls">
+      <button id="pauseBtn" class="ctrl">⏸ PAUSAR</button>
+      <button id="skipBtn" class="ctrl">⏭ SALTAR</button>
+      <button id="stopBtn" class="ctrl danger">⏹ DETENER</button>
+    </div>
+
+    <!-- Notificaciones Telegram -->
+    <details class="authbox">
+      <summary>📲 Notificaciones Telegram (opcional)</summary>
+      <div class="mods">
+        <label class="check">
+          <input type="checkbox" id="tgEnable">
+          <span>Activar notificaciones de este escaneo al bot</span>
+        </label>
+        <div id="tgStatus" class="tgstatus">Estado: sin configurar</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- PANEL DE DISPOSITIVOS -->
+  <section class="panel devices" id="devicesPanel" style="display:none">
+    <div class="loghead">🖥️ DISPOSITIVOS / WORKERS</div>
+    <div class="devices-wrap">
+      <table class="devices-table">
+        <thead>
+          <tr>
+            <th>Hostname</th>
+            <th>SO</th>
+            <th>Estado</th>
+            <th>Último contacto</th>
+            <th>Capacidad</th>
+          </tr>
+        </thead>
+        <tbody id="devicesBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DASHBOARD SOC -->
+  <section class="panel dash" id="dashPanel" style="display:none">
+    <div class="loghead">📊 DASHBOARD</div>
+    <div class="metrics">
+      <div class="metric crit"><span id="mCrit">0</span><label>CRITICAL</label></div>
+      <div class="metric high"><span id="mHigh">0</span><label>HIGH</label></div>
+      <div class="metric med"><span id="mMed">0</span><label>MEDIUM</label></div>
+      <div class="metric low"><span id="mLow">0</span><label>LOW</label></div>
+      <div class="metric info"><span id="mInfo">0</span><label>INFO</label></div>
+    </div>
+    <div class="bargraph" id="bargraph"></div>
+  </section>
+
+  <!-- MAPA DE RECON -->
+  <section class="panel graphpanel" id="graphPanel" style="display:none">
+    <div class="loghead">🔗 MAPA DE RECON & APIS</div>
+    <div id="reconList" class="reconlist"></div>
+  </section>
+
+  <!-- PROGRESO -->
+  <section class="panel progress" id="progressPanel" style="display:none">
+    <div class="loghead">📡 PROGRESO DEL ANÁLISIS</div>
+    <div class="ookla">
+      <div class="gauge">
+        <svg viewBox="0 0 200 200" width="180" height="180">
+          <circle class="g-track" cx="100" cy="100" r="86"></circle>
+          <circle class="g-fill" id="gaugeArc" cx="100" cy="100" r="86"></circle>
+        </svg>
+        <div class="g-center">
+          <div class="g-pct" id="ooklaPct">0%</div>
+          <div class="g-sub" id="ooklaSub">iniciando…</div>
+        </div>
+      </div>
+      <div class="ookla-side">
+        <div class="barwrap">
+          <div class="bar" id="bar"></div>
+          <div class="barpct" id="barpct">0%</div>
+        </div>
+        <div class="ookla-stats">
+          <div><span id="ooklaMod">0</span><label>módulos</label></div>
+          <div><span id="ooklaFnd">0</span><label>hallazgos</label></div>
+          <div><span id="ooklaSpd">0.0</span><label>req/s</label></div>
+        </div>
+        <div class="ookla-mod" id="ooklaCurrent">—</div>
+      </div>
+    </div>
+    <div class="nodes" id="nodes"></div>
+  </section>
+
+  <!-- IA / SUGERENCIAS -->
+  <section class="panel ai" id="aiPanel" style="display:none">
+    <div class="loghead">🧠 ANÁLISIS / SUGERENCIAS</div>
+    <div id="aiList" class="ailist"></div>
+    <div class="loghead" style="margin-top:8px">🔗 CADENAS DE ATAQUE (grafo de correlación)</div>
+    <div id="chainList" class="ailist"></div>
+    <div id="diffInfo" class="diffinfo"></div>
+  </section>
+
+  <!-- LOG EN VIVO -->
+  <section class="panel logpanel" id="logPanel" style="display:none">
+    <div class="loghead">▌ ACTIVIDAD EN TIEMPO REAL</div>
+    <div id="log" class="log"></div>
+  </section>
+
+  <!-- HALLAZGOS -->
+  <section class="panel findpanel" id="findPanel" style="display:none">
+    <div class="loghead">🔍 HALLAZGOS
+      <span id="findCount" class="findcount">0 / 0</span>
+    </div>
+    <div class="filterbar">
+      <select id="fSev" class="fsel">
+        <option value="all">Todas las severidades</option>
+        <option value="critical">Critical</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+        <option value="info">Info</option>
+      </select>
+      <select id="fMod" class="fsel">
+        <option value="all">Todos los módulos</option>
+        <option value="tech">Tech/Fingerprint</option>
+        <option value="sqli">SQLi</option>
+        <option value="idor">IDOR</option>
+        <option value="xss">XSS</option>
+        <option value="lfi">LFI</option>
+        <option value="traversal">Traversal</option>
+        <option value="rfi">RFI</option>
+        <option value="rce">RCE</option>
+        <option value="xxe">XXE</option>
+        <option value="cors">CORS</option>
+        <option value="jwt">JWT</option>
+        <option value="graphql">GraphQL</option>
+        <option value="csrf">CSRF</option>
+      </select>
+      <input id="fSearch" class="fsearch" type="text" placeholder="🔎 buscar en hallazgos…">
+    </div>
+    <div id="findings" class="findings"></div>
+  </section>
+
+  <!-- COMPARADOR DE ESCANEOS -->
+  <section class="panel compare" id="comparePanel" style="display:none">
+    <div class="loghead">🔬 COMPARAR ESCANEOS</div>
+    <div class="cmprow">
+      <label>Escaneo A: <select id="cmpA" class="fsel"></select></label>
+      <label>Escaneo B: <select id="cmpB" class="fsel"></select></label>
+      <button id="cmpBtn" class="ctrl small">⚖ COMPARAR</button>
+    </div>
+    <div id="cmpOut" class="cmpout"></div>
+  </section>
+
+  <!-- REPORTE -->
+  <section class="panel report" id="reportPanel" style="display:none">
+    <div class="loghead">📄 REPORTE</div>
+    <div id="reportLinks"></div>
+  </section>
+</main>
+
+<footer>
+  <span id="status">listo</span> · Solo fines educativos / CTF local
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
