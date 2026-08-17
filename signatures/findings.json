@@ -1,0 +1,67 @@
+{
+  "findings": [
+    {
+      "name": "Laravel Debug Mode",
+      "match": {"header": "x-powered-by", "contains": "Laravel"},
+      "severity": "HIGH",
+      "module": "tech",
+      "advice": "Laravel expuesto en X-Powered-By. Probar Debug Mode, APP_KEY, Ignition RCE, Sanctum, Livewire."
+    },
+    {
+      "name": "Server header expuesto",
+      "match": {"header": "server", "exists": true},
+      "severity": "LOW",
+      "module": "headers",
+      "advice": "Ocultar cabecera Server para reducir fingerprinting del servidor."
+    },
+    {
+      "name": "WAF/Cloud detectado",
+      "match": {"header": "cf-ray", "exists": true},
+      "severity": "INFO",
+      "module": "tech",
+      "advice": "Tras Cloudflare/Akamai: los payloads pueden ser filtrados. Ajustar rate/encoding."
+    },
+    {
+      "name": "CORS wildcard con credentials",
+      "match": {"header": "access-control-allow-origin", "equals": "*"},
+      "severity": "HIGH",
+      "module": "cors",
+      "advice": "CORS abierto. Si la app usa cookies de sesion, riesgo de robo de credenciales (exige Access-Control-Allow-Credentials)."
+    },
+    {
+      "name": "JWT sin firma (alg=none)",
+      "match": {"header": "x-jwt-alg", "equals": "none"},
+      "severity": "HIGH",
+      "module": "jwt",
+      "advice": "El token JWT acepta alg=none. Se puede forjar cualquier payload sin clave."
+    },
+    {
+      "name": "Panel de administracion expuesto",
+      "match": {"url": "/admin"},
+      "severity": "MEDIUM",
+      "module": "archivos",
+      "advice": "Panel /admin accesible. Comprobar auth débil, default creds, o bypass."
+    },
+    {
+      "name": "GraphQL introspection habilitado",
+      "match": {"url": "/graphql"},
+      "severity": "MEDIUM",
+      "module": "graphql",
+      "advice": "GraphQL expuesto. Usar introspection para mapear el esquema y probar batching/alias abuse."
+    },
+    {
+      "name": "Falta HSTS",
+      "match": {"header": "strict-transport-security", "absent": true},
+      "severity": "LOW",
+      "module": "headers",
+      "advice": "Habilitar HSTS para evitar ataques SSL stripping."
+    },
+    {
+      "name": "Falta CSP",
+      "match": {"header": "content-security-policy", "absent": true},
+      "severity": "LOW",
+      "module": "headers",
+      "advice": "Configurar CSP para mitigar XSS."
+    }
+  ]
+}
