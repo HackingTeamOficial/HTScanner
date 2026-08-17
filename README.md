@@ -1,6 +1,7 @@
 🔥 HTScanner 2.0 — Nueva generación de análisis de seguridad web
 
-<img width="1913" height="909" alt="Captura de pantalla 2026-08-14 171109" src="https://github.com/user-attachments/assets/f57c6189-fdf9-4f89-9694-6b717f643e0e" />
+<img width="1918" height="916" alt="Captura de pantalla 2026-08-14 125052" src="https://github.com/user-attachments/assets/bb7a319e-2719-4651-bc54-c87f7ca08efa" />
+
 
 Presentamos HTScanner 2.0, una nueva evolución de nuestra plataforma de análisis de seguridad web, diseñada para investigadores de seguridad, pentesters, equipos Red Team, administradores y profesionales de ciberseguridad.
 
