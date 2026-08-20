@@ -1,0 +1,7 @@
+# requirements for HTScanner
+PyYAML>=6.0
+pytest>=7.0
+flake8>=6.0
+black>=24.9
+bandit>=1.7
+pip-audit>=2.6
