@@ -1,0 +1,49 @@
+# HTScannerPro — archivos que NO van al repo
+
+# Empaquetados / distribucion
+FINAL.rar
+HTScanner_FINAL.rar
+*.rar
+
+# Bases de datos locales
+ht_scanner.db
+ht_demo.db
+*.db
+
+# Reportes generados
+reports/
+*.pdf
+*.burp
+*.nuclei.yaml
+*.json
+*.md
+!config/*.json
+!config/update.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Secrets / notas
+secret_notes.txt
+crawler.py.bak
+config/auth.env
+
+J/
+wp_demo/
+
+# Entornos / OS
+.env
+.DS_Store
+Thumbs.db
+*.log
+
+# Dispositivo/residuo de Windows que bloquea git add
+nul
+nul*
+NUL

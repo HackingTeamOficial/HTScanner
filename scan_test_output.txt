@@ -1,0 +1,2 @@
+data: {"type": "scan_id", "scan_id": "d2d921d9"}
+

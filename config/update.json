@@ -1,0 +1,6 @@
+{
+  "remote_version_url": "https://raw.githubusercontent.com/HackingTeamOficial/HTScanner/main/version.json",
+  "remote_package_url": "https://github.com/HackingTeamOficial/HTScanner/archive/refs/heads/main.zip",
+  "repo_url": "https://github.com/HackingTeamOficial/HTScanner",
+  "changelog": "HTScannerPro 2.1 — Release de seguridad y estabilidad:\n- Auth: el hash de contrasena ya no esta hardcodeado; se carga desde config/auth.env o variable HACKINGTEAM_PASS (fallback 'admin' para CTF local).\n- CORS restringido a localhost/127.0.0.1 (antes '*').\n- Reporte PDF: incluye las secciones de sistema analizado y donut de severidad; muestra hallazgos sqli/xss/nuclei con evidencias.\n- Correccion de encoding (charmap) en todos los exportadores del reporte (utf-8).\n- Hallazgos estructurados de forma uniforme (sin crash por strings en riesgo/correlacion).\n- Tema claro/oscuro unificado y sin inversion.\n- Repositorio y script de despliegue incluidos (.gitignore, README.md, subir_repo.sh)."
+}

